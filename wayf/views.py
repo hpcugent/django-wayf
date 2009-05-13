@@ -5,13 +5,9 @@ from django.shortcuts import render_to_response
 from django.http import HttpResponse
 
 def list(request):
-    print request.LANGUAGE_CODE
-    # Get the user's preferred languages
-    languages = request.META['HTTP_ACCEPT_LANGUAGE'].split(',')
+    # Get the user's preferred languages, ordered by his preference
+    languages = acceptedlangs(request.META['HTTP_ACCEPT_LANGUAGE'])
     
-    # Always include english at the end as a fall-back
-    languages.append('en')
-
     # Instantiate the metadata
     metadata = ShibbolethMetadata('metadata.xml')
 
