@@ -1,3 +1,4 @@
+# This is a map from the old wayf entries to the actual metadata entityIDs
 idpmap = { 
     "http://www.grnet.gr/aai:edugain.gr": "http://edugain-login.grnet.gr/ShiBE-R/ShiBEWebRequester",
     "http://www.grnet.gr/aai:panepisthmio.gr": "https://aai-tei.ucnet.uoc.gr/shibboleth-idp/",
