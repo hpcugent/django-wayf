@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-13 06:06-0500\n"
+"POT-Creation-Date: 2009-05-13 07:12-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,25 +16,30 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: wayf/templates/base.html:73
+#: wayf/templates/base.html:67
 msgid "GRNET Federation,<br />Authentication & Authorization Infrastructure"
 msgstr "Ομοσπονδία ΕΔΕΤ,<br />Υποδομή Ταυτοποίησης & Εξουσιοδότησης (AAI)"
 
-#: wayf/templates/base.html:74
+#: wayf/templates/base.html:68 wayf/templates/support.html:3
+#: wayf/templates/support_fail.html:3
+msgid "User support"
+msgstr "Υποστήριξη Χρηστών"
+
+#: wayf/templates/base.html:68 wayf/templates/faq.html:3
 msgid "FAQ"
 msgstr "Συχνές Ερωτήσεις - Απαντήσεις"
 
-#: wayf/templates/base.html:74
+#: wayf/templates/base.html:68 wayf/templates/help.html:3
 msgid "Help"
 msgstr "Βοήθεια"
 
-#: wayf/templates/base.html:74
+#: wayf/templates/base.html:68 wayf/templates/privacy.html:3
 msgid "Privacy"
 msgstr "Προσωπικά Δεδομένα"
 
-#: wayf/templates/support.html:3 wayf/templates/support_fail.html:3
-msgid "User support"
-msgstr "Υποστήριξη Χρηστών"
+#: wayf/templates/index.html:3
+msgid "About"
+msgstr "Γενικές Πληροφορίες"
 
 #: wayf/templates/support.html:5
 msgid ""

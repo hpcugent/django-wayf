@@ -51,3 +51,12 @@ def support(request):
     # At this point, no suitable IdentityProvider entry or one with no 
     # contact information was found. So, we have to apologise to the user.
     return render_to_response("support_fail.html", { 'idpname': idpname })
+
+def faq(request):
+    return render_to_response("faq.html")
+
+def help(request):
+    return render_to_response("help.html")
+
+def privacy(request):
+    return render_to_response("privacy.html")

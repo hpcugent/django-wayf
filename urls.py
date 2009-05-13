@@ -8,6 +8,9 @@ urlpatterns = patterns('',
     # Example:
     # (r'^grnet_wayf/', include('grnet_wayf.foo.urls')),
     (r'^support$', 'wayf.views.support'),
+    (r'^faq$', 'wayf.views.faq'),
+    (r'^help$', 'wayf.views.help'),
+    (r'^privacy$', 'wayf.views.privacy'),
     (r'^$', 'wayf.views.index'), 
 
     # Uncomment the admin/doc line below and add 'django.contrib.admindocs' 
