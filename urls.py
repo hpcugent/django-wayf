@@ -7,6 +7,7 @@ from django.conf.urls.defaults import *
 urlpatterns = patterns('',
     # Example:
     # (r'^grnet_wayf/', include('grnet_wayf.foo.urls')),
+    (r'^support$', 'wayf.views.support'),
     (r'^$', 'wayf.views.index'), 
 
     # Uncomment the admin/doc line below and add 'django.contrib.admindocs' 

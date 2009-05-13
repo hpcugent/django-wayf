@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+Επιλέξατε τον identity provider του {{ idp.name.el }}<br />
+Παρουσιάστηκε πρόβλημα κατά τη χρήση της υποδομής AAI του ΕΔΕΤ. Παρακαλούμε επικοινωνήστε με τους υπευθύνους του οικείου ιδρύματος, με έναν από τους παρακάτω τρόπους:
+<ul>
+{% if idp.contact.email %}
+	<li>email: {{ idp.contact.email }}</li>
+{% endif %}
+{% if idp.contact.telephone %}
+	<li>Τηλέφωνο: {{ idp.contact.telephone }}</li>
+{% endif %}
+</ul>
+{% endblock %}
