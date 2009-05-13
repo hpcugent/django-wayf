@@ -1,12 +1,104 @@
+{% load i18n %}
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-<title>GRNet Shibboleth Federation -- wayf.grnet.gr</title>
-<!-- <link type="text/css" rel="stylesheet" href="/static/updates.css" /> -->
+<meta name="robots" content="ALL">
+<meta name="revisit-after" content="30 days">
+<title>{% block title %} GRNET: Shibboleth Federation {% endblock %}</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" lang="el">
+<link href="/static/style.css" rel="stylesheet" type="text/css">
+<link href="/static/overlib.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
+<table class="holdingTable" border="0" cellpadding="0" cellspacing="0">
+<tbody>
+	<tr>
+		<td rowspan="8" class="BGEb">&nbsp;</td>
+		<td rowspan="8" valign="top">
+			<table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tbody>
+				<tr><td height="57"><img src="/static/images/s.gif" height="1" width="1" alt="divider" title="divider"></td></tr>
+				<tr><td><a href="http://www.grnet.gr/"><img src="/static/images/tab_grnet.gif" alt="GRNET.GR" title="GRNET.GR" border="0" height="131" width="13"></a></td></tr>
+				<tr><td><a href="http://shibboleth.grnet.gr/"><img src="/static/images/tab_shibb.gif" alt="shibboleth.grnet.gr" title="shibboleth.grnet.gr" border="0" height="135" width="14"></a></td></tr>
+			</tbody>
+			</table>
+		</td>
+		<td colspan="3" id="topStrip"><img src="/static/images/s.gif" height="1" width="700" alt="divider" title="divider"></td>
+		<td rowspan="8" ><img src="/static/images/s.gif" height="1" width="1" alt="divider" title="divider"></td>
+		<td rowspan="8" class="BGEb">&nbsp;</td>
+	</tr>
+	<tr>
+		<td width="1"><img src="/static/images/s.gif" height="1" width="1" alt="divider" title="divider"></td>
+		<td height="1">
+			<table align="right" border="0" cellpadding="0" cellspacing="0">
+			<tbody>
+				<tr>
+					<td><img src="/static/images/s.gif" height="1" width="1" alt="divider" title="divider"></td>
+					<td id="corner_white_on_grey_topx--"><img src="/static/images/s.gif" height="1" width="1" alt="divider" title="divider"></td>
+					<td rowspan="2" class="pageContents"><img src="/static/images/s.gif" height="1" width="1" alt="divider" title="divider"></td>
+				</tr>
+				<tr>
+					<td ><img src="/static/images/s.gif" height="1" width="1" alt="divider" title="divider"></td>
+					<td class="pageContents"><img src="/static/images/s.gif" height="1" width="120" alt="divider" title="divider"></td>
+				</tr>
+			</tbody>
+			</table>
+		</td>
+		<td id="corner_white_on_grey_top--x"><img src="/static/images/s.gif" height="1" width="1" alt="divider" title="divider"></td>
+	</tr>
+	<tr>
+		<td id="corner_white_on_grey_topx--"><img src="/static/images/s.gif" height="1" width="1" alt="divider" title="divider"></td>
+		<td class="pageContents"><img src="/static/images/s.gif" height="1" width="300" alt="divider" title="divider"></td>
+		<td class="pageContents"><img src="/static/images/s.gif" height="1" width="1" alt="divider" title="divider"></td>
+	</tr>
+	<tr>
+		<td colspan="3" class="pageContents" valign="top">
+			<table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tbody>
+				<tr>
+					<td width="20">&nbsp;</td>
+					<td>
+						<table >
+						<tr>
+							<td><a href="http://shibboleth.grnet.gr"> <img src="/static/images/aai.gif" width="655" height="26" alt="aai" title="aai" border="0"></td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<table border="0" cellpadding="2" cellspacing="0" width="100%" height="100%">
+									<tr>
+										<td valign="top"><a href="http://www.grnet.gr" target="_blank"><img src="/static/images/grnet.gif" border="0" width="85" height="94" alt="GRNET" title="GRNET"></a></td>
+										<td width="100%" valign="top">
+											<table border="0" cellpadding="0" cellspacing="0" width="100%" height="100%">
+												<tr><td height="100%" valign="top" bgcolor="#D6D3D3"><div class="greyheader"><a style="text-decoration:none" href="http://shibboleth.grnet.gr">{% trans "GRNET Authentication and Authorization Infrastructure" %}</a></div></td></tr>
+												<tr><td valign="bottom" height="100%" ><div class="greysmallheader" >::<a href="http://shibboleth.grnet.gr/faq.html">{% trans "FAQ" %}</a> ::<a href="http://shibboleth.grnet.gr/help.html">{% trans "Help" %}</a> ::<a href="http://shibboleth.grnet.gr/privacy.html">{% trans "Privacy" %}</a></div></td></tr>
+											</table>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+<tr><td><br>
+<h1>{% block header %}AAI{% endblock %}</h1>
+
+<!--<div class="bluebox">-->
+<div class="rbroundbox">
+<div class="rbtop"><div></div></div>
+<div class="rbcontent">
 {% block content %}
 {% endblock %}
+</div><!-- /rbcontent -->
+<div class="rbbot"><div></div></div>
+</div><!-- /rbroundbox -->
+<tr><td class="break">&nbsp;</td></tr>
+</td></tr>
+<tr>
+         <td id="corner_white_on_grey_bottomx--"><img src="/static/images/s.gif" height="1" width="1" alt="divider" title="divider"></td>
+         <td class="pageContents"><img src="/static/images/s.gif" height="1" width="1" alt="divider" title="divider"></td>
+         <td id="corner_white_on_grey_bottom--x"><img src="/static/images/s.gif" height="1" width="1" alt="divider" title="divider"></td>
+</tr>
+</tbody>
+</table>
 </body>
 </html>
 

@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from lxml.objectify import parse
+from django.utils.translation import ugettext as _
 import re
 
 

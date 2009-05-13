@@ -39,8 +39,12 @@ def support(request):
         # If we got to this point with an IdP instance, then render the
         # support page template
         if idp:
-            print idp.id
-            return render_to_response("support.html", { 'idp': idp })
+            try:
+                idpname = idp.name[request.LANGUAGE_CODE]
+            except:
+                idpname = idp.name['en']
+
+            return render_to_response("support.html", { 'idp': idp, 'idpname': idpname })
 
     # At this point, no suitable IdentityProvider entry was found. So, 
     # we have to apologise to the user.

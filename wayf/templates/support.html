@@ -1,13 +1,17 @@
 {% extends "base.html" %}
+{% load i18n %}
+{% block header %}{% trans "User support" %}{% endblock %}
 {% block content %}
-Επιλέξατε τον identity provider του {{ idp.name.el }}<br />
-Παρουσιάστηκε πρόβλημα κατά τη χρήση της υποδομής AAI του ΕΔΕΤ. Παρακαλούμε επικοινωνήστε με τους υπευθύνους του οικείου ιδρύματος, με έναν από τους παρακάτω τρόπους:
+{% trans "A problem occured during shibboleth authentication. Please contact your home institution's staff in one of the following ways:" %}
+<p>
+<h4>{{ idpname }}</h4>
+</p>
 <ul>
 {% if idp.contact.email %}
-	<li>email: {{ idp.contact.email }}</li>
+	<li>email: <a href="mailto:{{ idp.contact.email }}?subject={% trans "Shibboleth Authentication Issue" %}">{{ idp.contact.email }}</a></li>
 {% endif %}
 {% if idp.contact.telephone %}
-	<li>Τηλέφωνο: {{ idp.contact.telephone }}</li>
+	<li>{% trans "Telephone" %} {{ idp.contact.telephone }}</li>
 {% endif %}
 </ul>
 {% endblock %}
