@@ -1,4 +1,9 @@
 {% extends "base.html" %}
+{% load i18n %}
+{% block header %}{% trans "User support" %}{% endblock %}
 {% block content %}
-Δυστυχώς δεν βρέθηκαν στοιχεία επικοινωνίας με τους υπευθύνους του identity provider σας.
+{% trans "A problem occured during shibboleth authentication. Furthermore we failed to obtain contact details for your home institution" %}
+<p>
+<h4>{{ idpname }}</h4>
+</p>
 {% endblock %}

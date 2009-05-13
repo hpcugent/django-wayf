@@ -11,7 +11,7 @@
 	<li>email: <a href="mailto:{{ idp.contact.email }}?subject={% trans "Shibboleth Authentication Issue" %}">{{ idp.contact.email }}</a></li>
 {% endif %}
 {% if idp.contact.telephone %}
-	<li>{% trans "Telephone" %} {{ idp.contact.telephone }}</li>
+	<li>{% trans "Telephone" %}: {{ idp.contact.telephone }}</li>
 {% endif %}
 </ul>
 {% endblock %}

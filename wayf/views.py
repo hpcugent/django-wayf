@@ -23,6 +23,8 @@ def support(request):
     # by a service provider. The aim is to produce a help page, indicating
     # the user's home institution contact details.
 
+    idpname = ''
+
     # Check to see whether _redirect_user_idp is set. This cookie will include
     # The user's selected IdP
     if '_redirect_user_idp' in request.COOKIES.keys():
@@ -36,16 +38,16 @@ def support(request):
         # Get the corresponding IdentityProvider instance
         idp = ShibbolethMetadata('metadata.xml').getIdps()[userIdp]
 
-        # If we got to this point with an IdP instance, then render the
-        # support page template
         if idp:
             try:
                 idpname = idp.name[request.LANGUAGE_CODE]
             except:
                 idpname = idp.name['en']
+            if idp.contact['telephone'] or idp.contact['email']:
+                # If we got to this point with an IdP instance, then render the
+                # support page template
+                return render_to_response("support.html", { 'idp': idp, 'idpname': idpname })
 
-            return render_to_response("support.html", { 'idp': idp, 'idpname': idpname })
-
-    # At this point, no suitable IdentityProvider entry was found. So, 
-    # we have to apologise to the user.
-    return render_to_response("support_fail.html")
+    # At this point, no suitable IdentityProvider entry or one with no 
+    # contact information was found. So, we have to apologise to the user.
+    return render_to_response("support_fail.html", { 'idpname': idpname })
