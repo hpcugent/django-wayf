@@ -23,7 +23,19 @@ def list(request):
     cattitles = map(lambda x: x[1], institution_categories)
 
     # Generate the category - idp list
-    idplist = zip(cattitles, map(lambda x: map(lambda y: {'name': y.getName(request.LANGUAGE_CODE), 'id': y.id },idps.getCategoryIdps(x)), cats))
+    # Black voodoo - functional magic
+    idplist = zip(
+        cattitles, 
+        map(
+            lambda x: map(
+                lambda y: {'name': y.getName(request.LANGUAGE_CODE), 'id': y.id },
+                sorted(
+                    idps.getCategoryIdps(x), lambda z,w: cmp(z.getName(request.LANGUAGE_CODE), w.getName(request.LANGUAGE_CODE))
+                )
+            ), 
+            cats
+        )
+    )
 
     # Render the wayf template
     return render_to_response("list.html", { 'idplist': idplist } )
