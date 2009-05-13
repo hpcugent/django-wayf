@@ -1,18 +1,19 @@
 # -*- coding: utf-8 -*-
 from lxml.objectify import parse
 from django.utils.translation import ugettext as _
+from django.utils.translation import ugettext_lazy as _l
 import re
 
 
 # A catalog of the institution categories. The order in which they appear
 # here is the same as they will appear on the web.
 institution_categories = (
-      ('university', { 'en': 'Universities', 'el': u'Πανεπιστήμια' }),
-      ('tei', { 'en': 'Technological Educational Institutes', 'el': u'Τεχνολογικά Εκπαιδευτικά Ιδρύματα' }),
-      ('institute', { 'en': 'Research Institutes', 'el': u'Ερευνητικά ινστιτούτα' }),
-      ('other', { 'en': 'Other', 'el': u'Άλλα' }),
-      ('test', { 'en': 'Testing', 'el': u'Δοκιμαστικοί φορείς' }),
-      ('wayf', { 'en': 'Other federations', 'el': u'Άλλες ομοσπονδίες' }),
+      ('university', _l("Universities")),
+      ('tei',  _l("Technological Educational Institutes")),
+      ('institute', _l("Research Institutes")),
+      ('other', _l("Other")),
+      ('test', _l("Testing")),
+      ('wayf', _l("Other federations")),
 )
 
 
@@ -79,31 +80,6 @@ class IdpList(list):
         except:
             return None
 
-    def as_combo(self,languages=["en"]):
-        """Returns an HTML string with  a combo box definition for all identity providers, sorted by category.
-        arguments:
-            languages -- An array of languages, in desceding order of preference
-
-        """
-
-        string = '<select name="user_idp">\n'
-        for category, catnames in institution_categories:
-            # Check for languages, in descending order of preference
-            for language in languages:
-                if language in catnames.keys():
-                    string += "    <optgroup label='%s'>\n" % unicode(catnames[language])
-                    break
-
-            for idp in sorted(self.getCategoryIdps(category)):
-                for language in languages:
-                    if language in idp.name.keys():
-                        string += "        <option value=\"%s\">%s</option>\n" % (idp.id, unicode(idp.name[language]))
-                        break
-            string += "    </optgroup>\n"
-        string += "</select>\n"
-        return string
-
-
 class IdentityProvider:
     """Basic class holding a Shibboleth Identity Provider"""
 
@@ -150,6 +126,12 @@ class IdentityProvider:
 
     def __repr__(self):
         return "IDP: \"" + self.name['en'] + '"'
+
+    def getName(self,lang='en'):
+        try:
+            return self.name[lang]
+        except:
+            return self.name['en']
 
     def getType(self):
         """Returns the type (category) of the current IdP"""

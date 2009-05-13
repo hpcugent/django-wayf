@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block header %}{% trans "User support" %}{% endblock %}
+{% block content %}
+{{ LANGUAGE_CODE }}
+	<select name="user_idp">
+	{% for category, insts in  idplist %}
+		<optgroup label="{{ category }}">
+		{% for inst in insts %}
+			<option value="{{ inst.id }}">{{ inst.name }}</option>
+		{% endfor %}
+		</optgroup>
+	{% endfor %}
+	</select>
+{% endblock %}

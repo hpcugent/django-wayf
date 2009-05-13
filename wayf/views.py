@@ -4,7 +4,8 @@ from idpmap import *
 from django.shortcuts import render_to_response
 from django.http import HttpResponse
 
-def index(request):
+def list(request):
+    print request.LANGUAGE_CODE
     # Get the user's preferred languages
     languages = request.META['HTTP_ACCEPT_LANGUAGE'].split(',')
     
@@ -14,8 +15,22 @@ def index(request):
     # Instantiate the metadata
     metadata = ShibbolethMetadata('metadata.xml')
 
+    # Get the IdP list
+    idps = metadata.getIdps()
+
+    # List the categories and their titles
+    cats = map(lambda x: x[0], institution_categories)
+    cattitles = map(lambda x: x[1], institution_categories)
+
+    # Generate the category - idp list
+    idplist = zip(cattitles, map(lambda x: map(lambda y: {'name': y.getName(request.LANGUAGE_CODE), 'id': y.id },idps.getCategoryIdps(x)), cats))
+
     # Render the wayf template
-    return render_to_response("index.html", { 'idplist': metadata.getIdps().as_combo(languages)} )
+    return render_to_response("list.html", { 'idplist': idplist } )
+
+
+def index(request):
+    return render_to_response("index.html")
 
 
 def support(request):

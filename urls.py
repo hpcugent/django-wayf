@@ -11,6 +11,7 @@ urlpatterns = patterns('',
     (r'^faq$', 'wayf.views.faq'),
     (r'^help$', 'wayf.views.help'),
     (r'^privacy$', 'wayf.views.privacy'),
+    (r'^list$', 'wayf.views.list'),
     (r'^$', 'wayf.views.index'), 
 
     # Uncomment the admin/doc line below and add 'django.contrib.admindocs' 
