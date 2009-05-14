@@ -13,6 +13,19 @@
 		</optgroup>
 	{% endfor %}
 	</select>
-	<input type="submit" value="{% trans "Save Selection" %}" />
+	<input type="submit" value="{% trans "Save Selection" %}" /><br />
+	{% if request.GET %}
+	<script type="text/javascript">
+	function toggleRadios(){
+		var state;
+		state = ! document.forms[0].save.checked;
+		document.getElementById('permsave').disabled = state;
+		document.getElementById('sesssave').disabled = state;
+	}
+	</script>
+	<input type="hidden" name="queryString" value="{{ request.GET.urlencode }}" />	<input type="checkbox" name="save" value="1" onclick="toggleRadios();"/>Αποθήκευση της προτίμησης:</input><br />
+	<input type="radio" id="sesssave" name="savetype" value="session" disabled="true" checked="true" />Μέχρι να κλείσω το browser</input><br />
+	<input type="radio" id="permsave" name="savetype" value="perm" disabled="true" />Μόνιμα</input><br />
+	{% endif %}
 </form>
 {% endblock %}

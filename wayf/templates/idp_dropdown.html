@@ -1,0 +1,7 @@
+	{% for category, insts in  idplist %}
+		<optgroup label="{{ category }}">
+		{% for inst in insts %}
+			<option value="{{ inst.id }}">{{ inst.name }}</option>
+		{% endfor %}
+		</optgroup>
+	{% endfor %}

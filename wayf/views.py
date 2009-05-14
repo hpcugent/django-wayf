@@ -10,10 +10,25 @@ def debug(request):
     return HttpResponse("<br />\n".join(map(lambda x: "%s: %s" % (x[0], x[1]), request.COOKIES.items())))
 
 def wayf_set(request):
-    response = HttpResponseRedirect("/wayf")
+    location = "/wayf"
 
+    if 'queryString' in request.POST.keys():
+        location += "?" + request.POST['queryString']
+
+    response = HttpResponseRedirect(location)
+ 
     if 'user_idp' in request.POST.keys():
-        response.set_cookie(IDP_COOKIE, request.POST['user_idp'], domain='.grnet.gr')
+        if 'save' in request.POST.keys():
+            if request.POST['save']:
+                if request.POST['savetype'] == 'perm':
+                    age = 86400 * 100 
+                else:
+                    age = None
+
+        else:
+            age = 5
+
+        response.set_cookie(IDP_COOKIE, request.POST['user_idp'], domain='.grnet.gr', max_age = age)
 
     return response
 
@@ -30,37 +45,43 @@ def wayf(request):
     # Get the IdP list
     idps = metadata.getIdps()
 
+    current_idp = None
+
     if IDP_COOKIE in request.COOKIES.keys():
-        current_idp = idps[request.COOKIES[IDP_COOKIE]].getName(request.LANGUAGE_CODE)
+        current_idp = idps[request.COOKIES[IDP_COOKIE]]
+
+    if not current_idp:
+        # Generate the category - idp list
+        idplist = idps.getIdpsByCategory(request.LANGUAGE_CODE)
+
+        # Render the wayf template
         try:
-            return render_to_response("wayf_set.html." + request.LANGUAGE_CODE, { 'currentidp': current_idp })
+            return render_to_response("wayf.html." + request.LANGUAGE_CODE, { 'idplist': idplist, 'request': request } )
         except:
-            return render_to_response("wayf_set.html", { 'currentidp': current_idp })
+            return render_to_response("wayf.html", { 'idplist': idplist, 'request': request } )
 
-    # List the categories and their titles
-    cats = map(lambda x: x[0], institution_categories)
-    cattitles = map(lambda x: x[1], institution_categories)
+    # Now we have an IdP. There are 2 cases:
+    # 1. The request comes from an SP
+    # 2. The request is stand-alone
 
-    # Generate the category - idp list
-    # Black voodoo - functional magic
-    idplist = zip(
-        cattitles, 
-        map(
-            lambda x: map(
-                lambda y: {'name': y.getName(request.LANGUAGE_CODE), 'id': y.id },
-                sorted(
-                    idps.getCategoryIdps(x), lambda z,w: cmp(z.getName(request.LANGUAGE_CODE), w.getName(request.LANGUAGE_CODE))
-                )
-            ), 
-            cats
-        )
-    )
+    # Check if this is a Discovery Service request
+    if 'entityID' in request.GET.keys():
+        # Discovery Service mandates that 'entityID' holds the SP's ID
+        pass
 
-    # Render the wayf template
+    # Check if this is an old Shibboleth 1.x request
+    if 'shire' in request.GET.keys() and 'target' in request.GET.keys():
+        # We just redirect the user to the given IdP
+        return HttpResponseRedirect(
+            current_idp.sso['urn:mace:shibboleth:1.0:profiles:AuthnRequest'] + "?" + request.GET.urlencode()
+            )
+    
     try:
-        return render_to_response("wayf.html." + request.LANGUAGE_CODE, { 'idplist': idplist } )
+        return render_to_response("wayf_set.html." + request.LANGUAGE_CODE, { 'currentidp': current_idp.getName(request.LANGUAGE_CODE) })
     except:
-        return render_to_response("wayf.html", { 'idplist': idplist } )
+        return render_to_response("wayf_set.html", { 'currentidp': current_idp })
+
+
 
 
 def index(request):

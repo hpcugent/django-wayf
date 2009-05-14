@@ -80,6 +80,34 @@ class IdpList(list):
         except:
             return None
 
+    def getIdpsByCategory(self, lang='en'):
+        """Returns a sequence of tuples of the form:
+        
+        (category, [ idp1, idp2, ...])
+        
+        where idpX is a dict { 'name': name, 'id': entityid }
+
+        The list of idps is sorted by name
+
+        """
+        
+        cats = map(lambda x: x[0], institution_categories)
+        cattitles = map(lambda x: x[1], institution_categories)
+
+        # Black voodoo - functional magic
+        return zip(
+            cattitles, 
+            map(
+                lambda x: map(
+                    lambda y: {'name': y.getName(lang), 'id': y.id },
+                    sorted(
+                        self.getCategoryIdps(x), lambda z,w: cmp(z.getName(lang), w.getName(lang))
+                    )
+                ), 
+                cats
+            )
+        )
+
 class IdentityProvider:
     """Basic class holding a Shibboleth Identity Provider"""
 

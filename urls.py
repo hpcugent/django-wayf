@@ -14,7 +14,7 @@ urlpatterns = patterns('',
     (r'^wayf$', 'wayf.views.wayf'),
     (r'^wayf/set$', 'wayf.views.wayf_set'),
     (r'^wayf/unset$', 'wayf.views.wayf_unset'),
-    (r'^$', 'wayf.views.debug'), 
+    (r'^$', 'wayf.views.wayf'), 
 
     # Uncomment the admin/doc line below and add 'django.contrib.admindocs' 
     # to INSTALLED_APPS to enable admin documentation:
