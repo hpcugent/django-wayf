@@ -11,8 +11,10 @@ urlpatterns = patterns('',
     (r'^faq$', 'wayf.views.faq'),
     (r'^help$', 'wayf.views.help'),
     (r'^privacy$', 'wayf.views.privacy'),
-    (r'^list$', 'wayf.views.list'),
-    (r'^$', 'wayf.views.index'), 
+    (r'^wayf$', 'wayf.views.wayf'),
+    (r'^wayf/set$', 'wayf.views.wayf_set'),
+    (r'^wayf/unset$', 'wayf.views.wayf_unset'),
+    (r'^$', 'wayf.views.debug'), 
 
     # Uncomment the admin/doc line below and add 'django.contrib.admindocs' 
     # to INSTALLED_APPS to enable admin documentation:

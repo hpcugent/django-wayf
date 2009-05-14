@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-13 11:34-0500\n"
+"POT-Creation-Date: 2009-05-14 04:26-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: wayf/templates/base.html:67
-msgid "GRNET Federation,<br />Authentication & Authorization Infrastructure"
-msgstr "Ομοσπονδία ΕΔΕΤ,<br />Υποδομή Ταυτοποίησης & Εξουσιοδότησης (AAI)"
+msgid "GRNET Federation<br />Authentication & Authorization Infrastructure"
+msgstr "Ομοσπονδία ΕΔΕΤ<br />Υποδομή Ταυτοποίησης και Εξουσιοδότησης (AAI)"
 
-#: wayf/templates/base.html:68 wayf/templates/list.html:3
-#: wayf/templates/support.html:3 wayf/templates/support_fail.html:3
+#: wayf/templates/base.html:68 wayf/templates/support.html:3
+#: wayf/templates/support_fail.html:3
 msgid "User support"
 msgstr "Υποστήριξη Χρηστών"
 
@@ -40,13 +40,6 @@ msgstr "Προσωπικά Δεδομένα"
 #: wayf/templates/index.html:3
 msgid "About"
 msgstr "Γενικές Πληροφορίες"
-
-#: wayf/templates/list.html:6
-#, python-format
-msgid ""
-"\n"
-"%(idplist)s\n"
-msgstr ""
 
 #: wayf/templates/support.html:5
 msgid ""
@@ -73,6 +66,18 @@ msgstr ""
 "Παρουσιάστηκε πρόβλημα κατά τη χρήση της υποδομής ταυτοποίησης και "
 "εξουσιοδότησης του ΕΔΕΤ. Επιπλέον, δε βρέθηκαν στοιχεία επικοινωνίας με το "
 "οικείο ίδρυμα."
+
+#: wayf/templates/wayf.html:3 wayf/templates/wayf_set.html:3
+msgid "Permanently set your Home Organization"
+msgstr "Επιλογή οικείου φορέα"
+
+#: wayf/templates/wayf.html:16
+msgid "Save Selection"
+msgstr "Αποθήκευση"
+
+#: wayf/templates/wayf_set.html:8
+msgid "Clear"
+msgstr "Καθαρισμός"
 
 msgid "Universities"
 msgstr "Πανεπιστήμια"

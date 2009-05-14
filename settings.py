@@ -79,3 +79,5 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'grnet_wayf.wayf',
 )
+
+IDP_COOKIE = 'grnet_selected_idp'

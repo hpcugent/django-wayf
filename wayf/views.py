@@ -2,21 +2,40 @@ from models import *
 from util import *
 from idpmap import *
 from django.shortcuts import render_to_response
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 
-def list(request):
-    print request.LANGUAGE_CODE
-    # Get the user's preferred languages
-    languages = request.META['HTTP_ACCEPT_LANGUAGE'].split(',')
+IDP_COOKIE = 'grnet_selected_idp'
+
+def debug(request):
+    return HttpResponse("<br />\n".join(map(lambda x: "%s: %s" % (x[0], x[1]), request.COOKIES.items())))
+
+def wayf_set(request):
+    response = HttpResponseRedirect("/wayf")
+
+    if 'user_idp' in request.POST.keys():
+        response.set_cookie(IDP_COOKIE, request.POST['user_idp'], domain='.grnet.gr')
+
+    return response
+
+def wayf_unset(request):
+    response = HttpResponseRedirect("/wayf")
+    response.delete_cookie(IDP_COOKIE, domain='.grnet.gr')
+    return response
+
     
-    # Always include english at the end as a fall-back
-    languages.append('en')
-
+def wayf(request):
     # Instantiate the metadata
     metadata = ShibbolethMetadata('metadata.xml')
 
     # Get the IdP list
     idps = metadata.getIdps()
+
+    if IDP_COOKIE in request.COOKIES.keys():
+        current_idp = idps[request.COOKIES[IDP_COOKIE]].getName(request.LANGUAGE_CODE)
+        try:
+            return render_to_response("wayf_set.html." + request.LANGUAGE_CODE, { 'currentidp': current_idp })
+        except:
+            return render_to_response("wayf_set.html", { 'currentidp': current_idp })
 
     # List the categories and their titles
     cats = map(lambda x: x[0], institution_categories)
@@ -38,7 +57,10 @@ def list(request):
     )
 
     # Render the wayf template
-    return render_to_response("list.html", { 'idplist': idplist } )
+    try:
+        return render_to_response("wayf.html." + request.LANGUAGE_CODE, { 'idplist': idplist } )
+    except:
+        return render_to_response("wayf.html", { 'idplist': idplist } )
 
 
 def index(request):
