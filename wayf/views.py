@@ -2,13 +2,13 @@ from models import *
 from util import *
 from idpmap import *
 from django.shortcuts import render_to_response
+from django.conf import settings
 from django.http import HttpResponse, HttpResponseRedirect
 from django.utils.http import urlencode
-
-IDP_COOKIE = 'grnet_selected_idp'
+from os import environ
 
 def debug(request):
-    return HttpResponse("<br />\n".join(map(lambda x: "%s: %s" % (x[0], x[1]), request.COOKIES.items())))
+    return HttpResponse("<br />\n".join(map(lambda x: "%s: %s" % (x[0], x[1]), environ.items())))
 
 def wayf_set(request):
     location = "/wayf"
@@ -29,27 +29,27 @@ def wayf_set(request):
         else:
             age = 5
 
-        response.set_cookie(IDP_COOKIE, request.POST['user_idp'], domain='.grnet.gr', max_age = age)
+        response.set_cookie(settings.IDP_COOKIE, request.POST['user_idp'], domain='.grnet.gr', max_age = age)
 
     return response
 
 def wayf_unset(request):
     response = HttpResponseRedirect("/wayf")
-    response.delete_cookie(IDP_COOKIE, domain='.grnet.gr')
+    response.delete_cookie(settings.IDP_COOKIE, domain='.grnet.gr')
     return response
 
     
 def wayf(request):
     # Instantiate the metadata
-    metadata = ShibbolethMetadata('metadata.xml')
+    metadata = ShibbolethMetadata(settings.SHIB_METADATA)
 
     # Get the IdP list
     idps = metadata.getIdps()
 
     current_idp = None
 
-    if IDP_COOKIE in request.COOKIES.keys():
-        current_idp = idps[request.COOKIES[IDP_COOKIE]]
+    if settings.IDP_COOKIE in request.COOKIES.keys():
+        current_idp = idps[request.COOKIES[settings.IDP_COOKIE]]
 
     if not current_idp:
         # Generate the category - idp list
@@ -103,8 +103,8 @@ def support(request):
 
     # Check to see whether _redirect_user_idp is set. This cookie will include
     # The user's selected IdP
-    if IDP_COOKIE in request.COOKIES.keys():
-        userIdp = urldecode(request.COOKIES[IDP_COOKIE])
+    if settings.IDP_COOKIE in request.COOKIES.keys():
+        userIdp = urldecode(request.COOKIES[settings.IDP_COOKIE])
 
         # Check to see if this is one of the old WAYF entries and map it to a
         # new entityID instead.
@@ -112,7 +112,7 @@ def support(request):
             userIdp = idpmap[userIdp]
             
         # Get the corresponding IdentityProvider instance
-        idp = ShibbolethMetadata('metadata.xml').getIdps()[userIdp]
+        idp = ShibbolethMetadata(settings.SHIB_METADATA).getIdps()[userIdp]
 
         if idp:
             opts['idp'] = idp

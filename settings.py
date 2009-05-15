@@ -81,3 +81,4 @@ INSTALLED_APPS = (
 )
 
 IDP_COOKIE = 'grnet_selected_idp'
+SHIB_METADATA = 'metadata.xml'
