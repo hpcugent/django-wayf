@@ -3,6 +3,7 @@ from util import *
 from idpmap import *
 from django.shortcuts import render_to_response
 from django.http import HttpResponse, HttpResponseRedirect
+from django.utils.http import urlencode
 
 IDP_COOKIE = 'grnet_selected_idp'
 
@@ -67,7 +68,12 @@ def wayf(request):
     # Check if this is a Discovery Service request
     if 'entityID' in request.GET.keys():
         # Discovery Service mandates that 'entityID' holds the SP's ID
-        pass
+        if 'returnIDParam' in request.GET.keys() and request.GET['returnIDParam']:
+            returnparam = request.GET['returnIDParam']
+        else:
+            returnparam = 'entityID'
+        
+        return HttpResponseRedirect(request.GET['return'] + "&" + urlencode(((returnparam, current_idp.id),)))
 
     # Check if this is an old Shibboleth 1.x request
     if 'shire' in request.GET.keys() and 'target' in request.GET.keys():
