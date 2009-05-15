@@ -99,12 +99,12 @@ def support(request):
     # by a service provider. The aim is to produce a help page, indicating
     # the user's home institution contact details.
 
-    idpname = ''
+    opts = {}
 
     # Check to see whether _redirect_user_idp is set. This cookie will include
     # The user's selected IdP
-    if '_redirect_user_idp' in request.COOKIES.keys():
-        userIdp = urldecode(request.COOKIES['_redirect_user_idp'])
+    if IDP_COOKIE in request.COOKIES.keys():
+        userIdp = urldecode(request.COOKIES[IDP_COOKIE])
 
         # Check to see if this is one of the old WAYF entries and map it to a
         # new entityID instead.
@@ -115,18 +115,15 @@ def support(request):
         idp = ShibbolethMetadata('metadata.xml').getIdps()[userIdp]
 
         if idp:
-            try:
-                idpname = idp.name[request.LANGUAGE_CODE]
-            except:
-                idpname = idp.name['en']
-            if idp.contact['telephone'] or idp.contact['email']:
-                # If we got to this point with an IdP instance, then render the
-                # support page template
-                return render_to_response("support.html", { 'idp': idp, 'idpname': idpname })
+            opts['idp'] = idp
+            opts['idpname'] = idp.getName(request.LANGUAGE_CODE)
 
     # At this point, no suitable IdentityProvider entry or one with no 
     # contact information was found. So, we have to apologise to the user.
-    return render_to_response("support_fail.html", { 'idpname': idpname })
+    try:
+        return render_to_response("support.html." + request.LANGUAGE_CODE, opts)
+    except:
+        return render_to_response("support.html", opts)
 
 def faq(request):
     return render_to_response("faq.html")

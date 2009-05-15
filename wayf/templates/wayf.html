@@ -10,6 +10,8 @@
 	{% if request.GET %}
 	<input type="hidden" name='queryString' value="{{ request.GET.urlencode }" />
 	{% endif %}
+	<input type="hidden" name="save" value="true" />
+	<input type="hidden" name="savetype" value="perm" />
 	<input type="submit" value="{% trans "Save Selection" %}" />
 </form>
 {% endblock %}
