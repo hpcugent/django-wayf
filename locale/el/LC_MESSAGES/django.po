@@ -72,8 +72,8 @@ msgid "Permanently set your Home Organization"
 msgstr "Επιλογή οικείου φορέα"
 
 #: wayf/templates/wayf.html:16
-msgid "Save Selection"
-msgstr "Αποθήκευση"
+msgid "Confirm"
+msgstr "Επιβεβαίωση"
 
 #: wayf/templates/wayf_set.html:8
 msgid "Clear"
