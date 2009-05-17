@@ -56,10 +56,7 @@ def wayf(request):
         idplist = idps.getIdpsByCategory(request.LANGUAGE_CODE)
 
         # Render the wayf template
-        try:
-            return render_to_response("wayf.html." + request.LANGUAGE_CODE, { 'idplist': idplist, 'request': request } )
-        except:
-            return render_to_response("wayf.html", { 'idplist': idplist, 'request': request } )
+        return render_to_response("wayf.html", { 'idplist': idplist, 'request': request } )
 
     # Now we have an IdP. There are 2 cases:
     # 1. The request comes from an SP
@@ -82,10 +79,7 @@ def wayf(request):
             current_idp.sso['urn:mace:shibboleth:1.0:profiles:AuthnRequest'] + "?" + request.GET.urlencode()
             )
     
-    try:
-        return render_to_response("wayf_set.html." + request.LANGUAGE_CODE, { 'currentidp': current_idp.getName(request.LANGUAGE_CODE) })
-    except:
-        return render_to_response("wayf_set.html", { 'currentidp': current_idp })
+    return render_to_response("wayf_set.html", { 'currentidp': current_idp })
 
 
 
@@ -120,10 +114,7 @@ def support(request):
 
     # At this point, no suitable IdentityProvider entry or one with no 
     # contact information was found. So, we have to apologise to the user.
-    try:
-        return render_to_response("support.html." + request.LANGUAGE_CODE, opts)
-    except:
-        return render_to_response("support.html", opts)
+    return render_to_response("support.html", opts)
 
 def faq(request):
     return render_to_response("faq.html")
