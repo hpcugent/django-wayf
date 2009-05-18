@@ -115,6 +115,7 @@ def support(request):
     return render_to_response("support.html", opts)
 
 def static(request):
+    # A catch-all view, trying to render all our static pages or give a 404 
     try:
         return render_to_response(request.path[1:] + ".html")
     except:

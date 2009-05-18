@@ -1,3 +1,8 @@
+"""
+A simple, translation-aware template loader from the application directories
+It will try to load <template_name>.<language_code> and fall back to <template_name>.
+"""
+
 from django.utils import translation
 from django.template.loaders import app_directories
 
