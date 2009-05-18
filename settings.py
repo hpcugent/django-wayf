@@ -21,7 +21,7 @@ DATABASE_PORT = ''             # Set to empty string for default. Not used with 
 # although not all choices may be available on all operating systems.
 # If running in a Windows environment this must be set to the same as your
 # system time zone.
-TIME_ZONE = 'America/Chicago'
+TIME_ZONE = 'Europe/Athens'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
@@ -83,3 +83,5 @@ INSTALLED_APPS = (
 
 IDP_COOKIE = 'grnet_selected_idp'
 SHIB_METADATA = 'metadata.xml'
+LAST_IDP_COOKIE = 'grnet_last_idp'
+COOKIE_DOMAIN = '.grnet.gr'

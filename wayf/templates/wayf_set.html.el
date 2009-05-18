@@ -10,7 +10,8 @@
 </p>
 <div align="center">
 <h4>{{ currentidp }}</h4>
-<form action="/wayf/unset" method="post">
+<form method="post">
+	<input type="hidden" name="clear" value="true" />
 	<input type="submit" value="{% trans "Clear" %}" />
 </form>
 </div>

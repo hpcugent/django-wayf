@@ -8,8 +8,6 @@ urlpatterns = patterns('',
     (r'^support$', 'wayf.views.support'),
     (r'^debug$', 'wayf.views.debug'),
     (r'^wayf$', 'wayf.views.wayf'),
-    (r'^wayf/set$', 'wayf.views.wayf_set'),
-    (r'^wayf/unset$', 'wayf.views.wayf_unset'),
     (r'^$', 'wayf.views.wayf'), 
     (r'.*', 'wayf.views.static'),
 
