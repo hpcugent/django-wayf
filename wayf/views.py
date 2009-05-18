@@ -42,7 +42,6 @@ def wayf(request):
             if request.POST['clear']:
                 response = HttpResponseRedirect("/")
                 response.delete_cookie(settings.IDP_COOKIE, domain=settings.COOKIE_DOMAIN)
-                print response
                 return response
 
         elif 'user_idp' in request.POST.keys():
@@ -105,9 +104,8 @@ def wayf(request):
     # Generate the category - idp list
     idplist = idps.getIdpsByCategory(request.LANGUAGE_CODE)
 
-
     # Render the apropriate wayf template
-    return render_to_response("wayf.html", { 'idplist': idplist, 'request': request, 'selected': selectedidp } )
+    return render_to_response("wayf_from_sp.html", { 'idplist': idplist, 'request': request, 'selected': selectedidp } )
 
 
 def support(request):

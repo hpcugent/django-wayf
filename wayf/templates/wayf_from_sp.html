@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block header %}{% trans "Permanently set your Home Organization" %}{% endblock %}
+{% block content %}
+<p>On this page you can set a default Home Organization for this web browser. Setting a default Home Organization will henceforth redirect you directly to your Home Organization when you access AAI-Resources. Don't use this feature if you use several AAI accounts.</p>
+<form method="post" action="{{ request.path }}">
+	<select name="user_idp">
+	{% include "idp_dropdown.html" %}
+	</select>
+	<input type="hidden" name="save" value="true" />
+	<input type="hidden" name="savetype" value="perm" />
+	<input type="submit" value="{% trans "Save Selection" %}" />
+</form>
+{% endblock %}
