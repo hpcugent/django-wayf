@@ -5,17 +5,13 @@ from django.conf.urls.defaults import *
 # admin.autodiscover()
 
 urlpatterns = patterns('',
-    # Example:
-    # (r'^grnet_wayf/', include('grnet_wayf.foo.urls')),
     (r'^support$', 'wayf.views.support'),
     (r'^debug$', 'wayf.views.debug'),
-    (r'^faq$', 'wayf.views.faq'),
-    (r'^help$', 'wayf.views.help'),
-    (r'^privacy$', 'wayf.views.privacy'),
     (r'^wayf$', 'wayf.views.wayf'),
     (r'^wayf/set$', 'wayf.views.wayf_set'),
     (r'^wayf/unset$', 'wayf.views.wayf_unset'),
     (r'^$', 'wayf.views.wayf'), 
+    (r'.*', 'wayf.views.static'),
 
     # Uncomment the admin/doc line below and add 'django.contrib.admindocs' 
     # to INSTALLED_APPS to enable admin documentation:

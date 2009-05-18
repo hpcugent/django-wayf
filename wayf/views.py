@@ -3,8 +3,9 @@ from util import *
 from idpmap import *
 from django.shortcuts import render_to_response
 from django.conf import settings
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, HttpResponseNotFound
 from django.utils.http import urlencode
+from django.template.loader import render_to_string
 from os import environ
 
 def debug(request):
@@ -79,14 +80,11 @@ def wayf(request):
             current_idp.sso['urn:mace:shibboleth:1.0:profiles:AuthnRequest'] + "?" + request.GET.urlencode()
             )
     
-    return render_to_response("wayf_set.html", { 'currentidp': current_idp })
-
-
+    return render_to_response("wayf_set.html", { 'currentidp': current_idp.getName(request.LANGUAGE_CODE) })
 
 
 def index(request):
     return render_to_response("index.html")
-
 
 def support(request):
     # This gets triggered when a user's attributes fail to be accepted 
@@ -116,11 +114,8 @@ def support(request):
     # contact information was found. So, we have to apologise to the user.
     return render_to_response("support.html", opts)
 
-def faq(request):
-    return render_to_response("faq.html")
-
-def help(request):
-    return render_to_response("help.html")
-
-def privacy(request):
-    return render_to_response("privacy.html")
+def static(request):
+    try:
+        return render_to_response(request.path[1:] + ".html")
+    except:
+        return HttpResponseNotFound(render_to_string("404.html"))
