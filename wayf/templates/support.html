@@ -2,16 +2,16 @@
 {% load i18n %}
 {% block header %}{% trans "User support" %}{% endblock %}
 {% block content %}
-{% trans "A problem occured during shibboleth authentication. Please contact your home institution's staff in one of the following ways:" %}
-<p>
-<h4>{{ idpname }}</h4>
-</p>
+A problem occured while attempting to use GRNET's AAI. Please contact your Home Organization.
+{% if idpname %}
+According to your selected Home Organization, &quot;<strong>{{idpname}}</strong> &quot;, you may contact them in the following ways:
 <ul>
 {% if idp.contact.email %}
-	<li>email: <a href="mailto:{{ idp.contact.email }}?subject={% trans "Shibboleth Authentication Issue" %}">{{ idp.contact.email }}</a></li>
+	<li><b>E-mail:</b> <a href="mailto:{{ idp.contact.email }}?subject={% trans "Shibboleth Authentication Issue" %}">{{ idp.contact.email }}</a></li>
 {% endif %}
 {% if idp.contact.telephone %}
-	<li>{% trans "Telephone" %}: {{ idp.contact.telephone }}</li>
+	<li><b>{% trans "Telephone" %}</b>: {{ idp.contact.telephone }}</li>
 {% endif %}
 </ul>
+{% endif %}
 {% endblock %}
