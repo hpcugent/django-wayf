@@ -9,7 +9,7 @@ urlpatterns = patterns('',
     (r'^help$', 'wayf.views.support',{ 'mode': 'help' }),
     (r'^debug$', 'wayf.views.debug'),
     (r'^wayf$', 'wayf.views.wayf'),
-    (r'^$', 'wayf.views.wayf'), 
+    (r'^$', 'wayf.views.wayf'),
     (r'.*', 'wayf.views.static'),
 
     # Uncomment the admin/doc line below and add 'django.contrib.admindocs' 

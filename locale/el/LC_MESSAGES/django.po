@@ -35,7 +35,7 @@ msgstr "Υποστήριξη Χρηστών"
 
 #: wayf/templates/base.html:68 wayf/templates/faq.html:3
 msgid "FAQ"
-msgstr "Συχνές Ερωτήσεις - Απαντήσεις"
+msgstr "Συχνές ερωτήσεις - απαντήσεις"
 
 #: wayf/templates/base.html:68 wayf/templates/help.html:3
 msgid "Help"
