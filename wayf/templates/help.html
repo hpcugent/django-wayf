@@ -3,13 +3,25 @@
 {% block header %}{% trans "Help" %}{% endblock %}
 {% block content %}
 <p>
-Αν αντιμετωπίζετε κάποιο πρόβλημα στη χρήση των υποδομών AAI του ΕΔΕΤ, κι εφόσον ανήκετε σε οργανισμό-μέλος της Ομοσπονδίας, μπορείτε να επικοινωνήσετε με τα παρακάτω μέρη, ανάλογα το σημείο εμφάνισης του προβλήματος:
+If you are having difficulties using AAI-enabled services, and if you belong to a federated organization, you may contact the following parts, depending on the problem's nature:
 </p>
-<ul>
-<li><b>Αν το πρόβλημα εμφανίστηκε εντός των σελίδων της υπηρεσίας που θέλετε να χρησιμοποιήσετε</b> θα πρέπει να επικοινωνήσετε πρώτα με τους υπεύθυνους της υπηρεσίας, στις διευθύνσεις που τυχόν αναφέρονται στις ιστοσελίδες της υπηρεσίας.
+<ul id="userhelp">
+<li>If the problem showed up <b>in the pages of the service you attempted to use</b>, then you will have to contact the service administrators, as they appear in the service's homepage.</li>
+
 <li>
-<b>Αν το πρόβλημα εμφανίστηκε στις σελίδες ταυτοποίησης του δικού σας ιδρύματος</b> ή οργανισμού (που σας έχει παράσχει τον λογαριασμό πρόσβασης) θα πρέπει να επικοινωνήσετε με το helpdesk του ιδρύματός σας. Εκεί μπορούν να αντιμετωπιστούν διάφορα γενικά προβλήματα του λογαριασμού σας, όπως απώλεια ή αλλαγή password, αλλαγή στοιχείων κλπ.
+If the problem showed up <b>in your Home Organization's authentication page</b>, then you should contact your Home Organization's helpdesk. This is the place to solve general issues related to your account, like loss or change of passwords, changes of contact details, etc.
+{% if idp.contact.email or idp.contact.telephone %}
+According to your selected Home Organization, &quot;<b>{{ idpname }}</b>&quot;, you may contact them in the following ways:
+<ul id="contactdetails">
+{% if idp.contact.email  %}
+        <li><strong>E-mail:</strong> <a href="mailto:{{ idp.contact.email }}?subject={% trans "Shibboleth Authentication Issue" %}">{{ idp.contact.email }}</a></li>
+{% endif %}
+{% if idp.contact.telephone %}
+        <li><strong>{% trans "Telephone" %}:</strong> {{ idp.contact.telephone }}</li>
+{% endif %}
+</ul>
+{% endif %}</li>
 <li>
-<b>Αν το πρόβλημα εμφανίστηκε στην ενδιάμεση ιστοσελίδα <a href="http://wayf.grnet.gr">http://wayf.grnet.gr</a></b> μπορείτε να επικoινωνείτε με την διεύθυνση helpdesk@grnet.gr, ή το τηλέφωνο 800-11-GRNET για να αναφέρετε το πρόβλημα.
+If the problem showed up in the <b>intermediate webpage, <a href="http://wayf.grnet.gr">wayf.grnet.gr</a></b>, then you should contact GRNET's helpdesk via e-mail at &quot;helpdesk@grnet.gr&quot; or telephone at 800-11-GRNET to report the issue.</li>
 </ul>
 {% endblock %}

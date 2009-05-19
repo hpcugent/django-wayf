@@ -2,7 +2,8 @@
 {% load i18n %}
 {% block header %}Επιλογή οικείου φορέα{% endblock %}
 {% block content %}
-<p>Σε αυτή τη σελίδα μπορείτε να καθορίσετε έναν προεπιλεγμένο Οικείο Φορέα που μπορεί να σας πιστοποιήσει για πρόσβαση σε υπηρεσίες της Ομοσπονδίας AAI του ΕΔΕΤ. Η ρύθμιση θα αποθηκευτεί στο συγκεκριμένο web browser και θα έχει ως αποτέλεσμα να μεταφέρεστε αυτόματα στο σύστημα ταυτοποίησης του ιδρύματός σας όταν προσπελαύνετε AAI-πόρους.</p>
+<p>Βρίσκεστε σε αυτήν τη σελίδα επειδή προσπαθήσατε να προσπελάσετε μια υπηρεσία που χρησιμοποιεί την Υποδομή Ταυτοποίησης και Εξουσιοδότησης του ΕΔΕΤ. Προκειμένου να προχωρήσετε, θα πρέπει να επιλέξετε τον Οικείο Φορέα σας από τον παρακάτω κατάλογο. Προαιρετικά, μπορείτε να αποθηκεύσετε την επιλογή αυτή, ώστε να μην ερωτηθείτε σε επόμενες χρήσεις της υποδομής.</p>
+
 <div id="idpform">
 <form method="post">
 	<select name="user_idp">
@@ -18,10 +19,13 @@
 	}
 	</script>
 	<div id="userprefs">
-	<input type="hidden" name="queryString" value="{{ request.GET.urlencode }}" />	<input type="checkbox" name="save" value="1" onclick="toggleRadios();"/>Αποθήκευση της προτίμησης:</input>
+	<input type="checkbox" name="save" value="1" onclick="toggleRadios();"/>Αποθήκευση της προτίμησης:</input>
 	<input type="radio" id="sesssave" name="savetype" value="session" disabled="true" checked="true" />Μέχρι να κλείσω το browser</input>
 	<input type="radio" id="permsave" name="savetype" value="perm" disabled="true" />Μόνιμα</input><br />
 	</div>
 </form>
 </div>
+
 {% endblock %}
+
+{% comment %} vim: set ft=htmldjango: {% endcomment %}

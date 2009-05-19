@@ -3,16 +3,16 @@
 {% block header %}{% trans "Select your home institution" %}{% endblock %}
 {% block content %}
 <p>
-A default setting for your Home Organization has the effect that you don't need to select your Home Organization anymore when accessing AAI resources with this web browser.
-</p>
-<p>
-The default setting is:
+Your selected Home Organization is:
 </p>
 <div align="center">
 <h4>{{ currentidp }}</h4>
-<form action="/wayf/unset" method="post">
+<form method="post">
 	<input type="hidden" name="clear" value="true" />
 	<input type="submit" value="{% trans "Clear" %}" />
 </form>
 </div>
+<p>
+A default setting for your Home Organization has the effect that you don't need to select your Home Organization anymore when accessing AAI-enabled resources with this web browser.
+</p>
 {% endblock %}

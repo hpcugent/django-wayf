@@ -1,14 +1,29 @@
 {% extends "base.html" %}
 {% load i18n %}
-{% block header %}{% trans "Permanently set your Home Organization" %}{% endblock %}
+{% block header %}Select your Home Organization{% endblock %}
 {% block content %}
-<p>On this page you can set a default Home Organization for this web browser. Setting a default Home Organization will henceforth redirect you directly to your Home Organization when you access AAI-Resources. Don't use this feature if you use several AAI accounts.</p>
-<form method="post" action="{{ request.path }}">
+<p>You were redirected to this page because you tried to access a service that uses GRNET's AAI. In order to proceed, you have to select your Home Organization from the list below. You may save your selection, in order to avoid this question during future uses of GRNET's AAI.</p>
+
+<div id="idpform">
+<form method="post">
 	<select name="user_idp">
 	{% include "idp_dropdown.html" %}
 	</select>
-	<input type="hidden" name="save" value="true" />
-	<input type="hidden" name="savetype" value="perm" />
-	<input type="submit" value="{% trans "Save Selection" %}" />
+	<input type="submit" value="{% trans "Confirm" %}" /><br />
+	<script type="text/javascript">
+	function toggleRadios(){
+		var state;
+		state = ! document.forms[0].save.checked;
+		document.getElementById('permsave').disabled = state;
+		document.getElementById('sesssave').disabled = state;
+	}
+	</script>
+	<div id="userprefs">
+	<input type="checkbox" name="save" value="1" onclick="toggleRadios();"/>Αποθήκευση της προτίμησης:</input>
+	<input type="radio" id="sesssave" name="savetype" value="session" disabled="true" checked="true" />Μέχρι να κλείσω το browser</input>
+	<input type="radio" id="permsave" name="savetype" value="perm" disabled="true" />Μόνιμα</input><br />
+	</div>
 </form>
+</div>
+
 {% endblock %}

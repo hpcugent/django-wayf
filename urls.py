@@ -6,6 +6,7 @@ from django.conf.urls.defaults import *
 
 urlpatterns = patterns('',
     (r'^support$', 'wayf.views.support'),
+    (r'^help$', 'wayf.views.support',{ 'mode': 'help' }),
     (r'^debug$', 'wayf.views.debug'),
     (r'^wayf$', 'wayf.views.wayf'),
     (r'^$', 'wayf.views.wayf'), 

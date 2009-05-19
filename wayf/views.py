@@ -108,7 +108,7 @@ def wayf(request):
     return render_to_response("wayf_from_sp.html", { 'idplist': idplist, 'request': request, 'selected': selectedidp } )
 
 
-def support(request):
+def support(request, mode="support"):
     # This gets triggered when a user's attributes fail to be accepted 
     # by a service provider. The aim is to produce a help page, indicating
     # the user's home institution contact details.
@@ -132,8 +132,9 @@ def support(request):
             opts['idp'] = idp
             opts['idpname'] = idp.getName(request.LANGUAGE_CODE)
 
-    # At this point, no suitable IdentityProvider entry or one with no 
-    # contact information was found. So, we have to apologise to the user.
+    if mode == "help":
+        return render_to_response("help.html", opts)
+
     return render_to_response("support.html", opts)
 
 def static(request):
