@@ -5,11 +5,11 @@ from django.conf.urls.defaults import *
 # admin.autodiscover()
 
 urlpatterns = patterns('',
-    (r'^support$', 'wayf.views.support'),
-    (r'^help$', 'wayf.views.support',{ 'mode': 'help' }),
-    (r'^debug$', 'wayf.views.debug'),
-    (r'^wayf$', 'wayf.views.wayf'),
-    (r'^$', 'wayf.views.wayf'),
+    (r'^support/?$', 'wayf.views.support'),
+    (r'^help/?$', 'wayf.views.support',{ 'mode': 'help' }),
+    (r'^debug/?$', 'wayf.views.debug'),
+    (r'^/?$', 'wayf.views.index'),
+    (r'^wayf/?$', 'wayf.views.wayf'),
     (r'.*', 'wayf.views.static'),
 
     # Uncomment the admin/doc line below and add 'django.contrib.admindocs' 
