@@ -4,12 +4,21 @@ It will try to load <template_name>.<language_code> and fall back to <template_n
 """
 
 from django.utils import translation
+from django.template import TemplateDoesNotExist
 from django.template.loaders import app_directories
+from django.conf import settings
 
 def load_template_source(template_name, template_dirs=None):
     try:
-        return app_directories.load_template_source(template_name + "." + translation.get_language(), template_dirs)
-    except:
-        return app_directories.load_template_source(template_name, template_dirs)
+        return app_directories.load_template_source(translation.get_language() + "/" + template_name, template_dirs)
+    except TemplateDoesNotExist:
+	pass
+
+    try:
+        return app_directories.load_template_source(settings.LANGUAGE_CODE + "/" + template_name, template_dirs)
+    except TemplateDoesNotExist:
+	pass
+
+    return app_directories.load_template_source(template_name, template_dirs)
 
 load_template_source.is_usable = True
