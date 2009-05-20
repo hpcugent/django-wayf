@@ -140,7 +140,11 @@ def support(request, mode="support"):
     return render_to_response("support.html", opts)
 
 def index(request):
-    return render_to_response("index.html")
+    metadata = ShibbolethMetadata(settings.SHIB_METADATA)
+    idps = metadata.getIdps()
+    idplist = idps.getIdpsByCategory(request.LANGUAGE_CODE)
+
+    return render_to_response("index.html", { 'idplist' : idplist } )
 
 def static(request):
     # A catch-all view, trying to render all our static pages or give a 404 
