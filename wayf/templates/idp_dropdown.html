@@ -1,5 +1,5 @@
 	{% for category, insts in  idplist %}
-		<optgroup label="{{ category }}">
+		<optgroup label="{{ category.name }}">
 		{% for inst in insts %}
 			{% ifequal inst.id selected.id %}
 			<option value="{{ inst.id }}" selected="true">{{ inst.name }}</option>

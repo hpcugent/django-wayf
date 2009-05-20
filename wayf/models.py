@@ -94,9 +94,12 @@ class IdpList(list):
         cats = map(lambda x: x[0], institution_categories)
         cattitles = map(lambda x: x[1], institution_categories)
 
+	categories = map(lambda x: { 'id': x[0], 'name': x[1] },
+			 institution_categories)
+
         # Black voodoo - functional magic
         return zip(
-            cattitles, 
+            categories, 
             map(
                 lambda x: map(
                     lambda y: {'name': y.getName(lang), 'id': y.id },
