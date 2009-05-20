@@ -31,10 +31,12 @@ def wayf(request):
     # Try to get the user's last used IdP
     if settings.LAST_IDP_COOKIE in request.COOKIES.keys():
         selectedidp = idps[request.COOKIES[settings.LAST_IDP_COOKIE]]
+    else:
+        selectedidp = None
 
     # If this is the first visit, use some IP-based heuristics, as in utils.py's getUserRealm()
     if not selectedidp:
-        selectedidp = idps.getIdpForScope(getUserRealm(request.META['HTTP_X_FORWARDED_FOR']))
+        selectedidp = idps.getIdpForScope(getUserRealm(request.META['REMOTE_ADDR']))
 
     # First check to see if anything has changed
     if request.method == "POST":
@@ -136,6 +138,9 @@ def support(request, mode="support"):
         return render_to_response("help.html", opts)
 
     return render_to_response("support.html", opts)
+
+def index(request):
+    return render_to_response("index.html")
 
 def static(request):
     # A catch-all view, trying to render all our static pages or give a 404 
