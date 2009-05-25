@@ -136,12 +136,16 @@ def support(request, mode="support"):
     # the user's home institution contact details.
 
     opts = {}
+    userIdp = None
 
     # Check to see whether _redirect_user_idp is set. This cookie will include
     # The user's selected IdP
     if settings.IDP_COOKIE in request.COOKIES.keys():
         userIdp = urldecode(request.COOKIES[settings.IDP_COOKIE])
+    elif settings.LAST_IDP_COOKIE in request.COOKIES.keys():
+        userIdp = urldecode(request.COOKIES[settings.LAST_IDP_COOKIE])
 
+    if userIdp:
         # Check to see if this is one of the old WAYF entries and map it to a
         # new entityID instead.
         if userIdp in idpmap.keys():
