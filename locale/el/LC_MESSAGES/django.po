@@ -28,6 +28,9 @@ msgstr "Λυπούμαστε, η σελίδα που ζητήσατε δε βρ�
 msgid "GRNET Federation<br />Authentication & Authorization Infrastructure"
 msgstr "Ομοσπονδία ΕΔΕΤ<br />Υποδομή Ταυτοποίησης και Εξουσιοδότησης (AAI)"
 
+msgid "GRNET AAI Federation"
+msgstr "Ομοσπονδία ΕΔΕΤ"
+
 #: wayf/templates/base.html:68 wayf/templates/el/wayf_set.html:3
 #: wayf/templates/en-us/wayf_set.html:3 wayf/templates/old/wayf_set.html:3
 msgid "Select your home institution"
@@ -54,9 +57,9 @@ msgid ""
 "operation of all Universities, Technologial Educational Institutions and "
 "Research Institutes in Greece."
 msgstr "" 
-"Το Εθνικό Δίκτυο Έρευνας και Τεχνολογίας (ΕΔΕΤ) παρέχει στην ελληνική"
-"ακαδημαϊκή, ερευνητική και εκπαιδευτική κοινότητα προηγμένες υπηρεσίες εθνικής"
-"διασύνδεσης Internet υψηλής χωρητικότητας εξυπηρετώντας όλα τα ΑΕΙ, ΤΕΙ και"
+"Το Εθνικό Δίκτυο Έρευνας και Τεχνολογίας (ΕΔΕΤ) παρέχει στην ελληνική "
+"ακαδημαϊκή, ερευνητική και εκπαιδευτική κοινότητα προηγμένες υπηρεσίες εθνικής "
+"διασύνδεσης Internet υψηλής χωρητικότητας εξυπηρετώντας όλα τα ΑΕΙ, ΤΕΙ και "
 "Ερευνητικά Κέντρα της χώρας."
 
 #: wayf/templates/el/help.html:17 wayf/templates/el/support.html:11
