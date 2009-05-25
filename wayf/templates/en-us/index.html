@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block header %}{% trans "About" %}{% endblock %}
+{% block content %}
+<p>
+GRNET's Authentication and Authorization Infrastructure (AAI) assists 
+intra-organizational services by providing federated access control between
+GRNET's partner organizations. Using GRNET's AAI, the Institutions belonging 
+to GRNET's federation may provide services to users of fellow federated 
+Institutions in a transparent, safe and easy manner.
+</p>
+
+<p>
+GRNET's federation is primarily targeted to the Hellenic Academic and Research 
+community and anyone interested in providing services towards this community.  
+The main aim is the co-ordination of the co-operation between the different 
+institutions and the assistance of development of intra-institutional 
+services.
+</p>
+
+<p>
+The adoption of such services by the <strong>Identity Providers</strong>, i.e.  
+the Institutions, yields multiple benefits:
+<ul>
+<li>logging into a service provided by a third party does not require a 
+separate account, the user may use his/her current institutional account.</li>
+<li>every service provider participating in the federation does not need to 
+know the access credential of the users accessing their service. Service 
+providers need only to trust the users' Home Organizations.</li>
+<li>there is support for fully anonymous, trusted access and credentials 
+including the user's identity, position and affiliation are only optionally 
+transmitted to each service provider. In cases where the provided service 
+relies on particular end-user attributes, the federation requires the Identity 
+Provides to aprove the release of these attributes and the end-users are 
+notified accordingly.</li>
+</ul>
+</p>
+
+<p>
+Accordingly, a <strong>Service Provider</strong> may benefit from joining the 
+federation by utilizing a simple and powerful access control mechanism when 
+providing services to the Hellenic Academic and Research community, either in 
+part, or in whole.
+</p>
+
+<p>
+The following services are currently provided over GRNET's AAI:
+<ul>
+<li><a href="http://pithos.grnet.gr/">&quot;Pithos&quot; Data storage 
+service</a></li>
+<li><a href="https://downloads.channel8.msdn.com/">Microsoft DreamSpark</a>, 
+ free access to software for students</li>
+<li><a href="http://anafandon.grnet.gr/">ΑΝΑΦΑΝΔΟΝ-MSDNAA</a>, free access to 
+software for students through the MSDNAA initiative</li>
+<li><a href="http://iptv.grnet.gr/">IPTV service</a>, digital television 
+broadcasting</li>
+<li><a href="http://rts.grnet.gr/">Teleconference service</a> VoIP service 
+(Real Time Services)</li>
+</ul>
+</p>
+
+<p>
+GRNET's federation is currently based on Shibboleth software and comprises the 
+following Identity Providers:
+<ul>
+{% for category, insts in idplist %}
+	{% ifnotequal category.id 'wayf' %}
+	{% ifnotequal category.id 'test' %}
+	<li>{{ category.name }}</li>
+	<ul>
+	{% for inst in insts %}
+		<li>{{ inst.name }}</li>
+	{% endfor %}
+	</ul>
+	{% endifnotequal %}
+	{% endifnotequal %}
+{% endfor %}
+</ul>
+</p>
+
+<p>
+In order to assist the adoption of federated services, GRNET has developed 
+reference IdP and SP systems hosted in standalone servers (service 
+&quot;boxes&quot;) provided for free to the Institutions. Furthermore, there 
+is significant effort to base all community-targeted services on GRNET's AAI 
+federation.</p>
+
+<p>
+At the same time, access is provided to <a 
+href="http://www.edugain.org">eduGAIN's european AAI services</a> which was 
+developed as part of GÈANT2, to ease co-operation between the academic 
+community and European institutions.
+</p>
+
+<p>
+For more information, please contact <a 
+href=mailto:helpdesk@grnet.gr>helpdesk@grnet.gr</a> or dial 800-11-GRNET 
+(800-11-47638).
+</p>
+
+<p>
+Documentation:
+<ul>
+<li><a 
+href="http://vnoc.grnet.gr/engine/index.php?op=modload&modname=Downloads&action=downloadsviewfile&ctn=776&language=el">General 
+information for directory service, IdP and SP administrators regarding the use 
+of Shibboleth software</a> (in Greek).</li>
+<li><a 
+href="http://vnoc.grnet.gr/engine/index.php?op=modload&modname=Downloads&action=downloadsviewfile&ctn=855&language=el">Shibboleth 
+1.3 installation and configuration guide</a> (in Greek).</li>
+<li><a href="http://shibboleth.internet2.edu/">Shibboleth suite</a></li>
+<li><a href="http://www.switch.ch/aai/shibboleth.html">Documentation of the 
+Swiss NREN's (SWITCH) AAI federation</a></li>
+<li><a href="http://www.incommonfederation.org">Documentation of the 
+federation of institutions in the United States of America 
+(Internet2)</a></li>
+</ul>
+</p>
+
+{% endblock %}

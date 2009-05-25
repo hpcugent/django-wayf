@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-18 12:00+0300\n"
+"POT-Creation-Date: 2009-05-25 12:03+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,28 +28,73 @@ msgstr "Λυπούμαστε, η σελίδα που ζητήσατε δε βρ�
 msgid "GRNET Federation<br />Authentication & Authorization Infrastructure"
 msgstr "Ομοσπονδία ΕΔΕΤ<br />Υποδομή Ταυτοποίησης και Εξουσιοδότησης (AAI)"
 
-#: wayf/templates/base.html:68 wayf/templates/support.html:3
-#: wayf/templates/support_fail.html:3
-msgid "User support"
-msgstr "Υποστήριξη Χρηστών"
+#: wayf/templates/base.html:68 wayf/templates/el/wayf_set.html:3
+#: wayf/templates/en-us/wayf_set.html:3 wayf/templates/old/wayf_set.html:3
+msgid "Select your home institution"
+msgstr "Επιλογή οικείου φορέα"
 
-#: wayf/templates/base.html:68 wayf/templates/faq.html:3
+#: wayf/templates/base.html:68 wayf/templates/el/faq.html:3
 msgid "FAQ"
 msgstr "Συχνές ερωτήσεις - απαντήσεις"
 
-#: wayf/templates/base.html:68 wayf/templates/help.html:3
+#: wayf/templates/base.html:68 wayf/templates/el/help.html:3
+#: wayf/templates/en-us/help.html:3
 msgid "Help"
 msgstr "Βοήθεια"
 
-#: wayf/templates/base.html:68 wayf/templates/privacy.html:3
+#: wayf/templates/base.html:68 wayf/templates/en-us/privacy.html:3
 msgid "Privacy"
 msgstr "Προσωπικά Δεδομένα"
 
-#: wayf/templates/index.html:3
+#: wayf/templates/base.html:93
+msgid ""
+"The Greek Research and Technology Network (GRNET) provides the Hellenic "
+"Academic, Research and Education community with advanced services, high-"
+"capacity national and international Internet connectivity, assisting the "
+"operation of all Universities, Technologial Educational Institutions and "
+"Research Institutes in Greece."
+msgstr "" 
+"Το Εθνικό Δίκτυο Έρευνας και Τεχνολογίας (ΕΔΕΤ) παρέχει στην ελληνική"
+"ακαδημαϊκή, ερευνητική και εκπαιδευτική κοινότητα προηγμένες υπηρεσίες εθνικής"
+"διασύνδεσης Internet υψηλής χωρητικότητας εξυπηρετώντας όλα τα ΑΕΙ, ΤΕΙ και"
+"Ερευνητικά Κέντρα της χώρας."
+
+#: wayf/templates/el/help.html:17 wayf/templates/el/support.html:11
+#: wayf/templates/en-us/help.html:17 wayf/templates/en-us/support.html:10
+#: wayf/templates/old/support.html:11
+msgid "Shibboleth Authentication Issue"
+msgstr "Πρόβλημα κατά την πιστοποίηση με χρήση Shibboleth"
+
+#: wayf/templates/el/help.html:20 wayf/templates/el/support.html:14
+#: wayf/templates/en-us/help.html:20 wayf/templates/en-us/support.html:13
+#: wayf/templates/old/support.html:14
+msgid "Telephone"
+msgstr "Τηλέφωνο"
+
+#: wayf/templates/el/index.html:3 wayf/templates/en-us/index.html:3
 msgid "About"
 msgstr "Γενικές Πληροφορίες"
 
-#: wayf/templates/support.html:5
+#: wayf/templates/el/support.html:3 wayf/templates/en-us/support.html:3
+#: wayf/templates/old/support.html:3
+msgid "User support"
+msgstr "Υποστήριξη Χρηστών"
+
+#: wayf/templates/el/wayf.html:11 wayf/templates/el/wayf_from_sp.html:12
+#: wayf/templates/en-us/wayf.html:11 wayf/templates/en-us/wayf_from_sp.html:12
+msgid "Confirm"
+msgstr "Επιβεβαίωση"
+
+#: wayf/templates/el/wayf_set.html:12 wayf/templates/en-us/wayf_set.html:12
+#: wayf/templates/old/wayf_set.html:14
+msgid "Clear"
+msgstr "Καθαρισμός"
+
+#: wayf/templates/en-us/wayf.html:3 wayf/templates/old/wayf.html:3
+msgid "Permanently set your Home Organization"
+msgstr "Επιλογή οικείου φορέα"
+
+#: wayf/templates/old/support.html:5
 msgid ""
 "A problem occured during shibboleth authentication. Please contact your home "
 "institution's staff in one of the following ways:"
@@ -58,41 +103,17 @@ msgstr ""
 "εξουσιοδότησης του ΕΔΕΤ. Παρακαλούμε επικοινωνήστε με τους υπευθύνους του "
 "οικείου ιδρύματος, με έναν από τους παρακάτω τρόπους:"
 
-#: wayf/templates/support.html:11
-msgid "Shibboleth Authentication Issue"
-msgstr "Πρόβλημα κατά την πιστοποίηση με χρήση Shibboleth"
-
-#: wayf/templates/support.html:14
-msgid "Telephone"
-msgstr "Τηλέφωνο"
-
-#: wayf/templates/support_fail.html:5
-msgid ""
-"A problem occured during shibboleth authentication. Furthermore we failed to "
-"obtain contact details for your home institution"
-msgstr ""
-"Παρουσιάστηκε πρόβλημα κατά τη χρήση της υποδομής ταυτοποίησης και "
-"εξουσιοδότησης του ΕΔΕΤ. Επιπλέον, δε βρέθηκαν στοιχεία επικοινωνίας με το "
-"οικείο ίδρυμα."
-
-#: wayf/templates/wayf.html:3
-msgid "Permanently set your Home Organization"
-msgstr "Επιλογή οικείου φορέα"
-
-#: wayf/templates/wayf.html:15
+#: wayf/templates/old/wayf.html:15
 msgid "Save Selection"
 msgstr ""
 
-#: wayf/templates/wayf_set.html:3
-msgid "Select your home institution"
-msgstr "Επιλογή οικείου φορέα"
-
-#: wayf/templates/wayf_set.html:14
-msgid "Clear"
-msgstr "Καθαρισμός"
-
-msgid "Confirm"
-msgstr "Επιβεβαίωση"
+msgid ""
+"A problem occured during shibboleth authentication. Furthermore we failed "
+"to obtain contact details for your home institution"
+msgstr ""
+"Παρουσιάστηκε πρόβλημα κατά τη χρήση της υποδομής ταυτοποίησης και "
+"εξουσιοδότησης του ΕΔΕΤ. Επιπλέον, δε βρέθηκαν στοιχεία επικοινωνίας με "
+"το οικείο ίδρυμα."
 
 msgid "Universities"
 msgstr "Πανεπιστήμια"
@@ -112,5 +133,5 @@ msgstr "Δοκιμαστικοί φορείς"
 msgid "Other federations"
 msgstr "Άλλες ομοσπονδίες"
 
-#~ msgid "You selected the IdP of"
-#~ msgstr "Επιλέξατε τον Identity Provider του ιδρύματος"
+msgid "You selected the IdP of"
+msgstr "Επιλέξατε τον Identity Provider του ιδρύματος"
