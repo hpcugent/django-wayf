@@ -8,6 +8,11 @@ from django.utils.http import urlencode
 from django.template.loader import render_to_string
 from os import environ
 
+def setlanguage(request, lang):
+    response = HttpResponseRedirect(request.META['HTTP_REFERER'])
+    response.set_cookie(settings.LANGUAGE_COOKIE_NAME, lang, domain='.grnet.gr', max_age = 100 * 86400)
+    return response
+
 def debug(request):
     return HttpResponse("<br />\n".join(map(lambda x: "%s: %s" % (x[0], x[1]), environ.items())))
 

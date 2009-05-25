@@ -10,6 +10,7 @@ urlpatterns = patterns('',
     (r'^debug/?$', 'wayf.views.debug'),
     (r'^/?$', 'wayf.views.index'),
     (r'^wayf/?$', 'wayf.views.wayf'),
+    (r'^setlanguage/(.*)', 'wayf.views.setlanguage'),
     (r'.*', 'wayf.views.static'),
 
     # Uncomment the admin/doc line below and add 'django.contrib.admindocs' 
