@@ -77,13 +77,13 @@ h6 {
 
 
 #corner_white_on_grey_topx-- {
-	/*width:7px; */
 	height:7px;
 	background-image:url(images/topx--.gif);
 	background-position:top left;
 	background-repeat:no-repeat;
 	background-color:white;
 	text-align: center;
+	padding-left: 7px;
 }
 
 #corner_white_on_grey_top--x {

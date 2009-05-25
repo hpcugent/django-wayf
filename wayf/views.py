@@ -1,5 +1,6 @@
 from models import *
-from util import *
+from util import * 
+import time 
 from idpmap import *
 from django.shortcuts import render_to_response
 from django.conf import settings
@@ -10,7 +11,8 @@ from os import environ
 
 def setlanguage(request, lang):
     response = HttpResponseRedirect(request.META['HTTP_REFERER'])
-    response.set_cookie(settings.LANGUAGE_COOKIE_NAME, lang, domain='.grnet.gr', max_age = 100 * 86400)
+    response.set_cookie(settings.LANGUAGE_COOKIE_NAME, lang, domain='.grnet.gr', max_age = 100 * 86400, expires = time.strftime("%a, %d-%m-%y %H:%M:%S GMT", time.gmtime(time.time() + 100 * 86400)))
+    response['P3P'] = 'CP="NOI CUR DEVa OUR IND COM NAV PRE"'
     return response
 
 def debug(request):
@@ -49,6 +51,7 @@ def wayf(request):
             if request.POST['clear']:
                 response = HttpResponseRedirect("/")
                 response.delete_cookie(settings.IDP_COOKIE, domain=settings.COOKIE_DOMAIN)
+                response['P3P'] = 'CP="NOI CUR DEVa OUR IND COM NAV PRE"'
                 return response
 
         elif 'user_idp' in request.POST.keys():
@@ -70,12 +73,13 @@ def wayf(request):
         if current_idp:
             response = render_to_response("wayf_set.html", { 'currentidp': current_idp.getName(request.LANGUAGE_CODE) })
             for cookie in cookies:
-                response.set_cookie(cookie['name'], cookie['data'], domain=settings.COOKIE_DOMAIN, max_age=cookie['age'])
-            return response
+                response.set_cookie(cookie['name'], cookie['data'], domain=settings.COOKIE_DOMAIN, max_age=cookie['age'], expires = time.strftime("%a, %d-%m-%y %H:%M:%S GMT", time.gmtime(time.time() + cookie['age'])))
         else:
             idplist = idps.getIdpsByCategory(request.LANGUAGE_CODE)
+            response = render_to_response("wayf.html", { 'idplist': idplist, 'request': request, 'selected': selectedidp })
 
-            return render_to_response("wayf.html", { 'idplist': idplist, 'request': request, 'selected': selectedidp })
+        response['P3P'] = 'CP="NOI CUR DEVa OUR IND COM NAV PRE"'
+        return response
 
     # If we got to this point, then this is a request comming from an SP
     if current_idp:
@@ -101,8 +105,9 @@ def wayf(request):
             response = render_to_response("bad.html")
 
         for cookie in cookies:
-            response.set_cookie(cookie['name'], cookie['data'], domain=settings.COOKIE_DOMAIN, max_age=cookie['age'])
+            response.set_cookie(cookie['name'], cookie['data'], domain=settings.COOKIE_DOMAIN, max_age=cookie['age'], expires = time.strftime("%a, %d-%m-%y %H:%M:%S GMT", time.gmtime(time.time() + cookie['age'])))
         
+        response['P3P'] = 'CP="NOI CUR DEVa OUR IND COM NAV PRE"'
         return response
 
 
@@ -112,7 +117,9 @@ def wayf(request):
     idplist = idps.getIdpsByCategory(request.LANGUAGE_CODE)
 
     # Render the apropriate wayf template
-    return render_to_response("wayf_from_sp.html", { 'idplist': idplist, 'request': request, 'selected': selectedidp } )
+    response = render_to_response("wayf_from_sp.html", { 'idplist': idplist, 'request': request, 'selected': selectedidp } )
+    response['P3P'] = 'CP="NOI CUR DEVa OUR IND COM NAV PRE"'
+    return response
 
 
 def support(request, mode="support"):
@@ -140,9 +147,12 @@ def support(request, mode="support"):
             opts['idpname'] = idp.getName(request.LANGUAGE_CODE)
 
     if mode == "help":
-        return render_to_response("help.html", opts)
+        response = render_to_response("help.html", opts)
+    else:
+        response = render_to_response("support.html", opts)
 
-    return render_to_response("support.html", opts)
+    response['P3P'] = 'CP="NOI CUR DEVa OUR IND COM NAV PRE"'
+    return response
 
 def index(request):
     metadata = ShibbolethMetadata(settings.SHIB_METADATA)
