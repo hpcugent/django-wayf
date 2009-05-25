@@ -2,6 +2,7 @@
 from lxml.objectify import parse
 from django.utils.translation import ugettext as _
 from django.utils.translation import ugettext_lazy as _l
+from django.utils.translation import get_language
 import re
 
 
@@ -80,7 +81,7 @@ class IdpList(list):
         except:
             return None
 
-    def getIdpsByCategory(self, lang='en'):
+    def getIdpsByCategory(self, lang=None, exclude=None):
         """Returns a sequence of tuples of the form:
         
         (category, [ idp1, idp2, ...])
@@ -90,26 +91,25 @@ class IdpList(list):
         The list of idps is sorted by name
 
         """
-        
-        cats = map(lambda x: x[0], institution_categories)
-        cattitles = map(lambda x: x[1], institution_categories)
+        if not lang:
+            lang = get_language()
 
-	categories = map(lambda x: { 'id': x[0], 'name': x[1] },
-			 institution_categories)
+        if exclude:
+            validcats = filter(lambda x: x[0] not in exclude, institution_categories)
+        else:
+            validcats = institution_categories
 
-        # Black voodoo - functional magic
-        return zip(
-            categories, 
-            map(
-                lambda x: map(
-                    lambda y: {'name': y.getName(lang), 'id': y.id },
-                    sorted(
-                        self.getCategoryIdps(x), lambda z,w: cmp(z.getName(lang), w.getName(lang))
-                    )
-                ), 
-                cats
-            )
-        )
+        cats = map(lambda x: x[0], validcats) 
+
+        categories = map(lambda x: { 'id': x[0], 'name': x[1] }, validcats)
+
+        idps = []
+
+        for category in cats:
+            catidps = sorted(self.getCategoryIdps(category))
+            idps.append(map(lambda x: {'name': x.getName(lang), 'id': x.id }, catidps))
+
+        return zip(categories, idps)
 
 class IdentityProvider:
     """Basic class holding a Shibboleth Identity Provider"""
@@ -155,10 +155,17 @@ class IdentityProvider:
         for entry in self.idp.IDPSSODescriptor.SingleSignOnService:
             self.sso[entry.get('Binding')] = entry.get('Location')
 
+    def __cmp__ (self,other):
+        # Alphabetic sorting by name
+        return cmp(self.getName(get_language()), other.getName(get_language()))
+
     def __repr__(self):
         return "IDP: \"" + self.name['en'] + '"'
 
-    def getName(self,lang='en'):
+    def getName(self,lang=None):
+        if not lang:
+            lang = get_language()
+
         try:
             return self.name[lang]
         except:

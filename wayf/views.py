@@ -71,11 +71,11 @@ def wayf(request):
     if not request.GET:
         # We were called without any arguments
         if current_idp:
-            response = render_to_response("wayf_set.html", { 'currentidp': current_idp.getName(request.LANGUAGE_CODE) })
+            response = render_to_response("wayf_set.html", { 'currentidp': current_idp.getName() })
             for cookie in cookies:
                 response.set_cookie(cookie['name'], cookie['data'], domain=settings.COOKIE_DOMAIN, max_age=cookie['age'], expires = time.strftime("%a, %d-%m-%y %H:%M:%S GMT", time.gmtime(time.time() + cookie['age'])))
         else:
-            idplist = idps.getIdpsByCategory(request.LANGUAGE_CODE)
+            idplist = idps.getIdpsByCategory()
             response = render_to_response("wayf.html", { 'idplist': idplist, 'request': request, 'selected': selectedidp })
 
         response['P3P'] = 'CP="NOI CUR DEVa OUR IND COM NAV PRE"'
@@ -114,7 +114,7 @@ def wayf(request):
     # If we got this far, then we need to be redirected, but don't know where to.
     # Let the user pick an IdP
     # Generate the category - idp list
-    idplist = idps.getIdpsByCategory(request.LANGUAGE_CODE)
+    idplist = idps.getIdpsByCategory()
 
     # Render the apropriate wayf template
     response = render_to_response("wayf_from_sp.html", { 'idplist': idplist, 'request': request, 'selected': selectedidp } )
@@ -144,7 +144,7 @@ def support(request, mode="support"):
 
         if idp:
             opts['idp'] = idp
-            opts['idpname'] = idp.getName(request.LANGUAGE_CODE)
+            opts['idpname'] = idp.getName()
 
     if mode == "help":
         response = render_to_response("help.html", opts)
@@ -157,7 +157,7 @@ def support(request, mode="support"):
 def index(request):
     metadata = ShibbolethMetadata(settings.SHIB_METADATA)
     idps = metadata.getIdps()
-    idplist = idps.getIdpsByCategory(request.LANGUAGE_CODE)
+    idplist = idps.getIdpsByCategory(exclude=('wayf', 'test'))
 
     return render_to_response("index.html", { 'idplist' : idplist } )
 

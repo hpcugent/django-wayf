@@ -64,16 +64,12 @@ Authorization Infrastructure</em> - AAI) επιτρέπει σε διαφορε�
 Shibboleth και απαρτίζεται από τους παρακάτω παρόχους ταυτότητας:
 <ul>
 {% for category, insts in idplist %}
-	{% ifnotequal category.id 'wayf' %}
-	{% ifnotequal category.id 'test' %}
 	<li>{{ category.name }}</li>
 	<ul>
 	{% for inst in insts %}
 		<li>{{ inst.name }}</li>
 	{% endfor %}
 	</ul>
-	{% endifnotequal %}
-	{% endifnotequal %}
 {% endfor %}
 </ul>
 </p>
