@@ -1,4 +1,4 @@
-# Django settings for grnet_wayf project.
+# Django settings for wayf project.
 
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
@@ -65,7 +65,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
 )
 
-ROOT_URLCONF = 'grnet_wayf.urls'
+ROOT_URLCONF = 'wayf.urls'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
@@ -78,7 +78,7 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.sites',
-    'grnet_wayf.wayf',
+    'wayf.wayf',
 )
 
 IDP_COOKIE = 'grnet_selected_idp'

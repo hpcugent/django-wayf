@@ -5,13 +5,13 @@ from django.conf.urls.defaults import *
 # admin.autodiscover()
 
 urlpatterns = patterns('',
-    (r'^support/?$', 'wayf.views.support'),
-    (r'^help/?$', 'wayf.views.support',{ 'mode': 'help' }),
-    (r'^debug/?$', 'wayf.views.debug'),
-    (r'^/?$', 'wayf.views.index'),
-    (r'^wayf/?$', 'wayf.views.wayf'),
-    (r'^setlanguage/(.*)', 'wayf.views.setlanguage'),
-    (r'.*', 'wayf.views.static'),
+    (r'^support/?$', 'wayf.wayf.views.support'),
+    (r'^help/?$', 'wayf.wayf.views.support',{ 'mode': 'help' }),
+    (r'^debug/?$', 'wayf.wayf.views.debug'),
+    (r'^/?$', 'wayf.wayf.views.index'),
+    (r'^wayf/?$', 'wayf.wayf.views.wayf'),
+    (r'^setlanguage/(.*)', 'wayf.wayf.views.setlanguage'),
+    (r'.*', 'wayf.wayf.views.static'),
 
     # Uncomment the admin/doc line below and add 'django.contrib.admindocs' 
     # to INSTALLED_APPS to enable admin documentation:
