@@ -73,7 +73,11 @@ def wayf(request):
         if current_idp:
             response = render_to_response("wayf_set.html", { 'currentidp': current_idp.getName() })
             for cookie in cookies:
-                response.set_cookie(cookie['name'], cookie['data'], domain=settings.COOKIE_DOMAIN, max_age=cookie['age'], expires = time.strftime("%a, %d-%m-%y %H:%M:%S GMT", time.gmtime(time.time() + cookie['age'])))
+                if cookie['age']:
+                    expires = time.strftime("%a, %d-%m-%y %H:%M:%S GMT", time.gmtime(time.time() + cookie['age']))
+                else:
+                    expires = None
+                response.set_cookie(cookie['name'], cookie['data'], domain=settings.COOKIE_DOMAIN, max_age=cookie['age'], expires = expires)
         else:
             idplist = idps.getIdpsByCategory()
             response = render_to_response("wayf.html", { 'idplist': idplist, 'request': request, 'selected': selectedidp })
@@ -105,7 +109,11 @@ def wayf(request):
             response = render_to_response("bad.html")
 
         for cookie in cookies:
-            response.set_cookie(cookie['name'], cookie['data'], domain=settings.COOKIE_DOMAIN, max_age=cookie['age'], expires = time.strftime("%a, %d-%m-%y %H:%M:%S GMT", time.gmtime(time.time() + cookie['age'])))
+            if cookie['age']:
+                expires = time.strftime("%a, %d-%m-%y %H:%M:%S GMT", time.gmtime(time.time() + cookie['age']))
+            else:
+                expires = None
+            response.set_cookie(cookie['name'], cookie['data'], domain=settings.COOKIE_DOMAIN, max_age=cookie['age'], expires = expires)
         
         response['P3P'] = 'CP="NOI CUR DEVa OUR IND COM NAV PRE"'
         return response
