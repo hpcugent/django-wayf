@@ -22,6 +22,7 @@ Authorization Infrastructure</em> - AAI) επιτρέπει σε διαφορε�
 <p>
 Η υιοθέτηση τέτοιων υπηρεσιών τους <strong>παρόχους ταυτότητας</strong>,
 δηλαδή τα ιδρύματα, έχει πολλαπλό όφελος για τους τελικούς χρήστες τους:
+</p>
 <ul>
 <li>η είσοδος σε κάθε μία υπηρεσία τρίτου που επιθυμεί το άνοιγμα της σε
 ολόκληρη την κοινότητα δεν απαιτεί την απόκτηση ξεχωριστού λογαριασμού
@@ -39,7 +40,6 @@ Authorization Infrastructure</em> - AAI) επιτρέπει σε διαφορε�
 για την απελευθέρωση τους, ενώ ο τελικός χρήστης ενημερώνεται για τις
 απαιτήσεις.</li>
 </ul>
-</p>
 
 <p>
 Αντίστοιχα, για έναν <strong>πάροχο υπηρεσιών</strong>, υπάρχουν αρκετά
@@ -48,8 +48,7 @@ Authorization Infrastructure</em> - AAI) επιτρέπει σε διαφορε�
 φοιτητές).
 </p>
 
-<p>
-Οι παρακάτω υπηρεσίες παρέχονται μέσω της υποδομής AAI του ΕΔΕΤ:
+<p>Οι παρακάτω υπηρεσίες παρέχονται μέσω της υποδομής AAI του ΕΔΕΤ:</p>
 <ul>
 <li><a href="http://pithos.grnet.gr/">Υπηρεσία αποθήκευσης δεδομένων «Πίθος»</a></li>
 <li><a href="https://downloads.channel8.msdn.com/">Υπηρεσία Microsoft DreamSpark</a>, διανομής δωρεάν λογισμικού σε φοιτητές</li>
@@ -57,22 +56,22 @@ Authorization Infrastructure</em> - AAI) επιτρέπει σε διαφορε�
 <li><a href="http://iptv.grnet.gr/">Υπηρεσία IPTV</a>, μετάδοσης ψηφιακής τηλεόρασης</li>
 <li><a href="http://rts.grnet.gr/">Υπηρεσία διοργάνωσης τηλεδιασκέψεων</a> και τηλεφωνίας VoIP (Real Time Services)</li>
 </ul>
-</p>
 
 <p>
 Αυτή τη στιγμή η Ομοσπονδία ΑΑΙ του ΕΔΕΤ υλοποιείται με το λογισμικό
 Shibboleth και απαρτίζεται από τους παρακάτω παρόχους ταυτότητας:
+</p>
 <ul>
 {% for category, insts in idplist %}
-	<li>{{ category.name }}</li>
+	<li>{{ category.name }}
 	<ul>
 	{% for inst in insts %}
 		<li>{{ inst.name }}</li>
 	{% endfor %}
 	</ul>
+	</li>
 {% endfor %}
 </ul>
-</p>
 
 <p>
 Για την προώθηση των ομοσπονδιακών υπηρεσιών, το ΕΔΕΤ έχει αναπτύξει πρότυπα
@@ -98,15 +97,13 @@ href="http://www.edugain.org">Ευρωπαϊκές Υπηρεσίες AAI του
 επικοινωνήσετε με το Helpdesk του ΕΔΕΤ.
 </p>
 
-<p>
-Τεκμηρίωση:
+<p>Τεκμηρίωση:</p>
 <ul>
-<li><a href="http://vnoc.grnet.gr/engine/index.php?op=modload&modname=Downloads&action=downloadsviewfile&ctn=776&language=el">Γενικές αρχές προς διαχειριστές υπηρεσιών καταλόγου, ΙdP και SP για τις διαδικασίες παρoχής υπηρεσιών AAI με χρήση του Shibboleth</a></li>
-<li><a href="http://vnoc.grnet.gr/engine/index.php?op=modload&modname=Downloads&action=downloadsviewfile&ctn=855&language=el">Οδηγός εγκατάστασης και ρύθμισης Shibboleth 1.3</a></li>
+<li><a href="http://vnoc.grnet.gr/engine/index.php?op=modload&amp;modname=Downloads&amp;action=downloadsviewfile&amp;ctn=776&amp;language=el">Γενικές αρχές προς διαχειριστές υπηρεσιών καταλόγου, ΙdP και SP για τις διαδικασίες παρoχής υπηρεσιών AAI με χρήση του Shibboleth</a></li>
+<li><a href="http://vnoc.grnet.gr/engine/index.php?op=modload&amp;modname=Downloads&amp;action=downloadsviewfile&amp;ctn=855&amp;language=el">Οδηγός εγκατάστασης και ρύθμισης Shibboleth 1.3</a></li>
 <li><a href="http://shibboleth.internet2.edu/">Λογισμικό Shibboleth</a></li>
 <li><a href="http://www.switch.ch/aai/shibboleth.html">Τεκμηρίωση υλοποίησης του αντίστοιχης ομοσπονδίας του Ελβετικού NREN (SWITCH)</a></li>
 <li><a href="http://www.incommonfederation.org">Τεκμηρίωση υλοποίησης του αντίστοιχου project των ιδρυμάτων των Ηνωμένων Πολιτειών (Internet2)</a></li>
 </ul>
-</p>
 
 {% endblock %}

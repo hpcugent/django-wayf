@@ -22,6 +22,7 @@ services.
 <p>
 The adoption of such services by the <strong>Identity Providers</strong>, i.e.  
 the Institutions, yields multiple benefits:
+</p>
 <ul>
 <li>logging into a service provided by a third party does not require a 
 separate account, the user may use his/her current institutional account.</li>
@@ -35,7 +36,6 @@ relies on particular end-user attributes, the federation requires the Identity
 Provides to aprove the release of these attributes and the end-users are 
 notified accordingly.</li>
 </ul>
-</p>
 
 <p>
 Accordingly, a <strong>Service Provider</strong> may benefit from joining the 
@@ -44,8 +44,7 @@ providing services to the Hellenic Academic and Research community, either in
 part, or in whole.
 </p>
 
-<p>
-The following services are currently provided over GRNET's AAI:
+<p>The following services are currently provided over GRNET's AAI:</p>
 <ul>
 <li><a href="http://pithos.grnet.gr/">&quot;Pithos&quot; Data storage 
 service</a></li>
@@ -58,26 +57,22 @@ broadcasting</li>
 <li><a href="http://rts.grnet.gr/">Teleconference service</a> VoIP service 
 (Real Time Services)</li>
 </ul>
-</p>
 
 <p>
 GRNET's federation is currently based on Shibboleth software and comprises the 
 following Identity Providers:
+</p>
 <ul>
 {% for category, insts in idplist %}
-	{% ifnotequal category.id 'wayf' %}
-	{% ifnotequal category.id 'test' %}
-	<li>{{ category.name }}</li>
+	<li>{{ category.name }}
 	<ul>
 	{% for inst in insts %}
 		<li>{{ inst.name }}</li>
 	{% endfor %}
 	</ul>
-	{% endifnotequal %}
-	{% endifnotequal %}
+	</li>
 {% endfor %}
 </ul>
-</p>
 
 <p>
 In order to assist the adoption of federated services, GRNET has developed 
@@ -95,15 +90,14 @@ community and European institutions.
 
 <p>For more information, please contact GRNET's Helpdesk.</p>
 
-<p>
-Documentation:
+<p>Documentation:</p>
 <ul>
 <li><a 
-href="http://vnoc.grnet.gr/engine/index.php?op=modload&modname=Downloads&action=downloadsviewfile&ctn=776&language=el">General 
+href="http://vnoc.grnet.gr/engine/index.php?op=modload&amp;modname=Downloads&amp;action=downloadsviewfile&amp;ctn=776&amp;language=el">General 
 information for directory service, IdP and SP administrators regarding the use 
 of Shibboleth software</a> (in Greek).</li>
 <li><a 
-href="http://vnoc.grnet.gr/engine/index.php?op=modload&modname=Downloads&action=downloadsviewfile&ctn=855&language=el">Shibboleth 
+href="http://vnoc.grnet.gr/engine/index.php?op=modload&amp;modname=Downloads&amp;action=downloadsviewfile&amp;ctn=855&amp;language=el">Shibboleth 
 1.3 installation and configuration guide</a> (in Greek).</li>
 <li><a href="http://shibboleth.internet2.edu/">Shibboleth suite</a></li>
 <li><a href="http://www.switch.ch/aai/shibboleth.html">Documentation of the 
@@ -112,6 +106,5 @@ Swiss NREN's (SWITCH) AAI federation</a></li>
 federation of institutions in the United States of America 
 (Internet2)</a></li>
 </ul>
-</p>
 
 {% endblock %}
