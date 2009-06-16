@@ -1,0 +1,6 @@
+This suite requires the following python modules to be present on the system:
+
+   python-lxml: uses lxml.objectify to parse the XML metadata
+   pydns: used for reverse DNS lookup to get a hint about a user's preferred IdP
+   IPy: used for IP map manipulation
+
