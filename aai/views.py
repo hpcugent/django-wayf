@@ -13,11 +13,14 @@ from django.template.loader import render_to_string
 
 
 def index(request):
+    return render_to_response("index.html")
+
+def idp_list(request):
     metadata = ShibbolethMetadata(settings.SHIB_METADATA)
     idps = metadata.getIdps()
     idplist = idps.getIdpsByCategory(exclude=('wayf', 'test'))
 
-    return render_to_response("index.html", { 'idplist' : idplist } )
+    return render_to_response("idp_list.html", { 'idplist' : idplist } )
 
 def static(request):
     # A catch-all view, trying to render all our static pages or give a 404 

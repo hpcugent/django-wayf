@@ -107,7 +107,11 @@ class IdpList(list):
 
         for category in cats:
             catidps = sorted(self.getCategoryIdps(category))
-            idps.append(map(lambda x: {'name': x.getName(lang), 'id': x.id }, catidps))
+            idps.append(map(lambda x: {
+                    'name': x.getName(lang),
+                    'url': x.getURL(lang),
+                    'id': x.id },
+                    catidps))
 
         return zip(categories, idps)
 
@@ -123,6 +127,7 @@ class IdentityProvider:
 
         self.idp = idp
         self.name = {} # Holds the institution's name in a form { language: string }
+        self.url = {}
         self.id = self.idp.get('entityID')
 
         # Initialize the contact details
@@ -134,6 +139,9 @@ class IdentityProvider:
         # Get the institution's name
         for name in self.idp.Organization.OrganizationDisplayName:
             self.name[name.get('{http://www.w3.org/XML/1998/namespace}lang')] = name.text
+
+        for url in self.idp.Organization.OrganizationURL:
+            self.url[url.get('{http://www.w3.org/XML/1998/namespace}lang')] = url.text
 
         # Fill in the contact details
         for contact in self.idp.ContactPerson:
@@ -170,6 +178,22 @@ class IdentityProvider:
             return self.name[lang]
         except:
             return self.name['en']
+
+    def getURL(self,lang=None):
+        if not lang:
+            lang = get_language()
+
+        try:
+            return self.url[lang]
+        except:
+            pass
+
+        try:
+            return self.url['en']
+        except:
+            pass
+
+        return None
 
     def getType(self):
         """Returns the type (category) of the current IdP"""

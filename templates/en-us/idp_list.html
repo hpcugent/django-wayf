@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}Participating organizations{% endblock %}
+{% block header %}Participating organizations{% endblock %}
+{% block content %}
+<p>
+GRNET's federation currently comprises the following Identity Providers:
+</p>
+<ul>
+{% for category, insts in idplist %}
+	<li>{{ category.name }}
+	<ul>
+	{% for inst in insts %}
+	    {% if inst.url %}
+		<li><a href="{{ inst.url }}">{{ inst.name }}</a></li>
+            {% else %}
+		<li>{{ inst.name }}</li>
+            {% endif %}
+	{% endfor %}
+	</ul>
+	</li>
+{% endfor %}
+</ul>
+{% endblock %}

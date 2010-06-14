@@ -3,19 +3,20 @@
 {% block title %}{% trans "Help" %}{% endblock %}
 {% block header %}{% trans "Help" %}{% endblock %}
 {% block content %}
+<h2>Support</h2>
 <p>
-If you are having difficulties using AAI-enabled services, and if you belong to a federated organization, you may contact the following parts, depending on the problem's nature:
+If you are having difficulties using AAI-enabled services and you belong to a participating organization, you may contact the following, depending on the problem's nature:
 </p>
 <ul id="userhelp">
-<li>If the problem showed up <b>in the pages of the service you attempted to use</b>, then you will have to contact the service administrators, as they appear in the service's homepage.</li>
+<li>If you encountered a problem <b>in the pages of the service you attempted to use</b>, then you should contact the respective service administrators, as they appear in the service's homepage.</li>
 
 <li>
-If the problem showed up <b>in your Home Organization's authentication page</b>, then you should contact your Home Organization's helpdesk. This is the place to solve general issues related to your account, like loss or change of passwords, changes of contact details, etc.
+If you encountered a problem <b>in your Home Organization's authentication page</b>, then you should contact your Home Organization's User Helpdesk. This is also the place to solve account-related issues, like the loss or change of your password, change of your contact details, etc.
 {% if idp.contact.email or idp.contact.telephone %}
-According to your selected Home Organization, &quot;<b>{{ idpname }}</b>&quot;, you may contact them in the following ways:
+According to your selected Home Organization, &quot;<b>{{ idpname }}</b>&quot;, you may use the following contact details for getting support:
 <ul id="contactdetails">
 {% if idp.contact.email  %}
-        <li><strong>E-mail:</strong> <a href="mailto:{{ idp.contact.email }}?subject={% trans "Shibboleth Authentication Issue" %}">{{ idp.contact.email }}</a></li>
+        <li><strong>E-mail:</strong> <a href="mailto:{{ idp.contact.email }}?subject=AAI+issue+report">{{ idp.contact.email }}</a></li>
 {% endif %}
 {% if idp.contact.telephone %}
         <li><strong>{% trans "Telephone" %}:</strong> {{ idp.contact.telephone }}</li>
@@ -23,6 +24,36 @@ According to your selected Home Organization, &quot;<b>{{ idpname }}</b>&quot;, 
 </ul>
 {% endif %}</li>
 <li>
-If the problem showed up in the <b>intermediate webpage, <a href="http://wayf.grnet.gr">wayf.grnet.gr</a></b>, then you should contact GRNET's Helpdesk.</li>
+If you encountered a problem in the <b>intermediate webpage, <a href="http://wayf.grnet.gr">wayf.grnet.gr</a></b>, then you should contact GRNET's Helpdesk.</li>
+</ul>
+
+<h2>Frequently Asked Questions</h2>
+<h3>Questions asked by users</h3>
+<ul>
+<li><b>I cannot login or I forgot my password. Who can help me?</b>
+<br />If your Home Institution is mentioned in the list of <a href="{% url grnet_aai.aai.views.idp_list %}">participating organizations</a>, you should contact your organization's User Helpdesk, where problems with your account can be solved. If no problems with your account are found, then please contact the administrators of the service you are trying to access.</li>
+<li><b>What services are available over GRNET's AAI?</b>
+<br>See the <a href="/">main page</a>.</li>
+<li><b>What do I have to do in order to be granted access to GRNET's AAI?</b>
+<br />If your Home Institution is already participating in the Federation, then no action is required from your part. Your username and password are the same as those used for the services provided by your organization.</li>
+</ul>
+
+<h3>Questions asked by administrators</h3>
+<ul>
+<li><b>Can my institution become a member of GRNET's AAI Federation?</b>
+<br />GRNET's Federation is targeted towards the Hellenic Academic, Research and Education community. Therefore, only Academic or Research Institutes can participate as Identity Providers. This restriction does not apply to Service Providers, as long as they provide content that serves academic or research goals.</li>
+<li><b>What should I do to grant my users access to the Federation's services?</b>
+<br />Your institution must be equipped with a suitable Identity Provider, which requires:
+<ul>
+  <li>the development of a comprehensive LDAP-based directory service and the infrastructure needed to keep account data up-to-date</li>
+  <li>the installation of an AAI &quot;Identity Provider&quot; software compatible with the SAML 2.0 specification.
+  <a href="http://shibboleth.internet2.edu/">Shibboleth IdP</a>, developed by <a href="http://www.internet2.edu">Internet2</a>, is recommended.
+  </li>
+</ul>
+For more information, please contact GRNET's Helpdesk</li>
+<li><b>How can I provide a service to the Federation's members?</b><br />
+You must install a &quot;Service Provider&quot; software, compatible with the SAML 2.0 specification. <a href="http://shibboleth.internet2.edu/">Shibboleth SP</a>, developed by <a href="http://www.internet2.edu">Internet2</a>, is recommended.</li>
+<li><b>Who is operating the Federation's infrastructure?</b>
+<br />The Federation is operated by GRNET's Network Operations Centre (NOC). For additions, removals, other changes and troubleshooting <i>regarding the Federation itself</i> you may contact GRNET's Helpdesk.</li>
 </ul>
 {% endblock %}

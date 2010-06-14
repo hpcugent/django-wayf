@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}Συμμετέχοντες φορείς{% endblock %}
+{% block header %}Συμμετέχοντες φορείς{% endblock %}
+{% block content %}
+<p>
+Στην Ομοσπονδία του ΕΔΕΤ συμμετέχουν οι ακόλουθοι φορείς με τους δίκους τους
+Παρόχους Ταυτότητας:
+</p>
+<ul>
+{% for category, insts in idplist %}
+	<li>{{ category.name }}
+	<ul>
+	{% for inst in insts %}
+	    {% if inst.url %}
+		<li><a href="{{ inst.url }}">{{ inst.name }}</a></li>
+            {% else %}
+		<li>{{ inst.name }}</li>
+            {% endif %}
+	{% endfor %}
+	</ul>
+	</li>
+{% endfor %}
+</ul>
+{% endblock %}
