@@ -9,7 +9,7 @@ body, td {
 	text-align:justify;
 }
 td {
-	font-size: 70%;
+	font-size: 80%;
 }
 
 h6 {
@@ -131,7 +131,7 @@ h6 {
 .greyheader {
 	background-color: #D6D3D3;
 	padding-left:20px;
-	padding-top:20px;
+	padding-top:15px;
 	font-size: 180%;
 	color:#5A5A7D;
 }
@@ -140,8 +140,9 @@ h6 {
 	border-top:1px solid #B2B2B2;
 	border-bottom:1px solid #B2B2B2;
 	width:100%;
-	font-size: 100%;
+	font-size: 110%;
 	color:#5A5A7D;
+	font-weight: bold;
 	text-align:right;
 }
 
@@ -165,7 +166,7 @@ a {
 }
 a:visited {
 	color: #666666;
-	text-decoration: underline;
+	text-decoration: none;
 }
 a:hover {
 	color: #5A5A7D;
