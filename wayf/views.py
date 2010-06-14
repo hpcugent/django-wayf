@@ -19,7 +19,6 @@ def debug(request):
     return HttpResponse("<br />\n".join(map(lambda x: "%s: %s" % (x[0], x[1]), environ.items())))
 
 def wayf(request):
-    print request.POST.items()
     # Instantiate the metadata
     metadata = ShibbolethMetadata(settings.SHIB_METADATA)
 
