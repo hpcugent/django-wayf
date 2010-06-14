@@ -1,4 +1,4 @@
-from models import *
+from aai.models import *
 from util import * 
 import time 
 from idpmap import *

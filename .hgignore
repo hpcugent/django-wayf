@@ -1,5 +1,4 @@
 syntax: glob
-aai/*
 *.pyc
 *.swp
 *.orig
