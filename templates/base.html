@@ -1,111 +1,69 @@
 {% load i18n %}
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+{% get_current_language as LANGUAGE_CODE %}
+<!DOCTYPE html>
 <html>
 <head>
+<title>{% trans "GRNET AAI Federation" %} • {% block title %}{% endblock %}</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" lang="{{ LANGUAGE_CODE }}">
 <meta name="robots" content="ALL">
 <meta name="revisit-after" content="30 days">
-<title>{% trans "GRNET AAI Federation" %} :: {% block title %}{% endblock %}</title> 
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" lang="el">
 <link href="/static/style.css" rel="stylesheet" type="text/css">
-<link href="/static/overlib.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
-<table class="holdingTable" border="0" cellpadding="0" cellspacing="0">
-<tbody>
-	<tr>
-		<td rowspan="8" class="BGEb">&nbsp;</td>
-		<td rowspan="8" valign="top">
-		&nbsp;
-		</td>
-		<td colspan="3" id="topStrip"><img src="/static/images/s.gif" height="1" width="700" alt="divider" title="divider"></td>
-		<td rowspan="8" ><img src="/static/images/s.gif" height="1" width="1" alt="divider" title="divider"></td>
-		<td rowspan="8" class="BGEb">&nbsp;</td>
-	</tr>
-	<tr>
-		<td width="1"><img src="/static/images/s.gif" height="1" width="1" alt="divider" title="divider"></td>
-		<td height="1">
-			<table align="right" border="0" cellpadding="0" cellspacing="0">
-			<tbody>
-				<tr>
-					<td><img src="/static/images/s.gif" height="1" width="1" alt="divider" title="divider"></td>
-					<td id="corner_white_on_grey_topx--"><img src="/static/images/s.gif" height="1" width="1" alt="divider" title="divider" /><a href="/setlanguage/el">Ελληνικά</a> | <a href="/setlanguage/en">English</a></td>
-					<td rowspan="2" class="pageContents"><img src="/static/images/s.gif" height="1" width="1" alt="divider" title="divider" /></td>
-				</tr>
-				<tr>
-					<td ><img src="/static/images/s.gif" height="1" width="1" alt="divider" title="divider"></td>
-					<td class="pageContents"><img src="/static/images/s.gif" height="1" width="120" alt="divider" title="divider"></td>
-				</tr>
-			</tbody>
-			</table>
-		</td>
-		<td id="corner_white_on_grey_top--x"><img src="/static/images/s.gif" height="1" width="1" alt="divider" title="divider"></td>
-	</tr>
-	<tr>
-		<td id="corner_white_on_grey_topx--"><img src="/static/images/s.gif" height="1" width="1" alt="divider" title="divider"></td>
-		<td class="pageContents"><img src="/static/images/s.gif" height="1" width="300" alt="divider" title="divider"></td>
-		<td class="pageContents"><img src="/static/images/s.gif" height="1" width="1" alt="divider" title="divider"></td>
-	</tr>
-	<tr>
-		<td colspan="3" class="pageContents" valign="top">
-			<table border="0" cellpadding="0" cellspacing="0" width="100%">
-			<tbody>
-				<tr>
-					<td width="14">&nbsp;</td>
-					<td>
-						<table >
-						<tr>
-							<td><a href="http://aai.grnet.gr/"> <img src="/static/images/aai.gif" width="655" height="26" alt="aai" title="aai" border="0"></a></td>
-						</tr>
-						<tr>
-							<td valign="top">
-								<table border="0" cellpadding="2" cellspacing="0" width="100%" height="100%">
-									<tr>
-										<td valign="top"><a href="http://www.grnet.gr/" target="_blank"><img src="/static/images/grnet.gif" border="0" width="85" height="94" alt="GRNET" title="GRNET"></a></td>
-										<td width="100%" valign="top">
-											<table border="0" cellpadding="0" cellspacing="0" width="100%" height="100%">
-												<tr><td height="100%" valign="top" bgcolor="#D6D3D3"><div class="greyheader"><a style="text-decoration:none" href="http://aai.grnet.gr/">{% trans "GRNET Federation<br />Authentication & Authorization Infrastructure" %}</a></div></td></tr>
-												<tr><td valign="bottom" height="100%" ><div class="greysmallheader" ><a href="http://wayf.grnet.gr/">{% trans "Select your home institution" %}</a> • <a href="http://aai.grnet.gr/participants">{% trans "Participants" %}</a> • <a href="http://aai.grnet.gr/services">{% trans "Services" %}</a> • <a href="http://aai.grnet.gr/help">{% trans "Help" %}</a> • <a href="http://aai.grnet.gr/documentation">{% trans "Documentation" %}</a></div></td></tr>
-											</table>
-										</td>
-									</tr>
-								</table>
-							</td>
-						</tr>
-<tr><td><br>
-<h1>{% block header %}AAI{% endblock %}</h1>
 
-<!--<div class="bluebox">-->
-<div class="rbroundbox">
-<div class="rbtop"><div></div></div>
-<div class="rbcontent">
+<div class="language-placeholder">
+	<div class="language-container" align="right">
+		<div class="language-div">
+			<div class="langtop">
+				<div></div>
+			</div>
+		<a href="/setlanguage/el">Ελληνικά</a>&nbsp;&nbsp;•&nbsp;&nbsp;<a href="/setlanguage/en">English</a>
+		</div>
+	</div>
+</div>
+
+<div class="content">
+	<div class="pagetop">
+		<div></div>
+	</div>
+	<div class="aailogo-placeholder">
+		<img src="/static/images/aai.gif">
+	</div>
+	<div class="header-placeholder">
+		<div class="header-image-placeholder">
+			<img src="/static/images/grnet.png">
+		</div>
+		<div class="header-text-placeholder">
+			<a href="http://aai.grnet.gr/">{% trans "GRNET Federation<br />Authentication & Authorization Infrastructure" %}</a>
+		</div>
+	</div>
+	<div class="headermenu-placeholder">
+		<a href="http://wayf.grnet.gr/">{% trans "Select your home institution" %}</a> 
+		• <a href="http://aai.grnet.gr/participants/">{% trans "Participants" %}</a>
+		• <a href="http://aai.grnet.gr/services/">{% trans "Services" %}</a> 
+		• <a href="http://aai.grnet.gr/documentation/">{% trans "Documentation" %}</a> 
+		• <a href="http://aai.grnet.gr/help/">{% trans "Help" %}</a> 
+	</div>
+	
+	<h1>{% block header %}AAI{% endblock %}</h1>
+	<div class="rbroundbox">
+		<div class="rbtop">
+			<div></div>
+		</div>
+		
+		<div class="rbcontent">
 {% block content %}
 {% endblock %}
-</div><!-- /rbcontent -->
-<div class="rbbot"><div></div></div>
-</div><!-- /rbroundbox -->
-<tr><td class="break">&nbsp;</td></tr>
-
-<table border="0" cellpadding="1" cellspacing="0">
-	<tr>
-		<td valign="top" width="14"><img src="/static/images/arrow-12.gif" width="12" height="12" alt="arrow"></td>
-		<td valign="top">
-			<p class="footer">{% trans "The Greek Research and Technology Network (GRNET) provides the Hellenic Academic, Research and Education community with advanced services, high-capacity national and international Internet connectivity, assisting the operation of all Universities, Technological Educational Institutions and Research Institutes in Greece."%}</p>
-		</td>
-	</tr>
-</table>
-
-</td></tr>
-</td>
-</tr>
-</tbody></table></tr>
-
-<tr>
-         <td id="corner_white_on_grey_bottomx--"><img src="/static/images/s.gif" height="1" width="1" alt="divider" title="divider"></td>
-         <td class="pageContents"><img src="/static/images/s.gif" height="1" width="1" alt="divider" title="divider"></td>
-         <td id="corner_white_on_grey_bottom--x"><img src="/static/images/s.gif" height="1" width="1" alt="divider" title="divider"></td>
-</tr>
-</tbody>
-</table>
+		</div>
+		<div class="rbbot">
+			<div></div>
+		</div>
+	</div>
+	<p class="footer">{% trans "The Greek Research and Technology Network (GRNET) provides the Hellenic Academic, Research and Education community with advanced services, high-capacity national and international Internet connectivity, assisting the operation of all Universities, Technological Educational Institutions and Research Institutes in Greece."%}</p>
+	<div class="pagebot">
+		<div></div>
+	</div>
+</div>
 </body>
 </html>

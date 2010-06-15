@@ -1,37 +1,96 @@
 body {
 	background-color: #B2B2B2;
-	font-size:100%;
-	
+	font-size: 100%;
 }
-body, td {
+
+body,td {
 	font-family: Arial, Verdana, Helvetica, sans-serif;
-	color:#656565;
-	text-align:justify;
+	color: #656565;
+	text-align: justify;
 }
-td {
+
+.content {
+	width: 700px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: white;
+}
+
+.language-placeholder {
+	width: 700px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.language-container {
+	display: table-cell;
+	width: 700px;
+	margin-left: auto;
+	margin-right: auto;
 	font-size: 80%;
 }
 
-h6 {
-	font-size: 130%;
-	color:#333333;
-	font-weight:bold;
-	margin:0em;
-	padding:0em;
-}
-.holdingTable {
-	vertical-align:top;
-	text-align:left;
-	width: 100%;
-}
-.BGEb {
-	background-repeat: repeat;
-	background-position: left top;
-	width: 50%;
+.language-list {
+	white-space: nowrap;
+	font-size: 80%;
 }
 
-#topStrip {
-	height: 30px;
+.language-list li {
+	display: block;
+	float: right;
+	list-style-type: none;
+	margin: 0;
+	padding: 0px;
+}
+
+.language-list li.active {
+	display: block;
+	float: right;
+	list-style-type: none;
+	margin: 0;
+	background-color: white;
+	padding: 1px;
+}
+.language-div{
+	text-align: center;
+	background-color:white; 
+	float: right;
+}
+
+.header-placeholder {
+	margin-right: 17px;
+	margin-left: 16px;
+	border-top: 1px solid #b2b2b2;
+	text-align: left
+}
+
+.header-image-placeholder {
+	display: table-cell;
+	width: 10%;
+	height: 80px;
+	vertical-align: middle;
+	text-align: left;
+	text-align: center;
+	padding-right: 10px;
+	
+}
+
+.header-text-placeholder {
+	display: table-cell;
+	height: 80px;
+	vertical-align: middle;
+	font-size: 140%;
+	background-color: silver;
+	width: 90%;
+	padding: 10px;
+}
+
+h1 {
+	font-size: 130%;
+	color: #656565;
+	font-weight: bold;
+	margin: 1em;
+	padding: 0em;
 }
 
 .collapse {
@@ -39,158 +98,125 @@ h6 {
 	height: 1px;
 }
 
-#corner_grey_on_white_topx-- {
-	width:7px;
-	height:7px;
-	background-image:url(images/topx--.gif);
-	background-position:left top;
-	background-repeat:no-repeat;
-	background-color:#B2B2B2;
+.aailogo-placeholder {
+	background-color: #FFF;
+	padding-left: 16px;
+	
 }
 
-#corner_grey_on_white_top--x {
-	width:7px;
-	height:7px;
-	background-image:url(images/top--x.gif);
-	background-position:top right;
-	background-repeat:no-repeat;
-	background-color:#B2B2B2;
-}
-
-#corner_grey_on_white_bottomx-- {
-	width:7px;
-	height:7px;
-	background-image:url(images/bottomx--.gif);
-	background-position:bottom left;
-	background-repeat:no-repeat;
-	background-color:#B2B2B2;
-}
-
-#corner_grey_on_white_bottom--x {
-	width:7px;
-	height:7px;
-	background-image:url(images/bottom--x.gif);
-	background-position:bottom right;
-	background-repeat:no-repeat;
-	background-color:#B2B2B2;
-}
-
-
-#corner_white_on_grey_topx-- {
-	height:7px;
-	background-image:url(images/topx--.gif);
-	background-position:top left;
-	background-repeat:no-repeat;
-	background-color:white;
-	text-align: center;
-	padding-left: 7px;
-}
-
-#corner_white_on_grey_top--x {
-	width:7px;
-	height:7px;
-	background-image:url(images/top--x.gif);
-	background-position:top right;
-	background-repeat:no-repeat;
-	background-color:white;
-}
-
-#corner_white_on_grey_bottomx-- {
-	width:7px;
-	height:7px;
-	background-image:url(images/bottomx--.gif);
-	background-position:bottom left;
-	background-repeat:no-repeat;
-	background-color:white;
-}
-
-#corner_white_on_grey_bottom--x {
-	width:7px;
-	height:7px;
-	background-image:url(images/bottom--x.gif);
-	background-position:bottom right;
-	background-repeat:no-repeat;
-	background-color:white;
-}
-.pageContents {
-	background-color: white;
-}
-.pageContents{
-
-}
-.bluebox {
-	border-width: 1;
-	border-color: #CCCCCC;
+.headermenu-placeholder {
 	background-color: #F0F0F0;
-	border-style: solid;
-	padding: 3px;
-	padding-left:26px;
-	color: #656161;
-	font-size: 120%;
-}
-.greyheader {
-	background-color: #D6D3D3;
-	padding-left:20px;
-	padding-top:15px;
-	font-size: 180%;
-	color:#5A5A7D;
-}
-.greysmallheader {
-	background-color: #F0F0F0;
-	border-top:1px solid #B2B2B2;
-	border-bottom:1px solid #B2B2B2;
-	width:100%;
-	font-size: 110%;
-	color:#5A5A7D;
-	font-weight: bold;
-	text-align:right;
+	border-top: 1px solid #B2B2B2;
+	border-bottom: 1px solid #B2B2B2;
+	font-size: 0.8em;
+	padding-right: 10px;
+	color: #5A5A7D;
+	text-align: right;
+	margin-left: 16px;
+	margin-right: 17px;
 }
 
-#subFooterSpacer {
-	height:3px;
-}
-#subFooter {}
-#subFooter* a:link, #subFooter* a:visited {
-		color:#666666;
-}
-#subFooter* a:hover {
-	color:#E4E4E4;
-}
-#subFooter td {
-	color:#FFFFFF;
+.headermenu-placeholder a:hover {
+	text-decoration: none;
+	color: orange;
 }
 
 a {
 	color: #666666;
 	text-decoration: none;
 }
-a:visited {
-	color: #666666;
-	text-decoration: none;
-}
+
 a:hover {
-	color: #5A5A7D;
-	text-decoration: underline;
-}
-
-tt {
-	color:#4e85da;
-	font-size: 90%;
-	border-top: 10% solid c
-	border-bottom: 10% solid #e4e4e4;
-}
-
-tt:hover {
-	background-color:#e4e4e4;
-	color: #ee9800;
+	text-decoration: none;
+	color: orange;
 }
 
 .footer {
-	font-size: 90%;
+	font-size: 80%;
 	font-style: italic;
-	padding-right: 2em;
+	padding: 1em;
 }
 
-td.break{
-	border-bottom: 10% solid  #e4e4e4;
+.rbroundbox {
+	background-color: #f1f1f1;
+}
+
+.rbtop div {
+	background: url(images/tl.gif) no-repeat top left;
+}
+
+.rbtop {
+	background: url(images/tr.gif) no-repeat top right;
+}
+
+.rbbot div {
+	background: url(images/bl.gif) no-repeat bottom left;
+}
+
+
+.rbbot {
+	background: url(images/br.gif) no-repeat bottom right;
+}
+/* height and width stuff, width not really nessisary.*/
+.rbtop div,.rbtop,.rbbot div,.rbbot {
+	width: 667px;
+	height: 7px;
+	font-size: 1px;
+}
+
+.rbcontent {
+	margin: 6px 10px 10px 10px;
+	font-size: 13px;
+}
+
+.rbroundbox {
+	width: 667px;
+	margin: 0;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.pagebot {
+	background: url(images/bottom--x.gif) no-repeat bottom right;
+}
+
+.pagebot div {
+	background: url(images/bottomx--.gif) no-repeat bottom left;
+}
+
+
+.pagetop div {
+	background: url(images/topx--.gif) no-repeat top left;
+}
+
+.pagebot div, .pagetop div{
+	width: 667px;	height: 7px;
+	font-size: 1px;
+}
+
+.langbot {
+	background: url(images/bottom--x.gif) no-repeat bottom right;
+}
+
+.langbot div {
+	background: url(images/bottomx--.gif) no-repeat bottom left;
+}
+.langtop {
+	background: url(images/top--x.gif) no-repeat top right;
+}
+
+.langtop div {
+	background: url(images/topx--.gif) no-repeat top left;
+}
+
+.langbot div, .langtop div{
+	width: 150px;
+	height: 7px;
+	font-size: 1px;
+}
+
+#idp_selection_form {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
 }
