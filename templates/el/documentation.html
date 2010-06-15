@@ -3,12 +3,53 @@
 {% block title %}Τεκμηρίωση{% endblock %}
 {% block header %}Τεκμηρίωση{% endblock %}
 {% block content %}
+
+<h2>Τεκμηρίωση Υποδομής</h2>
 <ul>
-<li><a href="http://vnoc.grnet.gr/engine/index.php?op=modload&amp;modname=Downloads&amp;action=downloadsviewfile&amp;ctn=776&amp;language=el">Γενικές αρχές προς διαχειριστές υπηρεσιών καταλόγου, ΙdP και SP για τις διαδικασίες παρoχής υπηρεσιών AAI με χρήση του Shibboleth</a></li>
-<li><a href="http://vnoc.grnet.gr/engine/index.php?op=modload&amp;modname=Downloads&amp;action=downloadsviewfile&amp;ctn=855&amp;language=el">Οδηγός εγκατάστασης και ρύθμισης Shibboleth 1.3</a></li>
-<li><a href="http://shibboleth.internet2.edu/">Λογισμικό Shibboleth</a></li>
-<li><a href="http://www.switch.ch/aai/shibboleth.html">Τεκμηρίωση υλοποίησης του αντίστοιχης ομοσπονδίας του Ελβετικού NREN (SWITCH)</a></li>
-<li><a href="http://www.incommonfederation.org">Τεκμηρίωση υλοποίησης του αντίστοιχου project των ιδρυμάτων των Ηνωμένων Πολιτειών (Internet2)</a></li>
+  <li><a href="/static/policy.pdf">Πολιτική και πρακτικές</a> (έκδοση 1.0.0)</li>
+  <li><a href="/schema/grEduPerson/">Σχήμα grEduPerson</a> (έκδοση 1.0)</li>
 </ul>
+
+<h2>Λογισμικό</h2>
+<p>
+Στην πλειονότητα της Υποδομής χρησιμοποιείται αυτή τη στιγμή και προτείνεται το λογισμικό
+<strong><a href="http://shibboleth.internet2.edu/">Shibboleth</a></strong> του
+Αμερικάνικου ακαδημαϊκού δικτύου <a href="http://www.internet2.edu/">Internet2</a>.
+Ωστόσο, οποιοδήποτε λογισμικό που συμμορφώνεται με τα πρότυπα SAML 2.0 του
+οργανισμού OASIS, είτε ως Πάροχος Ταυτότητας είτε ως Πάροχος Υπηρεσιών, μπορεί
+να διασυνδεθεί στην Υποδομή.
+</p>
+
+<p>
+Για την εγκατάσταση και παραμετροποίηση του Shibboleth, προτείνεται η ανάγνωση
+της <a href="http://www.switch.ch/aai/support/">τεκμηρίωσης υλοποίησης
+της αντίστοιχης ομοσπονδίας του Ελβετικού ακαδημαϊκού δικτύου (SWITCH)</a> ενώ
+ιδιαίτερη βοήθεια μπορεί να προσφέρει και το 
+<a href="https://spaces.internet2.edu/display/SHIB/">Wiki του Shibboleth</a>.
+</p>
+
+<h2>Metadata</h2>
+<ul>
+  <li><a href="/metadata.xml">Metadata της Ομοσπονδίας ΕΔΕΤ</a></li> 
+</ul>
+
+<h2>Μητρώο</h2>
+<ul>
+
+<li><a href="/registry/grEduPerson/undergraduateBranch/">
+Μητρώο τιμών στοιχείου <em>undergraduateBranch</em> του σχήματος
+<em>grEduPerson</em></a>
+
+<li>
+<li><a href="/registry/eduPersonEntitlement/">
+Μητρώο τιμών στοιχείου <em>eduPersonEntitlement</em> του σχήματος
+<em>eduPerson</em> για την παρούσα Ομοσπονδία
+</a>
+</li>
+</ul>
+
+<h2>Επικοινωνία</h2>
+Για ένταξη στην Ομοσπονδία ή οποιεσδήποτε άλλες πληροφορίες για αυτή, οι
+διαχειριστές των φορέων μπορούν να επικοινωνούν με το Helpdesk του ΕΔΕΤ.
 
 {% endblock %}

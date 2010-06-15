@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}Documentation{% endblock %}
+{% block header %}Documentation{% endblock %}
+{% block content %}
+
+<h2>Federation documentation</h2>
+<ul>
+  <li><a href="/static/policy.pdf">Policy and practices</a> (version 1.0.0) [in Greek]</li>
+  <li><a href="/schema/grEduPerson/">grEduPerson schema</a> (version 1.0)</li>
+</ul>
+
+<h2>Software</h2>
+<p>
+The majority of the infrastructure is using the 
+<strong><a href="http://shibboleth.internet2.edu/">Shibboleth</a></strong>
+software, of the American research and educational network 
+<a href="http://www.internet2.edu/">Internet2</a>.
+However, any software conforming to the OASIS SAML 2.0 specifications can be
+connected to the infrastructure, either as an Identity or a Service Provider.
+</p>
+
+<p>
+For the installation and configuration of Shibboleth, it is recommended to
+read the
+<a href="http://www.switch.ch/aai/support/">documentation of the 
+Swiss research and technology network (SWITCH)'s federation</a>; 
+<a href="https://spaces.internet2.edu/display/SHIB/">Shibboleth's Wiki</a> is
+also an excellent documentation resource.
+</p>
+
+<h2>Metadata</h2>
+<ul>
+  <li><a href="/metadata.xml">Federation's metadata</a></li> 
+</ul>
+
+<h2>Registry</h2>
+<ul>
+
+<li><a href="/registry/grEduPerson/undergraduateBranch/">
+Registry of the <em>undergraduateBranch</em> attribute of the
+<em>grEduPerson</em> schema</a>
+
+<li>
+<li><a href="/registry/eduPersonEntitlement/">
+Registry of the <em>eduPersonEntitlement</em> attribute of the
+<em>eduPerson</em> schema, for this federationγ
+</a>
+</li>
+</ul>
+
+<h2>Contact</h2>
+For joining the federation or any other technical information, organization
+administrators can contact GRNET's Helpdesk.
+
+{% endblock %}
