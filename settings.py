@@ -52,7 +52,7 @@ SECRET_KEY = 'w70vxdbe(^&92@^a)b%jm=8p0@-o$ykbfal2)tn%ssky(t*z5l'
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
-    'app_dirs_multilingual.load_template_source',
+    'filesystem_multilingual.load_template_source',
 #    'django.template.loaders.filesystem.load_template_source',
 #    'django.template.loaders.app_directories.load_template_source',
 #     'django.template.loaders.eggs.load_template_source',
@@ -60,25 +60,22 @@ TEMPLATE_LOADERS = (
 
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.locale.LocaleMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'grnet_aai.middleware.VhostMiddleware',
 )
 
-ROOT_URLCONF = 'wayf.urls'
+ROOT_URLCONF = 'grnet_aai.urls'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    '/path/to/templates',
 )
 
 INSTALLED_APPS = (
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.sites',
-    'wayf.wayf',
+    'grnet_aai.wayf',
+    'grnet_aai.aai',
 )
 
 IDP_COOKIE = 'grnet_selected_idp'
@@ -86,3 +83,5 @@ SHIB_METADATA = '/srv/aai/dist/grnet-metadata.xml'
 LAST_IDP_COOKIE = 'grnet_last_idp'
 COOKIE_DOMAIN = '.grnet.gr'
 LANGUAGE_COOKIE_NAME = 'grnet_aai_language'
+
+WAYF_SITENAME='wayf.grnet.gr'
