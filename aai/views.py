@@ -22,10 +22,10 @@ def idp_list(request):
 
     return render_to_response("idp_list.html", { 'idplist' : idplist } )
 
-def static(request):
+def static(request, path):
     # A catch-all view, trying to render all our static pages or give a 404 
     try:
-        return render_to_response(request.path[1:] + ".html")
+        return render_to_response(path + ".html")
     except:
         return HttpResponseNotFound(render_to_string("404.html"))
 
