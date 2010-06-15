@@ -13,6 +13,7 @@ if settings.DEBUG:
     (r'^robots.txt$', 'serve',
         {'path': "robots.txt"}),
     )
+
 urlpatterns += patterns('',
     (r'^support/?$', 'grnet_aai.aai.views.support'),
     (r'^help/?$', 'grnet_aai.aai.views.support',{ 'mode': 'help' }),

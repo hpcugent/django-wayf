@@ -1,8 +1,20 @@
 from django.conf.urls.defaults import *
+from django.conf import settings
 
-urlpatterns = patterns('',
-    (r'^support/?$', 'grnet_aai.aai.views.support'),
-    (r'^help/?$', 'grnet_aai.aai.views.support',{ 'mode': 'help' }),
+urlpatterns = []
+
+# Static files
+if settings.DEBUG:
+    urlpatterns += patterns('django.views.static',
+    (r'^static/(?P<path>.*)$', 'serve',
+        {'document_root': settings.MEDIA_ROOT}),
+    (r'^favicon.ico$', 'serve',
+        {'path': "favicon.ico"}),
+    (r'^robots.txt$', 'serve',
+        {'path': "robots.txt"}),
+    )
+
+urlpatterns += patterns('',
     (r'^/?$', 'grnet_aai.wayf.views.wayf'),
     (r'^setlanguage/(.*)', 'grnet_aai.aai.views.setlanguage'),
 )
