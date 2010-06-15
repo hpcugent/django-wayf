@@ -5,106 +5,48 @@
 {% block content %}
 <p>
 GRNET's Authentication and Authorization Infrastructure (AAI) assists 
-intra-organizational services by providing federated access control between
-GRNET's partner organizations. Using GRNET's AAI, the Institutions belonging 
-to GRNET's federation may provide services to users of fellow federated 
-Institutions in a transparent, safe and easy manner.
+cross-institutional services by providing federated authentication and
+authorization among participating organizations. Through the Infrastructure,
+users can access services in a secure and confidential manner, simply by using
+their institutional accounts.
 </p>
 
 <p>
-GRNET's federation is primarily targeted to the Hellenic Academic and Research 
-community and anyone interested in providing services towards this community.  
-The main aim is the co-ordination of the co-operation between the different 
-institutions and the assistance of development of intra-institutional 
-services.
+GRNET's Federation comprises members of the academic, research and educational
+community of Greece, as well as third parties wishing to provide services to
+the community.
 </p>
 
 <p>
-The adoption of the federation by the <strong>Identity Providers</strong>, i.e.  
-the Institutions, yields multiple benefits:
+The federation's members fall into two categories:
+<ol>
+<li><strong>Identity Providers (IdP)</strong>: the entities (e.g. academic or
+research institutions) authenticating their users and certifying their
+identities. Furthermore, they may provide Service Providers with the users'
+personal data in order to facilitate user authorization.
+</li>
+
+<li><strong>Service Providers (SP)</strong>: the entities providing services to
+the community. They may receive individual users' personal data, under consent,
+with the purpose of authorization and providing personalized services.</li>
+</ol>
+</p>
+
+<p>
+The participation of an <strong>Identity Provider</strong> in the Federation
+yields multiple benefits for its users:
 </p>
 <ul>
-<li>logging into a service provided by a third party does not require a 
-separate account, the user may use his/her current institutional account.</li>
-<li>every service provider participating in the federation does not need to 
-know the access credential of the users accessing their service. Service 
-providers need only to trust the users' Home Organizations.</li>
-<li>there is support for fully anonymous, trusted access and credentials 
-including the user's identity, position and affiliation are only optionally 
-transmitted to each service provider. In cases where the provided service 
-relies on particular end-user attributes, the federation requires the Identity 
-Provides to aprove the release of these attributes and the end-users are 
-notified accordingly.</li>
+<li>logging into a federated service is performed using the user's existing
+institutional account, without requiring separate registration.</li>
+<li>the user's identity, position and affiliation are only optionally
+transmitted to Service Providers, allowing fully anonymous and trusted access.</li>
 </ul>
 
 <p>
 Accordingly, a <strong>Service Provider</strong> may benefit from joining the 
-federation by utilizing a simple and powerful access control mechanism when 
-providing services to the Hellenic Academic and Research community, either in 
-part, or in whole.
+federation by being able to offer services to a large community through a
+central access mechanism without the need for ad hoc user authentication
+methods.
 </p>
-
-<p>The following services are currently provided over GRNET's AAI:</p>
-<ul>
-<li><a href="http://pithos.grnet.gr/">&quot;Pithos&quot; Data storage 
-service</a></li>
-<li><a href="https://www.dreamspark.com/">Microsoft DreamSpark</a>, 
- free access to software for students</li>
-<li><a href="http://anafandon.grnet.gr/">ΑΝΑΦΑΝΔΟΝ-MSDNAA</a>, free access to 
-software for students through the MSDNAA initiative</li>
-<li><a href="http://iptv.grnet.gr/">IPTV service</a>, digital television 
-broadcasting</li>
-<li><a href="http://rts.grnet.gr/">Teleconference service</a> VoIP service 
-(Real Time Services)</li>
-</ul>
-
-<p>
-GRNET's federation is currently based on Shibboleth software and comprises the 
-following Identity Providers:
-</p>
-<ul>
-{% for category, insts in idplist %}
-	<li>{{ category.name }}
-	<ul>
-	{% for inst in insts %}
-		<li>{{ inst.name }}</li>
-	{% endfor %}
-	</ul>
-	</li>
-{% endfor %}
-</ul>
-
-<p>
-In order to assist the adoption of federated services, GRNET has developed 
-reference IdP and SP systems hosted in standalone servers (service 
-&quot;boxes&quot;) provided for free to the Institutions. Furthermore, there 
-is significant effort to base all community-targeted services on GRNET's AAI 
-federation.</p>
-
-<p>
-At the same time, access is provided to <a 
-href="http://www.edugain.org">eduGAIN's european AAI services</a> which was 
-developed as part of GÉANT2, to ease co-operation between the academic 
-community and European institutions.
-</p>
-
-<p>For more information, please contact GRNET's Helpdesk.</p>
-
-<p>Documentation:</p>
-<ul>
-<li><a 
-href="http://vnoc.grnet.gr/engine/index.php?op=modload&amp;modname=Downloads&amp;action=downloadsviewfile&amp;ctn=776&amp;language=el">General 
-information for directory service, IdP and SP administrators regarding the use 
-of Shibboleth software</a> (in Greek).</li>
-<li><a 
-href="http://vnoc.grnet.gr/engine/index.php?op=modload&amp;modname=Downloads&amp;action=downloadsviewfile&amp;ctn=855&amp;language=el">Shibboleth 
-1.3 installation and configuration guide</a> (in Greek).</li>
-<li><a href="http://shibboleth.internet2.edu/">Shibboleth suite</a></li>
-<li><a href="http://www.switch.ch/aai/shibboleth.html">Documentation of the 
-Swiss NREN's (SWITCH) AAI federation</a></li>
-<li><a href="http://www.incommonfederation.org">Documentation of the 
-federation of institutions in the United States of America 
-(Internet2)</a></li>
-</ul>
-
 {% endblock %}

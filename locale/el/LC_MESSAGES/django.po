@@ -155,4 +155,7 @@ msgid "You selected the IdP of"
 msgstr "Επιλέξατε τον Identity Provider του ιδρύματος"
 
 msgid "Participants"
-msgstr "Συμμετέχοντες φορείς"
+msgstr "Φορείς"
+
+msgid "Services"
+msgstr "Υπηρεσίες"
