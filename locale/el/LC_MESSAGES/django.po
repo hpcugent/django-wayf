@@ -16,19 +16,15 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: wayf/templates/404.html:3
 msgid "Page not found"
 msgstr "Η σελίδα δε βρέθηκε"
 
-#: wayf/templates/404.html:5
 msgid "The page you requested could not be found!"
 msgstr "Λυπούμαστε, η σελίδα που ζητήσατε δε βρέθηκε."
 
-#: wayf/templates/500.html:3
 msgid "Server error"
 msgstr "Σφάλμα"
 
-#: wayf/templates/500.html:5
 msgid ""
 "The page you requested cannot be displayed because the server experienced a "
 "technical problem. We apologize for the inconvenience."
@@ -36,38 +32,24 @@ msgstr ""
 "Η εφαρμογή αντιμετώπισε πρόβλημα κατά τη δημιουργία της σελίδας που ζητήσατ"
 "ε. Ζητούμε συγγνώμη για την ταλαιπωρία."
 
-#: wayf/templates/base.html:7
 msgid "GRNET AAI Federation"
 msgstr "Ομοσπονδία ΕΔΕΤ"
 
-#: wayf/templates/base.html:67
 msgid "GRNET Federation<br />Authentication & Authorization Infrastructure"
 msgstr "Ομοσπονδία ΕΔΕΤ<br />Υποδομή Ταυτοποίησης και Εξουσιοδότησης (AAI)"
 
-#: wayf/templates/base.html:68 wayf/templates/el/wayf_set.html:3
-#: wayf/templates/el/wayf_set.html.py:4 wayf/templates/en-us/wayf_set.html:3
-#: wayf/templates/en-us/wayf_set.html:4
 msgid "Select your home institution"
 msgstr "Επιλογή οικείου φορέα"
 
-#: wayf/templates/base.html:68 wayf/templates/el/faq.html:3
-#: wayf/templates/el/faq.html.py:4
 msgid "FAQ"
 msgstr "Συχνές ερωτήσεις - απαντήσεις"
 
-#: wayf/templates/base.html:68 wayf/templates/el/help.html:3
-#: wayf/templates/el/help.html.py:4 wayf/templates/en-us/help.html:3
-#: wayf/templates/en-us/help.html.py:4
 msgid "Help"
 msgstr "Βοήθεια"
 
-#: wayf/templates/base.html:68 wayf/templates/el/privacy.html:3
-#: wayf/templates/el/privacy.html.py:4 wayf/templates/en-us/privacy.html:3
-#: wayf/templates/en-us/privacy.html:4
 msgid "Privacy"
 msgstr "Προσωπικά Δεδομένα"
 
-#: wayf/templates/base.html:93
 msgid ""
 "The Greek Research and Technology Network (GRNET) provides the Hellenic "
 "Academic, Research and Education community with advanced services, high-"
@@ -80,58 +62,26 @@ msgstr ""
 "εθνικής διασύνδεσης Internet υψηλής χωρητικότητας εξυπηρετώντας όλα τα ΑΕΙ, "
 "ΤΕΙ και Ερευνητικά Κέντρα της χώρας."
 
-#: wayf/templates/el/help.html:18 wayf/templates/el/support.html:12
-#: wayf/templates/en-us/help.html:18 wayf/templates/en-us/support.html:11
-msgid "Shibboleth Authentication Issue"
-msgstr "Πρόβλημα κατά την πιστοποίηση με χρήση Shibboleth"
-
-#: wayf/templates/el/help.html:21 wayf/templates/el/support.html:15
-#: wayf/templates/en-us/help.html:21 wayf/templates/en-us/support.html:14
 msgid "Telephone"
 msgstr "Τηλέφωνο"
 
-#: wayf/templates/el/index.html:3 wayf/templates/el/index.html.py:4
-#: wayf/templates/en-us/index.html:3 wayf/templates/en-us/index.html.py:4
 msgid "About"
-msgstr "Γενικές Πληροφορίες"
+msgstr "Γενικές πληροφορίες"
 
-#: wayf/templates/el/support.html:3 wayf/templates/el/support.html.py:4
-#: wayf/templates/en-us/support.html:3 wayf/templates/en-us/support.html:4
 msgid "User support"
-msgstr "Υποστήριξη Χρηστών"
+msgstr "Υποστήριξη χρηστών"
 
-#: wayf/templates/el/wayf.html:12
 msgid "Save"
-msgstr ""
+msgstr "Αποθήκευση"
 
-#: wayf/templates/el/wayf_from_sp.html:13 wayf/templates/en-us/wayf.html:12
-#: wayf/templates/en-us/wayf_from_sp.html:13
 msgid "Confirm"
 msgstr "Επιβεβαίωση"
 
-#: wayf/templates/el/wayf_set.html:13 wayf/templates/en-us/wayf_set.html:13
 msgid "Clear"
 msgstr "Καθαρισμός"
 
-#: wayf/templates/en-us/wayf.html:3 wayf/templates/en-us/wayf.html.py:4
 msgid "Permanently set your Home Organization"
 msgstr "Επιλογή οικείου φορέα"
-
-msgid ""
-"A problem occured during shibboleth authentication. Please contact your "
-"home institution's staff in one of the following ways:"
-msgstr ""
-"Παρουσιάστηκε πρόβλημα κατά τη χρήση της υποδομής ταυτοποίησης και "
-"εξουσιοδότησης του ΕΔΕΤ. Παρακαλούμε επικοινωνήστε με τους υπευθύνους του "
-"οικείου ιδρύματος, με έναν από τους παρακάτω τρόπους:"
-
-msgid ""
-"A problem occured during shibboleth authentication. Furthermore we failed "
-"to obtain contact details for your home institution"
-msgstr ""
-"Παρουσιάστηκε πρόβλημα κατά τη χρήση της υποδομής ταυτοποίησης και "
-"εξουσιοδότησης του ΕΔΕΤ. Επιπλέον, δε βρέθηκαν στοιχεία επικοινωνίας με "
-"το οικείο ίδρυμα."
 
 msgid "Universities"
 msgstr "Πανεπιστήμια"
