@@ -212,3 +212,7 @@ form#idp_selection {
 	margin-left: auto;
 	margin-right: auto;
 }
+
+div#userprefs {
+	margin-top: 3px;
+}
