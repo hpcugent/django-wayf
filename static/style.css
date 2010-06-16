@@ -207,7 +207,7 @@ div#langtop div {
 	font-size: 1px;
 }
 
-#idp_selection_form {
+form#idp_selection {
 	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
