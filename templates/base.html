@@ -12,33 +12,29 @@
 
 <body>
 
-<div class="language-placeholder">
-	<div class="language-container">
-		<div class="language-div">
-			<div class="langtop">
-				<div></div>
-			</div>
+<div id="language">
+	<div id="language-container">
+		<div id="language-div">
+			<div id="langtop"><div></div></div>
 			<a href="/setlanguage/el">Ελληνικά</a>&nbsp;&nbsp;•&nbsp;&nbsp;<a href="/setlanguage/en">English</a>
 		</div>
 	</div>
 </div>
 
-<div class="content">
-	<div class="pagetop">
-		<div></div>
-	</div>
-	<div class="aailogo-placeholder">
+<div id="content">
+	<div id="pagetop"><div></div></div>
+	<div id="aailogo">
 		<img src="/static/images/aai.gif">
 	</div>
-	<div class="header-placeholder">
-		<div class="header-image-placeholder">
+	<div id="header">
+		<div id="header-image">
 			<a href="http://www.grnet.gr/"><img src="/static/images/grnet.png" alt="GRNET" title="GRNET"></a>
 		</div>
-		<div class="header-outer-text-placeholder"><div class="header-inner-text-placeholder">
+		<div id="header-outer-text"><div id="header-inner-text">
 			<a href="http://aai.grnet.gr/">{% trans "GRNET Federation<br />Authentication & Authorization Infrastructure" %}</a>
 		</div></div>
 	</div>
-	<div class="headermenu-placeholder">
+	<div id="header-menu">
 		<a href="http://wayf.grnet.gr/">{% trans "Select your home institution" %}</a> 
 		• <a href="http://aai.grnet.gr/participants/">{% trans "Participants" %}</a>
 		• <a href="http://aai.grnet.gr/services/">{% trans "Services" %}</a> 
@@ -47,23 +43,16 @@
 	</div>
 	
 	<h1>{% block header %}AAI{% endblock %}</h1>
-	<div class="rbroundbox">
-		<div class="rbtop">
-			<div></div>
-		</div>
-		
-		<div class="rbcontent">
+	<div id="rbroundbox">
+		<div id="rbtop"><div></div></div>
+		<div id="rbcontent">
 {% block content %}
 {% endblock %}
 		</div>
-		<div class="rbbot">
-			<div></div>
-		</div>
+		<div id="rbbot"><div></div></div>
 	</div>
 	<p class="footer">{% trans "The Greek Research and Technology Network (GRNET) provides the Hellenic Academic, Research and Education community with advanced services, high-capacity national and international Internet connectivity, assisting the operation of all Universities, Technological Educational Institutions and Research Institutes in Greece."%}</p>
-	<div class="pagebot">
-		<div></div>
-	</div>
+	<div id="pagebot"><div></div></div>
 </div>
 </body>
 </html>
