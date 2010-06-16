@@ -131,6 +131,10 @@ a:hover {
 	color: orange;
 }
 
+a img {
+	border: 0px;
+}
+
 .footer {
 	font-size: 80%;
 	font-style: italic;
