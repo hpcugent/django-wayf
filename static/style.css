@@ -123,8 +123,8 @@ div#aailogo {
 }
 
 a {
-	color: #666666;
 	text-decoration: none;
+	color: #666666;
 }
 
 a:hover {
@@ -132,8 +132,8 @@ a:hover {
 	color: orange;
 }
 
-a img {
-	border: 0px;
+div#header a:hover {
+	color: #666666;
 }
 
 div#header-text a:hover {
@@ -141,9 +141,8 @@ div#header-text a:hover {
 	color: #666666;
 }
 
-div#headermenu a:hover {
-	text-decoration: none;
-	color: orange;
+a img {
+	border: 0px;
 }
 
 .footer {
