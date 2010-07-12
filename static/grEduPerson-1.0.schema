@@ -31,12 +31,10 @@ attributetype ( grEduPersonAttributeType:1
 	EQUALITY caseIgnoreMatch
 	SUBSTR caseIgnoreSubstringsMatch
 	SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
-	SINGLE-VALUE
-)
+	SINGLE-VALUE )
 
 # ObjectClasses
 objectClass ( grEduPersonObjectClass:1
     NAME 'grEduPerson'
     AUXILIARY
-    MAY ( grEduPersonUndergraduateBranch )
-)
+    MAY ( grEduPersonUndergraduateBranch ) )
