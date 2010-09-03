@@ -10,11 +10,12 @@ import re
 # here is the same as they will appear on the web.
 institution_categories = (
       ('university', _l("Universities")),
-      ('tei',  _l("Technological Educational Institutes")),
-      ('institute', _l("Research Institutes")),
+      ('tei',  _l("Technological educational institutes")),
+      ('ecclesiastical',  _l("Ecclesiastical schools")),
+      ('school',  _l("Other academic institutions")),
+      ('institute', _l("Research institutes")),
       ('other', _l("Other")),
       ('test', _l("Testing")),
-      ('wayf', _l("Other federations")),
 )
 
 
@@ -200,19 +201,25 @@ class IdentityProvider:
 
         # Some heuristics to determine the IdP type, based on the 
         # institution's name in english.
-        if self.name['en'].lower().find('edugain') >= 0:
-            return "wayf"
+        if self.name['en'].lower().find('university') >= 0:
+            return "university"
 
-        elif self.name['en'].lower().find('university') >= 0:
+        elif self.name['en'].lower().find('school of fine arts') >= 0:
             return "university"
 
         elif self.name['en'].lower().find('technological educational') >= 0:
             return "tei"
 
+        if self.name['en'].lower().find('ecclesiastical') >= 0:
+            return "ecclesiastical"
+
+        elif re.findall(r'(school|academy)', self.name['en'].lower()):
+            return "school"
+
         elif re.findall(r'(institute|cent(er|re))', self.name['en'].lower()):
             return "institute"
 
-        elif re.findall(r'(test|service box)', self.name['en'].lower()):
+        if self.name['en'].lower().find('test') >= 0:
             return "test"
 
         else:
