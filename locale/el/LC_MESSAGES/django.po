@@ -89,9 +89,6 @@ msgstr "Πανεπιστήμια"
 msgid "Technological educational institutes"
 msgstr "Τεχνολογικά εκπαιδευτικά ιδρύματα"
 
-msgid "Ecclesiastical schools"
-msgstr "Ανώτατες εκκλησιαστικές ακαδημίες"
-
 msgid "Other academic institutions"
 msgstr "Άλλα ανώτατα εκπαιδευτικά ιδρύματα"
 

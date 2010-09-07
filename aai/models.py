@@ -11,7 +11,6 @@ import re
 institution_categories = (
       ('university', _l("Universities")),
       ('tei',  _l("Technological educational institutes")),
-      ('ecclesiastical',  _l("Ecclesiastical schools")),
       ('school',  _l("Other academic institutions")),
       ('institute', _l("Research institutes")),
       ('other', _l("Other")),
@@ -210,10 +209,7 @@ class IdentityProvider:
         elif self.name['en'].lower().find('technological educational') >= 0:
             return "tei"
 
-        if self.name['en'].lower().find('ecclesiastical') >= 0:
-            return "ecclesiastical"
-
-        elif re.findall(r'(school|academy)', self.name['en'].lower()):
+        elif re.findall(r'(ecclesiastical|school|academy)', self.name['en'].lower()):
             return "school"
 
         elif re.findall(r'(institute|cent(er|re))', self.name['en'].lower()):
