@@ -206,7 +206,7 @@ class IdentityProvider:
         elif self.name['en'].lower().find('school of fine arts') >= 0:
             return "university"
 
-        elif self.name['en'].lower().find('technological educational') >= 0:
+        elif self.name['en'].lower().find('technological') >= 0:
             return "tei"
 
         elif re.findall(r'(ecclesiastical|school|academy)', self.name['en'].lower()):
