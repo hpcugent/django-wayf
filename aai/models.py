@@ -212,7 +212,7 @@ class IdentityProvider:
         elif re.findall(r'(ecclesiastical|school|academy)', self.name['en'].lower()):
             return "school"
 
-        elif re.findall(r'(institute|cent(er|re))', self.name['en'].lower()):
+        elif re.findall(r'(institute|cent(er|re)|ncsr)', self.name['en'].lower()):
             return "institute"
 
         if self.name['en'].lower().find('test') >= 0:
