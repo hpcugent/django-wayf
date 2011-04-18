@@ -81,7 +81,7 @@ INSTALLED_APPS = (
 )
 
 IDP_COOKIE = 'grnet_selected_idp'
-SHIB_METADATA = here('metadata.xml')
+SHIB_METADATA = '/srv/aai/dist/grnet-metadata.xml'
 LAST_IDP_COOKIE = 'grnet_last_idp'
 COOKIE_DOMAIN = '.grnet.gr'
 LANGUAGE_COOKIE_NAME = 'grnet_aai_language'
