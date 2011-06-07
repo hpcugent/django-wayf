@@ -66,7 +66,12 @@ def support(request, mode="support"):
     return response
 
 def setlanguage(request, lang):
-    response = HttpResponseRedirect(request.META['HTTP_REFERER'])
+    try:
+        url = request.META['HTTP_REFERER']
+    except KeyError:
+        url = '/'
+
+    response = HttpResponseRedirect(url)
     response.set_cookie(settings.LANGUAGE_COOKIE_NAME, lang, domain='.grnet.gr', max_age = 100 * 86400, expires = time.strftime("%a, %d-%m-%y %H:%M:%S GMT", time.gmtime(time.time() + 100 * 86400)))
     response['P3P'] = 'CP="NOI CUR DEVa OUR IND COM NAV PRE"'
     return response
