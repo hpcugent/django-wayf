@@ -89,10 +89,16 @@ def getUserRealm(ipaddr):
             return scope
 
     # Then try DNS
-    revip = IP(ipaddr).reverseName()
+    revip = ip.reverseName().rstrip('.') # Important, DnsRequest breaks
+                                         # with a trailing dot
     DNS.ParseResolvConf()
-    req = DNS.DnsRequest(name=revip, qtype='PTR')
-    res = req.req()
+    req = DNS.DnsRequest(name=revip, qtype='PTR', timeout=2)
+
+    try:
+        res = req.req()
+    except DNS.DNSError:
+        return
+
     if res.answers:
         return res.answers[0]['data']
     
