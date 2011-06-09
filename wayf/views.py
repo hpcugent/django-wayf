@@ -48,14 +48,13 @@ def wayf(request):
             if current_idp:
                 selected_idp = current_idp
                 cookies.append({'name': settings.LAST_IDP_COOKIE, 'data': request.POST['user_idp'], 'age': 86400 * 100})
-                if 'save' in request.POST.keys():
-                    if request.POST['save']:
-                        if request.POST['savetype'] == 'perm':
-                            age = 86400 * 100 
-                        else:
-                            age = None
+                if request.POST.get('save'):
+                    if request.POST.get('savetype') == 'perm':
+                        age = 86400 * 100
+                    else:
+                        age = None
                     cookies.append({'name': settings.IDP_COOKIE, 'data': request.POST['user_idp'], 'age': age })
-    
+
     # At this point we have handled the cookies and have an IdP, if the intent is such
     if not request.GET:
         # We were called without any arguments
