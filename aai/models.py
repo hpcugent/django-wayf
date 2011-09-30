@@ -198,26 +198,20 @@ class IdentityProvider:
     def getType(self):
         """Returns the type (category) of the current IdP"""
 
-        # Some heuristics to determine the IdP type, based on the 
+        # Some heuristics to determine the IdP type, based on the
         # institution's name in english.
-        if self.name['en'].lower().find('university') >= 0:
-            return "university"
-
-        elif self.name['en'].lower().find('school of fine arts') >= 0:
-            return "university"
-
-        elif self.name['en'].lower().find('technological') >= 0:
-            return "tei"
-
-        elif re.findall(r'(ecclesiastical|school|academy)', self.name['en'].lower()):
-            return "school"
-
-        elif re.findall(r'(institute|cent(er|re)|ncsr)', self.name['en'].lower()):
-            return "institute"
-
         if self.name['en'].lower().find('test') >= 0:
             return "test"
-
+        elif self.name['en'].lower().find('university') >= 0:
+            return "university"
+        elif self.name['en'].lower().find('school of fine arts') >= 0:
+            return "university"
+        elif self.name['en'].lower().find('technological') >= 0:
+            return "tei"
+        elif re.findall(r'(ecclesiastical|school|academy)', self.name['en'].lower()):
+            return "school"
+        elif re.findall(r'(institute|cent(er|re)|ncsr)', self.name['en'].lower()):
+            return "institute"
         else:
             return "other"
     
