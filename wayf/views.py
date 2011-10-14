@@ -76,8 +76,8 @@ def wayf(request):
     # If we got to this point, then this is a request comming from an SP
     if current_idp:
         # We have an IdP to route the request to
-        # Check if this is a Discovery Service request
-        if 'entityID' in request.GET.keys():
+        if 'entityID' in request.GET.keys() and 'return' in request.GET.keys():
+            # a SAML Discovery Service request
             # Discovery Service mandates that 'entityID' holds the SP's ID
             if 'returnIDParam' in request.GET.keys() and request.GET['returnIDParam']:
                 returnparam = request.GET['returnIDParam']
@@ -85,14 +85,12 @@ def wayf(request):
                 returnparam = 'entityID'
             
             response = HttpResponseRedirect(request.GET['return'] + "&" + urlencode(((returnparam, current_idp.id),)))
-
-        # Check if this is an old Shibboleth 1.x request
         elif 'shire' in request.GET.keys() and 'target' in request.GET.keys():
+            # an old Shibboleth 1.x request
             # We just redirect the user to the given IdP
             response = HttpResponseRedirect(
                 current_idp.sso['urn:mace:shibboleth:1.0:profiles:AuthnRequest'] + "?" + request.GET.urlencode()
                 )
-
         else:
             response = render_to_response("500.html")
             response.status_code = 400 # bad request
