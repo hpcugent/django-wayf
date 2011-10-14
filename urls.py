@@ -14,6 +14,9 @@ if settings.DEBUG:
         {'path': "robots.txt"}),
     )
 
+if settings.DEBUG:
+    urlpatterns += patterns('', (r'^wayf/(.*)', include('grnet_aai.wayf.urls')))
+
 urlpatterns += patterns('',
     (r'^support/?$', 'grnet_aai.aai.views.support'),
     (r'^help/?$', 'grnet_aai.aai.views.support',{ 'mode': 'help' }),
