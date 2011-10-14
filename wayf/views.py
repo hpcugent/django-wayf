@@ -94,7 +94,8 @@ def wayf(request):
                 )
 
         else:
-            response = render_to_response("bad.html")
+            response = render_to_response("500.html")
+            response.status_code = 400 # bad request
 
         for cookie in cookies:
             if cookie['age']:
