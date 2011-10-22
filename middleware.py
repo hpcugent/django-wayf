@@ -13,8 +13,5 @@ class HandleExceptionMiddleware:
     def process_exception(self, request, exception):
         if isinstance(exception, IOError) and \
            'request data read error' in unicode(exception):
-            logging.info('%s %s: %s: Request was canceled by the client.' % (
-                request.build_absolute_uri(), request.user, exception))
             return HttpResponseServerError()
-
         return None
