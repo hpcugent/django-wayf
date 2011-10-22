@@ -1,4 +1,5 @@
 from grnet_aai.settings import WAYF_SITENAME
+from django.http import HttpResponseServerError
 
 class VhostMiddleware:
     def process_request(self,request):
