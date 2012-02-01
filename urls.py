@@ -33,7 +33,9 @@ urlpatterns += patterns('django.views.generic.simple',
     (r'^schemas/(?P<schema>.+)/$', 'redirect_to',
         {'url': '/static/%(schema)s.schema', 'permanent': False}),
     (r'^policy/$', 'redirect_to',
-        {'url': '/static/policy.pdf', 'permanent': False}),
+        {'url': '/documentation/', 'permanent': False}),
+    (r'^policy/(?P<filename>.+)$', 'redirect_to',
+        {'url': '/static/policy/%(filename)s', 'permanent': False}),
 )
 
 # catch-all
