@@ -210,7 +210,7 @@ class IdentityProvider:
             return "tei"
         elif re.findall(r'(ecclesiastical|school|academy)', self.name['en'].lower()):
             return "school"
-        elif re.findall(r'(institute|cent(er|re)|ncsr)', self.name['en'].lower()):
+        elif re.findall(r'(institute|cent(er|re)|ncsr|foundat|bservat)', self.name['en'].lower()):
             return "institute"
         else:
             return "other"
