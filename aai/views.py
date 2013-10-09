@@ -22,10 +22,30 @@ def idp_list(request):
 
     return render_to_response("idp_list.html", { 'idplist' : idplist } )
 
+def sp_list(request):
+    metadata = ShibbolethMetadata(settings.SHIB_METADATA)
+    sps = metadata.getSps()
+    splist = sps.getEntitiesByGroup(exclude=['http://www.grnet.gr/aai'])
+
+    return render_to_response("sp_list.html", { 'splist' : splist } )
+
 def static(request, path):
     # A catch-all view, trying to render all our static pages or give a 404 
     try:
         return render_to_response(path + ".html")
+    except:
+        return HttpResponseNotFound(render_to_string("404.html"))
+
+def json(request, path):
+    try:
+        with open(settings.IDPDISCO_FEEDS + "/" + path, 'r') as feedfile:
+            data = feedfile.read()
+        if "callback" in request.REQUEST:
+            # a jsonp response!
+            data = "%s(%s);" % ( request.REQUEST["callback"], data )
+            return HttpResponse(data, "text/javascript")
+        else:
+            return HttpResponse(data, "application/json")
     except:
         return HttpResponseNotFound(render_to_string("404.html"))
 
