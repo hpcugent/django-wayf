@@ -17,4 +17,5 @@ if settings.DEBUG:
 urlpatterns += patterns('',
     (r'^/?$', 'grnet_aai.wayf.views.wayf'),
     (r'^setlanguage/(.*)', 'grnet_aai.aai.views.setlanguage'),
+    (r'^feeds/(.+\.json)$', 'grnet_aai.aai.views.json'),
 )
