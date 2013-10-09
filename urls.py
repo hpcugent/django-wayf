@@ -23,7 +23,9 @@ urlpatterns += patterns('',
     (r'^debug/?$', 'grnet_aai.aai.views.debug'),
     (r'^setlanguage/(.*)', 'grnet_aai.aai.views.setlanguage'),
     (r'^participants/?$', 'grnet_aai.aai.views.idp_list'),
+    (r'^service-providers/?$', 'grnet_aai.aai.views.sp_list'),
     (r'^(registry/.+)/$', 'grnet_aai.aai.views.static'),
+    (r'^feeds/(.+\.json)$', 'grnet_aai.aai.views.json'),
     (r'^/?$', 'grnet_aai.aai.views.index'),
 )
 

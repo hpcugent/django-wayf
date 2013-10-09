@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}Participating Service Providers{% endblock %}
+{% block header %}Participating Service Providers{% endblock %}
+{% block content %}
+<p>
+GRNET's federation currently comprises the following Service Providers:
+</p>
+<ul>
+{% for group, insts in splist %}
+	<li><span class="fineprint">[group: {{ group }}]</span>
+	<ul>
+	{% for inst in insts %}
+	    {% if inst.url %}
+		<li><a href="{{ inst.url }}">{{ inst.name }}</a>
+            {% else %}
+		<li>{{ inst.name }}
+            {% endif %}
+		  <br>
+		   <span class="fineprint">[id: {{ inst.id }}]</span>
+	    {% if inst.logo %}
+		  <br>
+		  <img title="{{ inst.name }}" alt="{{ inst.name }}" src="{{ inst.logo }}">
+            {% endif %}
+		</li>
+	{% endfor %}
+	</ul>
+	</li>
+{% endfor %}
+</ul>
+{% endblock %}
