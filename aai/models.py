@@ -324,11 +324,23 @@ class Entity:
 
         return None
 
-    def getLogo(self,dimensions={}):
-        if self.logo:
-            return self.logo[random.choice(self.logo.keys())]
-        else:
+    def getLogo(self,targetdimensions=tuple()):
+
+        if not self.logo:
             return None
+
+        # get (x, y) closest to target (a, b)
+        if isinstance(targetdimensions, tuple) and \
+                len(targetdimensions) is 2 and \
+                [isinstance(i, int) for i in targetdimensions]:
+            dimensions = min(self.logo.keys(),
+                             key = lambda x: abs(x[0]-targetdimensions[0]) + \
+                                 abs(x[1]-targetdimensions[1])
+                             )
+        else:
+            dimensions = random.choice(self.logo.keys())
+
+        return self.logo[dimensions]
 
 
 class IdentityProvider(Entity):
@@ -373,18 +385,25 @@ class IdentityProvider(Entity):
         try:
             ui = self.el.IDPSSODescriptor.\
                 Extensions['{urn:oasis:names:tc:SAML:metadata:ui}UIInfo']
+            # Override self.name with mdui:DisplayName or self.atcs.name
             if hasattr(ui, 'DisplayName'):
                 self.name = {}
                 for name in ui.DisplayName:
-                    self.name[name.get('{http://www.w3.org/XML/1998/namespace}lang')] = name.text
+                    self.name[name.get(
+                            '{http://www.w3.org/XML/1998/namespace}lang'
+                            )] = name.text
+            # Override self.url with mdui:InformationURL
             if hasattr(ui,'InformationURL'):
                 self.url = {}
                 for url in ui.InformationURL:
-                    self.url[url.get('{http://www.w3.org/XML/1998/namespace}lang')] = url.text
+                    self.url[url.get(
+                            '{http://www.w3.org/XML/1998/namespace}lang'
+                            )] = url.text
+            # Also add logo from mdui:Logo
             if hasattr(ui, 'Logo'):
                 for logo in ui.Logo:
-                    self.logo[{'width': int(logo.get('width')),
-                               'height': int(logo.get('height'))}] = logo.text
+                    self.logo[(int(logo.get('width')),
+                               int(logo.get('height')))] = logo.text
         except:
             pass
 
@@ -511,9 +530,9 @@ class ServiceProvider(Entity):
             self.name = [s.name for s in self.atcs.values()][0]
 
         try:
-            # Override self.name with mdui:DisplayName or self.atcs.name
             ui = self.el.SPSSODescriptor.\
                 Extensions['{urn:oasis:names:tc:SAML:metadata:ui}UIInfo']
+            # Override self.name with mdui:DisplayName
             if hasattr(ui, 'DisplayName'):
                 self.name = {}
                 for name in ui.DisplayName:
@@ -530,8 +549,8 @@ class ServiceProvider(Entity):
             # Also add logo from mdui:Logo
             if hasattr(ui, 'Logo'):
                 for logo in ui.Logo:
-                    self.logo[(logo.get('width'),
-                               logo.get('height'))] = logo.text
+                    self.logo[(int(logo.get('width')),
+                               int(logo.get('height')))] = logo.text
         except AttributeError:
             pass
 
