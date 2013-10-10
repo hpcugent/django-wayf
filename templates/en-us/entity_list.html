@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}Entities{% endblock %}
+{% block header %}Entities{% if group %} [{{ group }}]{% endif %}{% endblock %}
+{% block content %}
+<ul>
+{% for ent in entlist %}
+	{% if ent.url %}
+	    <li><a href="{{ inst.url }}">{{ ent.name }}</a>
+        {% else %}
+	    <li>{{ ent.name }}
+        {% endif %}
+	    <br>
+	    <span class="fineprint">[id: {{ ent.id }}]</span>
+	{% if inst.logo %}
+	    <br>
+		<img title="{{ ent.name }}" alt="{{ ent.name }}" src="{{ ent.logo }}">
+        {% endif %}
+	    </li>
+{% endfor %}
+</ul>
+{% endblock %}

@@ -1,6 +1,7 @@
 import time
 
 from os import environ
+import sys
 
 from aai.models import *
 from aai.util import *
@@ -25,9 +26,29 @@ def idp_list(request):
 def sp_list(request):
     metadata = ShibbolethMetadata(settings.SHIB_METADATA)
     sps = metadata.getSps()
-    splist = sps.getEntitiesByGroup(exclude=['http://www.grnet.gr/aai'])
+    splist = sps.getEntitiesByGroup()
+    # splist_other = entities in the top group
+    splist_other = [i[1] for i in splist if i[0] == 'http://www.grnet.gr/aai'][0]
+    # fitlerids = entity.id for entities not in the top group
+    filterids = [o['id'] for i in splist for o in i[1] if i[0] != 'http://www.grnet.gr/aai']
+    # filter out entities not in the top group from splist_other
+    splist_other_new = filter(lambda x: x['id'] not in filterids, splist_other)
+    # replace top group with filtered out version in splist
+    splist.insert(splist.index(('http://www.grnet.gr/aai', splist_other)), ('other', splist_other_new))
+    splist.remove(('http://www.grnet.gr/aai', splist_other))
 
     return render_to_response("sp_list.html", { 'splist' : splist } )
+
+def entity_list(request, group = None):
+    if group is not None:
+        group = "http://aai.grnet.gr%s" % request.path
+    print >>sys.stderr, "entity_list, group is %s" % group
+    metadata = ShibbolethMetadata(settings.SHIB_METADATA)
+    ents = metadata.getEntities()
+    entlist = ents.getEntities(group=group)
+
+    return render_to_response("entity_list.html", { 'entlist' : entlist,
+                                                    'group' : group } )
 
 def static(request, path):
     # A catch-all view, trying to render all our static pages or give a 404 
