@@ -215,3 +215,7 @@ form#idp_selection {
 div#userprefs {
 	margin-top: 3px;
 }
+span.fineprint {
+	font-size: 75%;
+	color: silver;
+}
