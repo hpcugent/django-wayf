@@ -1,7 +1,6 @@
 import time
 
 from os import environ
-import sys
 
 from aai.models import *
 from aai.util import *
@@ -42,10 +41,9 @@ def sp_list(request):
 def entity_list(request, group = None):
     if group is not None:
         group = "http://aai.grnet.gr%s" % request.path
-    print >>sys.stderr, "entity_list, group is %s" % group
     metadata = ShibbolethMetadata(settings.SHIB_METADATA)
-    ents = metadata.getEntities()
-    entlist = ents.getEntities(group=group)
+    entities = metadata.getEntities()
+    entlist = entities.getEntities(group=group)
 
     return render_to_response("entity_list.html", { 'entlist' : entlist,
                                                     'group' : group } )
