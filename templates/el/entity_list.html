@@ -6,15 +6,15 @@
 <ul>
 {% for ent in entlist %}
 	{% if ent.url %}
-	    <li><a href="{{ inst.url }}">{{ ent.name }}</a>
+	    <li><a href="{{ ent.url }}">{{ ent.name }}</a>
         {% else %}
 	    <li>{{ ent.name }}
         {% endif %}
 	    <br>
 	    <span class="fineprint">[id: {{ ent.id }}]</span>
-	{% if inst.logo %}
+	{% if ent.logo %}
 	    <br>
-		<img title="{{ ent.name }}" alt="{{ ent.name }}" src="{{ ent.logo }}">
+		<img title="{{ ent.name }}" alt="{{ ent.name }}" src="{{ ent.logo.data }}">
         {% endif %}
 	    </li>
 {% endfor %}

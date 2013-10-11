@@ -20,7 +20,7 @@ GRNET's federation currently comprises the following Service Providers:
 		   <span class="fineprint">[id: {{ inst.id }}]</span>
 	    {% if inst.logo %}
 		  <br>
-		  <img title="{{ inst.name }}" alt="{{ inst.name }}" src="{{ inst.logo }}">
+		  <img title="{{ inst.name }}" alt="{{ inst.name }}" src="{{ inst.logo.data }}">
             {% endif %}
 		</li>
 	{% endfor %}

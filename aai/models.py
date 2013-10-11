@@ -41,14 +41,16 @@ class ShibbolethMetadata:
         self.mdtree = parse(filename)
         self.metadata = self.mdtree.getroot()
 
-    def getEntities(self, entity_type = None):
-        """Returns an IdpList holding all Identity Providers found in the metadata"""
+    def getEntities(self, entity_type = None, augmented=False):
+        """Returns an EntityList holding all Entities (of requested type) found 
+        in the metadata, perhaps augmented in to the corresponding object type
+        """
         if entity_type is "idp":
             entityfilter = "IDPSSODescriptor"
         elif entity_type is "sp":
             entityfilter = "SPSSODescriptor"
-        elif entity_type is "aa":
-            entityfilter = "AttributeAuthorityDescriptor"
+        # elif entity_type is "aa":
+        #     entityfilter = "AttributeAuthorityDescriptor"
         else:
             entityfilter = None
 
@@ -60,13 +62,14 @@ class ShibbolethMetadata:
             else:
                 return False
 
-        # Create an EntityList holding entities of the requested type
-        return EntityList([ Entity(kot) for kot in
-                         filter(filtertype,
-                                self.metadata.xpath("//md:EntityDescriptor",
-                                                    namespaces=xpath_ns)
-                                ) ]
-                       )
+        kots = filter(filtertype, self.metadata.xpath("//md:EntityDescriptor",
+                                                     namespaces=xpath_ns))
+
+        if augmented:
+            return EntityList([ Entity.construct_augmented_entity(kot)
+                                for kot in kots])
+        else:
+            return EntityList([ Entity(kot) for kot in kots])
 
     def getIdps(self):
         """Returns an IdpList holding all Identity Providers found in the metadata"""
@@ -116,7 +119,7 @@ class EntityList(list):
             groups.update(x.groups)
         return groups
 
-    def getEntities(self, lang=None, group=None):
+    def getEntities(self, lang=None, group=None, logosize=tuple()):
         """Returns a list of entities, where each entity is represented by a 
         dict carrying the localized name, url, logo and entity ID attributes
 
@@ -133,7 +136,7 @@ class EntityList(list):
 
         return map(lambda x: {'name': x.getName(lang),
                               'url': x.getURL(lang),
-                              'logo': x.getLogo(),
+                              'logo': x.getLogo(targetsize=logosize),
                               'id': x.id },
                    entities)
 
@@ -297,7 +300,29 @@ class Entity:
         if issubclass(cls, entity.__class__) and hasattr(entity, 'el'):
             return cls(entity.el)
         else:
-            raise Exception('Can not instantiate %s from %s' % (cls, str(entity)))
+            raise Exception('Can not instantiate %s from %s' % (cls,
+                                                                str(entity)))
+
+    @staticmethod
+    def construct_augmented_entity(el):
+        elcls = el.__class__
+        # should do isinstance() but we do not import whole lxl.objectify
+        if ("%s.%s" % (elcls.__module__, elcls.__name__)) == \
+                "lxml.objectify.ObjectifiedElement":
+            if hasattr(el, "IDPSSODescriptor"):
+                aug_ent_cls = IdentityProvider
+            elif hasattr(el, "SPSSODescriptor"):
+                aug_ent_cls = ServiceProvider
+            # elif hasattr(el, "AttributeAuthorityDescriptor"):
+            #     pass
+            else:
+                aug_ent_cls = None
+
+            if aug_ent_cls is not None:
+                return aug_ent_cls(el)
+
+        raise Exception("Can not instantiate augmented Entity from %s" %
+                             el)
 
     def getName(self,lang=None):
         if not lang:
@@ -324,23 +349,25 @@ class Entity:
 
         return None
 
-    def getLogo(self,targetdimensions=tuple()):
+    def getLogo(self,targetsize=tuple()):
 
         if not self.logo:
             return None
 
         # get (x, y) closest to target (a, b)
-        if isinstance(targetdimensions, tuple) and \
-                len(targetdimensions) is 2 and \
-                [isinstance(i, int) for i in targetdimensions]:
+        if isinstance(targetsize, tuple) and \
+                len(targetsize) is 2 and \
+                [isinstance(i, int) for i in targetsize]:
             dimensions = min(self.logo.keys(),
-                             key = lambda x: abs(x[0]-targetdimensions[0]) + \
-                                 abs(x[1]-targetdimensions[1])
+                             key = lambda x: abs(x[0]-targetsize[0]) + \
+                                 abs(x[1]-targetsize[1])
                              )
         else:
             dimensions = random.choice(self.logo.keys())
 
-        return self.logo[dimensions]
+        return { 'width': dimensions[0],
+                 'height': dimensions[1],
+                 'data': self.logo[dimensions] }
 
 
 class IdentityProvider(Entity):

@@ -42,8 +42,8 @@ def entity_list(request, group = None):
     if group is not None:
         group = "http://aai.grnet.gr%s" % request.path_info
     metadata = ShibbolethMetadata(settings.SHIB_METADATA)
-    entities = metadata.getEntities()
-    entlist = entities.getEntities(group=group)
+    entities = metadata.getEntities(augmented=True)
+    entlist = entities.getEntities(group=group, logosize=(100,100))
 
     return render_to_response("entity_list.html", { 'entlist' : entlist,
                                                     'group' : group } )
