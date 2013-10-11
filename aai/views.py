@@ -40,7 +40,7 @@ def sp_list(request):
 
 def entity_list(request, group = None):
     if group is not None:
-        group = "http://aai.grnet.gr%s" % request.path
+        group = "http://aai.grnet.gr%s" % request.path_info
     metadata = ShibbolethMetadata(settings.SHIB_METADATA)
     entities = metadata.getEntities()
     entlist = entities.getEntities(group=group)
