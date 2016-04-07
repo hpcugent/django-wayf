@@ -76,8 +76,15 @@ TEMPLATE_DIRS = (
 )
 
 INSTALLED_APPS = (
+    'django.contrib.staticfiles',
     'wayf',
-    'aai',
+)
+
+SITE_ROOT = SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
+STATIC_URL = 'static/'
+STATIC_ROOT= 'static'
+STATICFILES_DIR = (
+    os.path.join(SITE_ROOT, 'static/'),
 )
 
 IDP_COOKIE = 'grnet_selected_idp'
