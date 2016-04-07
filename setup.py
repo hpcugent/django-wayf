@@ -18,6 +18,7 @@ setup(
     url='https://github.com/JensTimmerman/django-wayf',
     author='Jens Timmerman',
     author_email='jens.timmerman@ugent.be',
+    install_requires=['lxml'],
     classifiers=[
         'Environment :: Web Environment',
         'Framework :: Django',
@@ -33,4 +34,3 @@ setup(
         'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
     ],
 )
-
