@@ -50,7 +50,11 @@ Quick start
 4. Start the development server and visit http://127.0.0.1:8000/wayf
    To select your home institute
 
-5. Redirect a service here so
+5. Configure your shibboleth2.xml file to use this wayf::
+   <SessionInitiator type="Chaining" Location="/DS" id="DS"  isDefault="true" relayState="cookie">
+                <SessionInitiator type="SAMLDS" URL="https://example.com/wayf"/>
+   <SessionInitiator/>
+
 
 extra
 ---
