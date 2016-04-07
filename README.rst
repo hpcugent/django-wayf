@@ -21,6 +21,18 @@ Quick start
         'wayf',
     ]
     SHIB_METADATA = 'federation-metadata.xml'
+    INSTITUTION_CATEGORIES = (
+      ('university', ("Universities")),
+      ('tei',  ("Technological educational institutes")),
+      ('school',  ("Other academic institutions")),
+      ('institute', ("Research institutes")),
+      ('other', ("Please select your institute")),
+      ('test', ("Testing")),
+    )
+    P3P_HEADER = ''
+    IDP_COOKIE = 'wayf_selected_idp'
+    LAST_IDP_COOKIE = 'wayf_last_idp'
+    COOKIE_DOMAIN = '.example.com'
 
 2. Include the wayf URLconf in your project urls.py like this::
 
