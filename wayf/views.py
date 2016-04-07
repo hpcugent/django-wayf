@@ -1,12 +1,11 @@
-#from aai.models import *
-#from aai.util import *
+from wayf.utils import ShibbolethMetadata
+# optional for now , getUserRealm
 import time
 from django.shortcuts import render_to_response
 from django.conf import settings
-from django.http import HttpResponse, HttpResponseRedirect, HttpResponseNotFound
+from django.http import HttpResponseRedirect
 from django.utils.http import urlencode
-from django.template.loader import render_to_string
-from os import environ
+
 
 def wayf(request):
     # Instantiate the metadata
@@ -31,8 +30,9 @@ def wayf(request):
         selectedidp = None
 
     # If this is the first visit, use some IP-based heuristics, as in utils.py's getUserRealm()
-    if not selectedidp:
-        selectedidp = idps.getIdpForScope(getUserRealm(request.META['REMOTE_ADDR']))
+    #TODO: document we can do this magic
+    #if not selectedidp:
+    #    selectedidp = idps.getIdpForScope(getUserRealm(request.META['REMOTE_ADDR']))
 
     # First check to see if anything has changed
     if request.method == "POST":

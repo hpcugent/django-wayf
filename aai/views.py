@@ -48,19 +48,6 @@ def entity_list(request, group = None):
     return render_to_response("entity_list.html", { 'entlist' : entlist,
                                                     'group' : group } )
 
-def json(request, path):
-    try:
-        with open(settings.IDPDISCO_FEEDS + "/" + path, 'r') as feedfile:
-            data = feedfile.read()
-        if "callback" in request.REQUEST:
-            # a jsonp response!
-            data = "%s(%s);" % ( request.REQUEST["callback"], data )
-            return HttpResponse(data, "text/javascript")
-        else:
-            return HttpResponse(data, "application/json")
-    except:
-        return HttpResponseNotFound(render_to_string("404.html"))
-
 def support(request, mode="support"):
     # This gets triggered when a user's attributes fail to be accepted
     # by a service provider. The aim is to produce a help page, indicating
