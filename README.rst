@@ -42,7 +42,8 @@ Quick start
    there is only one view  for the basic app
    wayf.views.wayf
    so you can create your own url that points to just this view.
-   TODO: more flexibility towards the templates it uses.
+   The templates shipped with wayf extend a base.html template, where they will insert their html in the {% content %} tag.
+
 
 3. This app doesn't store anything in it's models, so no migrations are needed
 
@@ -50,6 +51,27 @@ Quick start
    To select your home institute
 
 5. Redirect a service here so
+
+extra
+---
+The only view you really need is wayf.views.wayf
+
+however, wayf.views contains a few other views, that can help you generate auto generated pages
+for users, e.g. using templates like::
+
+    If you encountered a problem <b>in your Home Organization's authentication page</b>, then you should contact your Home Organization's User Helpdesk. This is also the place to s    olve account-related issues, like the loss or change of your password, change of your contact details, etc.
+    {% if idp.contact.email or idp.contact.telephone %}
+    According to your selected Home Organization, &quot;<b>{{ idpname }}</b>&quot;, you may use the following contact details for getting support:
+    <ul id="contactdetails">
+    {% if idp.contact.email  %}
+            <li><strong>E-mail:</strong> <a href="mailto:{{ idp.contact.email }}?subject=AAI+issue+report">{{ idp.contact.email }}</a></li>
+    {% endif %}
+    {% if idp.contact.telephone %}
+            <li><strong>{% trans "Telephone" %}:</strong> {{ idp.contact.telephone }}</li>
+    {% endif %}
+    </ul>
+    {% endif %}</li>
+
 
 dependencies
 ---
