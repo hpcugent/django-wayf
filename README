@@ -1,3 +1,9 @@
+This code originates from https://code.grnet.gr/projects/wayf
+
+it was adapted to split of the wayf part as a separate usable django app
+
+---
+
 This suite requires the following python modules to be present on the system:
 
    python-lxml: uses lxml.objectify to parse the XML metadata
