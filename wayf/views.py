@@ -197,6 +197,6 @@ def setlanguage(request, lang):
         url = '/'
 
     response = HttpResponseRedirect(url)
-    response.set_cookie(settings.LANGUAGE_COOKIE_NAME, lang, domain='.grnet.gr', max_age = 100 * 86400, expires = time.strftime("%a, %d-%m-%y %H:%M:%S GMT", time.gmtime(time.time() + 100 * 86400)))
-    response['P3P'] = 'CP="NOI CUR DEVa OUR IND COM NAV PRE"'
+    response.set_cookie(settings.LANGUAGE_COOKIE_NAME, lang, domain=settings.COOKIE_DOMAIN, max_age = 100 * 86400, expires = time.strftime("%a, %d-%m-%y %H:%M:%S GMT", time.gmtime(time.time() + 100 * 86400)))
+    response['P3P'] = settings.P3P_HEADER
     return response
