@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from lxml.objectify import parse
+from django.conf import settings
 from django.utils.translation import ugettext as _
 from django.utils.translation import ugettext_lazy as _l
 from django.utils.translation import get_language
@@ -9,14 +10,7 @@ import random
 
 # A catalog of the institution categories. The order in which they appear
 # here is the same as they will appear on the web.
-institution_categories = (
-      ('university', _l("Universities")),
-      ('tei',  _l("Technological educational institutes")),
-      ('school',  _l("Other academic institutions")),
-      ('institute', _l("Research institutes")),
-      ('other', _l("Other")),
-      ('test', _l("Testing")),
-)
+institution_categories =  settings.INSTITUTION_CATEGORIES
 
 xpath_ns = {'ds': 'http://www.w3.org/2000/09/xmldsig#',
             'md': 'urn:oasis:names:tc:SAML:2.0:metadata',
@@ -42,7 +36,7 @@ class ShibbolethMetadata:
         self.metadata = self.mdtree.getroot()
 
     def getEntities(self, entity_type = None, augmented=False):
-        """Returns an EntityList holding all Entities (of requested type) found 
+        """Returns an EntityList holding all Entities (of requested type) found
         in the metadata, perhaps augmented in to the corresponding object type
         """
         if entity_type is "idp":
@@ -110,7 +104,7 @@ class EntityList(list):
             return None
 
     def getGroups(self):
-        """Returns the list of known groups entities are grouped by (in 
+        """Returns the list of known groups entities are grouped by (in
         EntitiesDescriptor elements)
 
         """
@@ -120,7 +114,7 @@ class EntityList(list):
         return groups
 
     def getEntities(self, lang=None, group=None, logosize=tuple()):
-        """Returns a list of entities, where each entity is represented by a 
+        """Returns a list of entities, where each entity is represented by a
         dict carrying the localized name, url, logo and entity ID attributes
 
         """
@@ -142,9 +136,9 @@ class EntityList(list):
 
     def getEntitiesByGroup(self, lang=None, exclude=[]):
         """Returns a sequence of tuples of the form:
-        
+
         (group, [ entity1, entity2, ...])
-        
+
         where the second element of each tuple is the return value of
         getEntities()
 
@@ -190,9 +184,9 @@ class IdpList(EntityList):
 
     def getIdpsByCategory(self, lang=None, exclude=None):
         """Returns a sequence of tuples of the form:
-        
+
         (category, [ idp1, idp2, ...])
-        
+
         where idpX is a dict { 'name': name, 'id': entityid }
 
         The list of idps is sorted by name
@@ -206,9 +200,9 @@ class IdpList(EntityList):
         else:
             validcats = institution_categories
 
-        cats = map(lambda x: x[0], validcats) 
+        cats = map(lambda x: x[0], validcats)
 
-        categories = map(lambda x: { 'id': x[0], 'name': x[1] }, validcats)
+        categories = map(lambda x: { 'id': x[0], 'name': _l(x[1]) }, validcats)
 
         idps = []
 
@@ -331,7 +325,10 @@ class Entity:
         try:
             return self.name[lang]
         except:
-            return self.name['en']
+            try:
+                return self.name['en']
+            except:
+                return self.name[self.name.keys()[0]]
 
     def getURL(self,lang=None):
         if not lang:
@@ -442,21 +439,19 @@ class IdentityProvider(Entity):
 
         # Some heuristics to determine the IdP type, based on the
         # institution's name in english.
-        if self.name['en'].lower().find('test') >= 0:
-            return "test"
-        elif self.name['en'].lower().find('university') >= 0:
-            return "university"
-        elif self.name['en'].lower().find('school of fine arts') >= 0:
-            return "university"
-        elif self.name['en'].lower().find('technological') >= 0:
-            return "tei"
-        elif re.findall(r'(ecclesiastical|school|academy)', self.name['en'].lower()):
-            return "school"
-        elif re.findall(r'(institute|cent(er|re)|ncsr|foundat|bservat)', self.name['en'].lower()):
-            return "institute"
-        else:
-            return "other"
-    
+        for lang in self.name.values():
+            if lang.lower().find('test') >= 0:
+                return "test"
+            elif re.findall(r'(univerisyt|universiteit|universite|school of fine arts)', lang.lower()):
+                return "university"
+            elif lang.lower().find('technological') >= 0:
+                return "tei"
+            elif re.findall(r'(ecclesiastical|school|academy)', lang.lower()):
+                return "school"
+            elif re.findall(r'(institute|cent(er|re)|ncsr|foundat|bservat)', lang.lower()):
+                return "institute"
+        return "other"
+
     def getScope(self):
         """Returns the scope of the current IdP"""
 
@@ -467,7 +462,7 @@ class IdentityProvider(Entity):
         """Checks wheter the current IdPs scope matches the given string"""
 
         myscope = self.getScope()
-        
+
         # Append a trailing '$', to align the regexp with the string end
         if myscope[-1] != '$':
             myscope += '$'

@@ -1,5 +1,5 @@
-from django.conf.urls.defaults import *
 from django.conf import settings
+from django.conf.urls import patterns, url, include
 
 urlpatterns = []
 
@@ -15,7 +15,7 @@ if settings.DEBUG:
     )
 
 urlpatterns += patterns('',
-    (r'^/?$', 'grnet_aai.wayf.views.wayf'),
-    (r'^setlanguage/(.*)', 'grnet_aai.aai.views.setlanguage'),
-    (r'^feeds/(.+\.json)$', 'grnet_aai.aai.views.json'),
+    (r'^/?$', 'wayf.views.wayf'),
+    (r'^setlanguage/(.*)', 'aai.views.setlanguage'),
+    (r'^feeds/(.+\.json)$', 'aai.views.json'),
 )

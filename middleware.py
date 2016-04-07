@@ -1,11 +1,11 @@
-from grnet_aai.settings import WAYF_SITENAME
+from settings import WAYF_SITENAME
 from django.http import HttpResponseServerError
 
 class VhostMiddleware:
     def process_request(self,request):
         if 'HTTP_HOST' in request.META and \
             request.META['HTTP_HOST'] == WAYF_SITENAME:
-            request.urlconf = 'grnet_aai.wayf.urls'
+            request.urlconf = 'wayf.urls'
 
         return None
 

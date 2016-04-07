@@ -2,7 +2,7 @@
 import os
 here = lambda x: os.path.join(os.path.abspath(os.path.dirname(__file__)), x)
 
-DEBUG = False
+DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -54,19 +54,19 @@ SECRET_KEY = 'w70vxdbe(^&92@^a)b%jm=8p0@-o$ykbfal2)tn%ssky(t*z5l'
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
-    'filesystem_multilingual.load_template_source',
-#    'django.template.loaders.filesystem.load_template_source',
-#    'django.template.loaders.app_directories.load_template_source',
-#     'django.template.loaders.eggs.load_template_source',
+    #'filesystem_multilingual.load_template_source',
+    'django.template.loaders.filesystem.Loader',
+    #'django.template.loaders.app_directories.load_template_source',
+    # 'django.template.loaders.eggs.load_template_source',
 )
 
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.middleware.locale.LocaleMiddleware',
-    'grnet_aai.middleware.VhostMiddleware',
+    'middleware.VhostMiddleware',
 )
 
-ROOT_URLCONF = 'grnet_aai.urls'
+ROOT_URLCONF = 'urls'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
@@ -76,14 +76,23 @@ TEMPLATE_DIRS = (
 )
 
 INSTALLED_APPS = (
-    'grnet_aai.wayf',
-    'grnet_aai.aai',
+    'wayf',
+    'aai',
 )
 
 IDP_COOKIE = 'grnet_selected_idp'
-SHIB_METADATA = '/srv/aai/dist/grnet-metadata.xml'
+SHIB_METADATA = 'federation-metadata.xml'
 LAST_IDP_COOKIE = 'grnet_last_idp'
 COOKIE_DOMAIN = '.grnet.gr'
 LANGUAGE_COOKIE_NAME = 'grnet_aai_language'
 
-WAYF_SITENAME='wayf.grnet.gr'
+WAYF_SITENAME='localhost:8000'
+INSTITUTION_CATEGORIES = (
+      ('university', ("Universities")),
+      ('tei',  ("Technological educational institutes")),
+      ('school',  ("Other academic institutions")),
+      ('institute', ("Research institutes")),
+      ('other', ("Please select your institute")),
+      ('test', ("Testing")),
+)
+P3P_HEADER = 'CP="NOI CUR DEVa OUR IND COM NAV PRE"'

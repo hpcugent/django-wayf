@@ -1,6 +1,6 @@
-from aai.models import *
-from aai.util import * 
-import time 
+#from aai.models import *
+#from aai.util import *
+import time
 from django.shortcuts import render_to_response
 from django.conf import settings
 from django.http import HttpResponse, HttpResponseRedirect, HttpResponseNotFound
@@ -40,7 +40,7 @@ def wayf(request):
             if request.POST['clear']:
                 response = HttpResponseRedirect("/")
                 response.delete_cookie(settings.IDP_COOKIE, domain=settings.COOKIE_DOMAIN)
-                response['P3P'] = 'CP="NOI CUR DEVa OUR IND COM NAV PRE"'
+                response['P3P'] = settings.P3P_HEADER
                 return response
 
         elif 'user_idp' in request.POST.keys():
@@ -70,7 +70,7 @@ def wayf(request):
             idplist = idps.getIdpsByCategory()
             response = render_to_response("wayf.html", { 'idplist': idplist, 'request': request, 'selected': selectedidp })
 
-        response['P3P'] = 'CP="NOI CUR DEVa OUR IND COM NAV PRE"'
+        response['P3P'] = settings.P3P_HEADER
         return response
 
     # If we got to this point, then this is a request comming from an SP
@@ -83,7 +83,7 @@ def wayf(request):
                 returnparam = request.GET['returnIDParam']
             else:
                 returnparam = 'entityID'
-            
+
             response = HttpResponseRedirect(request.GET['return'] + "&" + urlencode(((returnparam, current_idp.id),)))
         elif 'shire' in request.GET.keys() and 'target' in request.GET.keys():
             # an old Shibboleth 1.x request
@@ -101,8 +101,8 @@ def wayf(request):
             else:
                 expires = None
             response.set_cookie(cookie['name'], cookie['data'], domain=settings.COOKIE_DOMAIN, max_age=cookie['age'], expires = expires)
-        
-        response['P3P'] = 'CP="NOI CUR DEVa OUR IND COM NAV PRE"'
+
+        response['P3P'] = settings.P3P_HEADER
         return response
 
 
@@ -113,7 +113,7 @@ def wayf(request):
 
     # Render the apropriate wayf template
     response = render_to_response("wayf_from_sp.html", { 'idplist': idplist, 'request': request, 'selected': selectedidp } )
-    response['P3P'] = 'CP="NOI CUR DEVa OUR IND COM NAV PRE"'
+    response['P3P'] = settings.P3P_HEADER
     return response
 
 

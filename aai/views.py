@@ -4,7 +4,7 @@ from os import environ
 
 from aai.models import *
 from aai.util import *
-from grnet_aai.idpmap import *
+from idpmap import *
 from django.shortcuts import render_to_response
 from django.conf import settings
 from django.http import HttpResponse, HttpResponseRedirect, HttpResponseNotFound
@@ -48,13 +48,6 @@ def entity_list(request, group = None):
     return render_to_response("entity_list.html", { 'entlist' : entlist,
                                                     'group' : group } )
 
-def static(request, path):
-    # A catch-all view, trying to render all our static pages or give a 404 
-    try:
-        return render_to_response(path + ".html")
-    except:
-        return HttpResponseNotFound(render_to_string("404.html"))
-
 def json(request, path):
     try:
         with open(settings.IDPDISCO_FEEDS + "/" + path, 'r') as feedfile:
@@ -69,7 +62,7 @@ def json(request, path):
         return HttpResponseNotFound(render_to_string("404.html"))
 
 def support(request, mode="support"):
-    # This gets triggered when a user's attributes fail to be accepted 
+    # This gets triggered when a user's attributes fail to be accepted
     # by a service provider. The aim is to produce a help page, indicating
     # the user's home institution contact details.
 
@@ -88,7 +81,7 @@ def support(request, mode="support"):
         # new entityID instead.
         if userIdp in idpmap.keys():
             userIdp = idpmap[userIdp]
-            
+
         # Get the corresponding IdentityProvider instance
         idp = ShibbolethMetadata(settings.SHIB_METADATA).getIdps()[userIdp]
 

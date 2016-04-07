@@ -1,5 +1,5 @@
-from django.conf.urls.defaults import *
 from django.conf import settings
+from django.conf.urls import patterns, url, include
 
 urlpatterns = []
 
@@ -15,19 +15,19 @@ if settings.DEBUG:
     )
 
 if settings.DEBUG:
-    urlpatterns += patterns('', (r'^wayf/(.*)', include('grnet_aai.wayf.urls')))
+    urlpatterns += patterns('', (r'^wayf/(.*)', include('wayf.urls')))
 
 urlpatterns += patterns('',
-    (r'^support/?$', 'grnet_aai.aai.views.support'),
-    (r'^help/?$', 'grnet_aai.aai.views.support',{ 'mode': 'help' }),
-    (r'^debug/?$', 'grnet_aai.aai.views.debug'),
-    (r'^setlanguage/(.*)', 'grnet_aai.aai.views.setlanguage'),
-    (r'^participants/?$', 'grnet_aai.aai.views.idp_list'),
-    (r'^service-providers/?$', 'grnet_aai.aai.views.sp_list'),
-    (r'^entities/?(.+)?$', 'grnet_aai.aai.views.entity_list'),
-    (r'^(registry/.+)/$', 'grnet_aai.aai.views.static'),
-    (r'^feeds/(.+\.json)$', 'grnet_aai.aai.views.json'),
-    (r'^/?$', 'grnet_aai.aai.views.index'),
+    (r'^support/?$', 'aai.views.support'),
+    (r'^help/?$', 'aai.views.support',{ 'mode': 'help' }),
+    (r'^debug/?$', 'aai.views.debug'),
+    (r'^setlanguage/(.*)', 'aai.views.setlanguage'),
+    (r'^participants/?$', 'aai.views.idp_list'),
+    (r'^service-providers/?$', 'aai.views.sp_list'),
+    (r'^entities/?(.+)?$', 'aai.views.entity_list'),
+    (r'^(registry/.+)/$', 'aai.views.static'),
+    (r'^feeds/(.+\.json)$', 'aai.views.json'),
+    (r'^/?$', 'aai.views.index'),
 )
 
 urlpatterns += patterns('django.views.generic.simple',
@@ -43,5 +43,5 @@ urlpatterns += patterns('django.views.generic.simple',
 
 # catch-all
 urlpatterns += patterns('',
-    (r'([^/]+)/?$', 'grnet_aai.aai.views.static'),
+    (r'([^/]+)/?$', 'aai.views.static'),
 )
