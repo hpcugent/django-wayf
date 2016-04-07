@@ -1,0 +1,221 @@
+body {
+	background-color: #B2B2B2;
+	font-size: 100%;
+}
+
+body, td {
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+	color: #656565;
+	text-align: justify;
+}
+
+div#content {
+	width: 700px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: white;
+}
+
+div#language {
+	width: 700px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+div#language-container {
+	display: table-cell;
+	width: 700px;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 80%;
+}
+
+div#language-list {
+	white-space: nowrap;
+	font-size: 80%;
+}
+
+div#language-list li {
+	display: block;
+	float: right;
+	list-style-type: none;
+	margin: 0;
+	padding: 0px;
+}
+
+div#language-list li.active {
+	display: block;
+	float: right;
+	list-style-type: none;
+	margin: 0;
+	background-color: white;
+	padding: 1px;
+}
+
+div#language-div {
+	text-align: center;
+	background-color: white;
+	float: right;
+}
+
+div#header {
+	margin-right: 17px;
+	margin-left: 17px;
+	border-top: 1px solid #b2b2b2;
+	background-color: silver;
+	/* IE6 hacks for vertical alignment & positioning */
+	height: 100%;     /* triggers hasLayout */
+	overflow: hidden; /* to work with IE/Mac */
+	#position: relative;
+}
+
+div#header-image {
+	display: table-cell;
+	text-align: center;
+	background-color: white;
+	padding-left: 10px;
+	padding-right: 10px;
+	/* IE6 hacks for vertical alignment & positioning */
+	#float: left;
+}
+
+div#header-outer-text {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: left;
+	padding: 10px;
+	font-size: 140%;
+	/* IE6 hacks for vertical alignment & positioning */
+	#position: absolute;
+	#top: 50%;
+}
+
+div#header-inner-text {
+	/* IE6 hacks for vertical alignment & positioning */
+	#float: left;
+	#position: relative;
+	#top: -50%;
+}
+
+div#header-menu {
+	text-align: right;
+	padding-right: 10px;
+	margin-left: 17px;
+	margin-right: 17px;
+	font-size: 0.8em;
+	color: #5A5A7D;
+	background-color: #F0F0F0;
+	border-top: 1px solid #B2B2B2;
+	border-bottom: 1px solid #B2B2B2;
+}
+
+h1 {
+	font-size: 130%;
+	color: #656565;
+	font-weight: bold;
+	margin: 1em;
+	padding: 0em;
+}
+
+div#aailogo {
+	background-color: white;
+	padding-left: 17px;
+}
+
+a {
+	text-decoration: none;
+	color: #666666;
+}
+
+a:hover {
+	text-decoration: none;
+	color: orange;
+}
+
+div#header a:hover {
+	color: #666666;
+}
+
+div#header-text a:hover {
+	text-decoration: none;
+	color: #666666;
+}
+
+a img {
+	border: 0px;
+}
+
+.footer {
+	font-size: 80%;
+	font-style: italic;
+	padding: 1em;
+}
+
+div#rbroundbox {
+	background-color: #f1f1f1;
+}
+div#rbtop div {
+	background: url(images/tl.gif) no-repeat top left;
+}
+div#rbtop {
+	background: url(images/tr.gif) no-repeat top right;
+}
+div#rbbot div {
+	background: url(images/bl.gif) no-repeat bottom left;
+}
+div#rbbot {
+	background: url(images/br.gif) no-repeat bottom right;
+}
+div#rbtop div, div#rbtop, div#rbbot div, div#rbbot {
+	height: 7px;
+	font-size: 1px;
+}
+div#rbcontent {
+	margin: 6px 10px 10px 10px;
+	font-size: 13px;
+}
+div#rbroundbox {
+	width: 667px;
+	margin: 0;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+div#pagebot {
+	background: url(images/bottom--x.gif) no-repeat bottom right;
+}
+div#pagebot div {
+	background: url(images/bottomx--.gif) no-repeat bottom left;
+}
+div#pagetop div {
+	background: url(images/topx--.gif) no-repeat top left;
+}
+div#pagebot div, div#pagetop div{
+	width: 667px;
+	height: 7px;
+	font-size: 1px;
+}
+
+div#langtop {
+	background: url(images/top--x.gif) no-repeat top right;
+}
+div#langtop div {
+	background: url(images/topx--.gif) no-repeat top left;
+	width: 150px;
+	height: 7px;
+	font-size: 1px;
+}
+
+form#idp_selection {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+div#userprefs {
+	margin-top: 3px;
+}
+span.fineprint {
+	font-size: 75%;
+	color: silver;
+}
