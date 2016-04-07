@@ -9,6 +9,7 @@ Your selected Home Organization is:
 <div align="center">
 <h4>{{ currentidp }}</h4>
 <form method="post">
+    {% csrf_token %}
 	<input type="hidden" name="clear" value="true" />
 	<input type="submit" value="{% trans "Clear" %}" />
 </form>

@@ -7,6 +7,7 @@
 
 <div id="idpform">
 <form id="idp_selection" method="post">
+    {% csrf_token %}
 	<select name="user_idp">
 	{% include "idp_dropdown.html" %}
 	</select>
