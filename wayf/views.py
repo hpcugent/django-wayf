@@ -46,7 +46,6 @@ def wayf(request):
         elif 'user_idp' in request.POST.keys():
             current_idp = idps[request.POST['user_idp']]
             if current_idp:
-                selected_idp = current_idp
                 cookies.append({'name': settings.LAST_IDP_COOKIE, 'data': request.POST['user_idp'], 'age': 86400 * 100})
                 if request.POST.get('save'):
                     if request.POST.get('savetype') == 'perm':
@@ -115,5 +114,3 @@ def wayf(request):
     response = render_to_response("wayf_from_sp.html", { 'idplist': idplist, 'request': request, 'selected': selectedidp } )
     response['P3P'] = settings.P3P_HEADER
     return response
-
-
