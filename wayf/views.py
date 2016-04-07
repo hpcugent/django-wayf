@@ -5,6 +5,7 @@ from django.shortcuts import render_to_response
 from django.conf import settings
 from django.http import HttpResponseRedirect
 from django.utils.http import urlencode
+from django.template import RequestContext
 
 
 def wayf(request):
@@ -58,7 +59,7 @@ def wayf(request):
     if not request.GET:
         # We were called without any arguments
         if current_idp:
-            response = render_to_response("wayf_set.html", { 'currentidp': current_idp.getName() })
+            response = render_to_response("wayf_set.html", { 'currentidp': current_idp.getName() }, context_instance=RequestContext(request))
             for cookie in cookies:
                 if cookie['age']:
                     expires = time.strftime("%a, %d-%m-%y %H:%M:%S GMT", time.gmtime(time.time() + cookie['age']))
@@ -67,7 +68,7 @@ def wayf(request):
                 response.set_cookie(cookie['name'], cookie['data'], domain=settings.COOKIE_DOMAIN, max_age=cookie['age'], expires = expires)
         else:
             idplist = idps.getIdpsByCategory()
-            response = render_to_response("wayf.html", { 'idplist': idplist, 'request': request, 'selected': selectedidp })
+            response = render_to_response("wayf.html", { 'idplist': idplist, 'request': request, 'selected': selectedidp }, context_instance=RequestContext(request))
 
         response['P3P'] = settings.P3P_HEADER
         return response
@@ -111,19 +112,19 @@ def wayf(request):
     idplist = idps.getIdpsByCategory()
 
     # Render the apropriate wayf template
-    response = render_to_response("wayf_from_sp.html", { 'idplist': idplist, 'request': request, 'selected': selectedidp } )
+    response = render_to_response("wayf_from_sp.html", { 'idplist': idplist, 'request': request, 'selected': selectedidp }, context_instance=RequestContext(request) )
     response['P3P'] = settings.P3P_HEADER
     return response
 
 def index(request):
-    return render_to_response("index.html")
+    return render_to_response("index.html", context_instance=RequestContext(request))
 
 def idp_list(request):
     metadata = ShibbolethMetadata(settings.SHIB_METADATA)
     idps = metadata.getIdps()
     idplist = idps.getIdpsByCategory(exclude=('wayf', 'test'))
 
-    return render_to_response("idp_list.html", { 'idplist' : idplist } )
+    return render_to_response("idp_list.html", { 'idplist' : idplist }, context_instance=RequestContext(request) )
 
 def sp_list(request):
     metadata = ShibbolethMetadata(settings.SHIB_METADATA)
@@ -139,7 +140,7 @@ def sp_list(request):
     splist.insert(splist.index(('http://www.grnet.gr/aai', splist_other)), ('other', splist_other_new))
     splist.remove(('http://www.grnet.gr/aai', splist_other))
 
-    return render_to_response("sp_list.html", { 'splist' : splist } )
+    return render_to_response("sp_list.html", { 'splist' : splist }, context_instance=RequestContext(request) )
 
 def entity_list(request, group = None):
     if group is not None:
@@ -149,7 +150,7 @@ def entity_list(request, group = None):
     entlist = entities.getEntities(group=group, logosize=(100,100))
 
     return render_to_response("entity_list.html", { 'entlist' : entlist,
-                                                    'group' : group } )
+                                                    'group' : group } , context_instance=RequestContext(request))
 
 """ example support view
 uses urldecode from dnsutils
@@ -182,9 +183,9 @@ def support(request, mode="support"):
             opts['idpname'] = idp.getName()
 
     if mode == "help":
-        response = render_to_response("help.html", opts)
+        response = render_to_response("help.html", opts, context_instance=RequestContext(request))
     else:
-        response = render_to_response("support.html", opts)
+        response = render_to_response("support.html", opts, context_instance=RequestContext(request))
 
     response['P3P'] = 'CP="NOI CUR DEVa OUR IND COM NAV PRE"'
     return response
