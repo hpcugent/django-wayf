@@ -154,6 +154,7 @@ def entity_list(request, group = None):
 
 """ example support view
 uses urldecode from dnsutils
+and needs an idpmap from somewhere
 def support(request, mode="support"):
     # This gets triggered when a user's attributes fail to be accepted
     # by a service provider. The aim is to produce a help page, indicating
