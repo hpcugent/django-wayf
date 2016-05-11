@@ -206,6 +206,11 @@ class IdpList(EntityList):
 
         idps = []
 
+        # if no valid categories are found, return all idp's
+        if not validcats:
+            catidps = self.getEntities()
+            return [('institutions', catidps)]
+
         for category in cats:
             catidps = sorted(self.getCategoryIdps(category))
             idps.append(map(lambda x: {
@@ -253,13 +258,13 @@ class Entity:
         # Get the institution's name
         try:
             for name in self.el.Organization.OrganizationDisplayName:
-                self.name[name.get('{http://www.w3.org/XML/1998/namespace}lang')] = name.text
+                self.name[name.get('{http://www.w3.org/XML/1998/namespace}lang')] = name.text.strip()
         except:
             self.name = {'en': "no name"}
 
         try:
             for url in self.el.Organization.OrganizationURL:
-                self.url[url.get('{http://www.w3.org/XML/1998/namespace}lang')] = url.text
+                self.url[url.get('{http://www.w3.org/XML/1998/namespace}lang')] = url.text.strip()
         except:
             pass
 
@@ -271,12 +276,12 @@ class Entity:
                     # require a set of nested checks, exception catching is more
                     # clean.
                     try:
-                        self.contact['email'] = contact.EmailAddress.text
+                        self.contact['email'] = contact.EmailAddress.text.strip()
                     except:
                         pass
 
                     try:
-                        self.contact['telephone'] = contact.TelephoneNumber.text
+                        self.contact['telephone'] = contact.TelephoneNumber.text.strip()
                     except:
                         pass
         except:
