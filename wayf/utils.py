@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 from lxml.objectify import parse
 from django.conf import settings
-from django.utils.translation import ugettext as _
 from django.utils.translation import ugettext_lazy as _l
 from django.utils.translation import get_language
 import re
@@ -10,7 +9,7 @@ import random
 
 # A catalog of the institution categories. The order in which they appear
 # here is the same as they will appear on the web.
-institution_categories =  settings.INSTITUTION_CATEGORIES
+institution_categories = settings.INSTITUTION_CATEGORIES
 
 xpath_ns = {'ds': 'http://www.w3.org/2000/09/xmldsig#',
             'md': 'urn:oasis:names:tc:SAML:2.0:metadata',
@@ -24,7 +23,7 @@ xpath_ns = {'ds': 'http://www.w3.org/2000/09/xmldsig#',
 class ShibbolethMetadata:
     """Basic object holding the shibboleth metadata"""
 
-    def __init__(self,filename):
+    def __init__(self, filename):
         """Initialize a ShibbolethMetadata object
 
         arguments:
@@ -35,7 +34,7 @@ class ShibbolethMetadata:
         self.mdtree = parse(filename)
         self.metadata = self.mdtree.getroot()
 
-    def getEntities(self, entity_type = None, augmented=False):
+    def getEntities(self, entity_type=None, augmented=False):
         """Returns an EntityList holding all Entities (of requested type) found
         in the metadata, perhaps augmented in to the corresponding object type
         """
@@ -57,25 +56,25 @@ class ShibbolethMetadata:
                 return False
 
         kots = filter(filtertype, self.metadata.xpath("//md:EntityDescriptor",
-                                                     namespaces=xpath_ns))
+                                                      namespaces=xpath_ns))
 
         if augmented:
-            return EntityList([ Entity.construct_augmented_entity(kot)
-                                for kot in kots])
+            return EntityList([Entity.construct_augmented_entity(kot)
+                               for kot in kots])
         else:
-            return EntityList([ Entity(kot) for kot in kots])
+            return EntityList([Entity(kot) for kot in kots])
 
     def getIdps(self):
         """Returns an IdpList holding all Identity Providers found in the metadata"""
         idps = self.getEntities("idp")
 
-        return IdpList([ IdentityProvider.create_from_entity(kot) for kot in idps ])
+        return IdpList([IdentityProvider.create_from_entity(kot) for kot in idps])
 
     def getSps(self):
-        """Returns an IdpList holding all Identity Providers found in the metadata"""
+        """Returns an SPList holding all Service Providers found in the metadata"""
         sps = self.getEntities("sp")
 
-        return SpList([ ServiceProvider.create_from_entity(kot) for kot in sps ])
+        return SpList([ServiceProvider.create_from_entity(kot) for kot in sps])
 
     def getPath(self, entity):
         if isinstance(entity, Entity) and hasattr(entity, 'el'):
@@ -87,14 +86,14 @@ class ShibbolethMetadata:
 class EntityList(list):
     """Class holding a list of SAML Entities"""
 
-    def __init__(self,entity_list):
+    def __init__(self, entity_list):
         """Create a new list of SAML Entities
 
         arguments:
             entity_list -- a list of SAML Entities
 
         """
-        list.__init__(self,entity_list)
+        list.__init__(self, entity_list)
 
     def __getitem__(self, key):
         # Allow for "entitylist['a_provider_entityid'] lookups
@@ -131,7 +130,8 @@ class EntityList(list):
         return map(lambda x: {'name': x.getName(lang),
                               'url': x.getURL(lang),
                               'logo': x.getLogo(targetsize=logosize),
-                              'id': x.id },
+                              'id': x.id,
+                              },
                    entities)
 
     def getEntitiesByGroup(self, lang=None, exclude=[]):
@@ -154,15 +154,6 @@ class EntityList(list):
 
 class IdpList(EntityList):
     """Class holding a list of SAML Identity Providers"""
-
-    def __init__(self,idplist):
-        """Create a new list of Identity Providers
-
-        arguments:
-            idplist -- a list of IdentityProvider instances
-
-        """
-        super(EntityList, self).__init__(idplist)
 
     def getCategories(self):
         """Returns the list of known categories of Identity Providers"""
@@ -202,7 +193,7 @@ class IdpList(EntityList):
 
         cats = map(lambda x: x[0], validcats)
 
-        categories = map(lambda x: { 'id': x[0], 'name': _l(x[1]) }, validcats)
+        categories = map(lambda x: {'id': x[0], 'name': _l(x[1])}, validcats)
 
         idps = []
 
@@ -213,11 +204,7 @@ class IdpList(EntityList):
 
         for category in cats:
             catidps = sorted(self.getCategoryIdps(category))
-            idps.append(map(lambda x: {
-                    'name': x.getName(lang),
-                    'url': x.getURL(lang),
-                    'id': x.id },
-                    catidps))
+            idps.append(map(lambda x: {'name': x.getName(lang), 'url': x.getURL(lang), 'id': x.id}, catidps))
 
         return zip(categories, idps)
 
@@ -225,20 +212,15 @@ class IdpList(EntityList):
 class SpList(EntityList):
     """Class holding a list of SAML Service Providers"""
 
-    def __init__(self,splist):
-        """Create a new list of Service Providers
-
-        arguments:
-            splist -- a list of ServiceProvider instances
-
-        """
-        super(EntityList, self).__init__(splist)
+    def isdDiscoveryResponseLocation(self, location):
+        """Return True if any of the Service providers has this location as a responselocation"""
+        return bool([x for x in self if x.isDiscoveryResponseLocation(location)])
 
 
 class Entity:
     """Basic class holding a SAML Entity"""
 
-    def __init__(self,el):
+    def __init__(self, el):
         """Create a new Entity instance
         arguments:
             el -- An lxml.objectify.Element holding an EntityDescriptor for a SAML Entity
@@ -246,14 +228,14 @@ class Entity:
         """
 
         self.el = el
-        self.name = {} # Holds the Entity's name in a form { language: string }
+        self.name = {}  # Holds the Entity's name in a form { language: string }
         self.url = {}
         self.logo = {}
         self.id = self.el.get('entityID')
         self.groups = set(el.xpath("ancestor::md:EntitiesDescriptor/@Name", namespaces=xpath_ns))
 
         # Initialize the contact details
-        self.contact = { 'givenName': '', 'surName': '', 'company': '', 'email': '', 'telephone': '', 'url': '' }
+        self.contact = {'givenName': '', 'surName': '', 'company': '', 'email': '', 'telephone': '', 'url': ''}
 
         # Get the institution's name
         try:
@@ -287,12 +269,12 @@ class Entity:
         except:
             pass
 
-    def __cmp__ (self,other):
+    def __cmp__(self, other):
         # Alphabetic sorting by name
         return cmp(self.getName(get_language()), other.getName(get_language()))
 
     def __repr__(self):
-        return "Entity: \"" + self.name['en'] + '" (' + self.id + ')'
+        return "Entity: \"" + self.getname() + '" (' + self.id + ')'
 
     @classmethod
     def create_from_entity(cls, entity):
@@ -320,10 +302,9 @@ class Entity:
             if aug_ent_cls is not None:
                 return aug_ent_cls(el)
 
-        raise Exception("Can not instantiate augmented Entity from %s" %
-                             el)
+        raise Exception("Can not instantiate augmented Entity from %s", el)
 
-    def getName(self,lang=None):
+    def getName(self, lang=None):
         if not lang:
             lang = get_language()
 
@@ -335,7 +316,7 @@ class Entity:
             except:
                 return self.name[self.name.keys()[0]]
 
-    def getURL(self,lang=None):
+    def getURL(self, lang=None):
         if not lang:
             lang = get_language()
 
@@ -351,7 +332,7 @@ class Entity:
 
         return None
 
-    def getLogo(self,targetsize=tuple()):
+    def getLogo(self, targetsize=tuple()):
 
         if not self.logo:
             return None
@@ -360,22 +341,20 @@ class Entity:
         if isinstance(targetsize, tuple) and \
                 len(targetsize) is 2 and \
                 [isinstance(i, int) for i in targetsize]:
-            dimensions = min(self.logo.keys(),
-                             key = lambda x: abs(x[0]-targetsize[0]) + \
-                                 abs(x[1]-targetsize[1])
-                             )
+            dimensions = min(self.logo.keys(), key=lambda x: abs(x[0]-targetsize[0]) + abs(x[1]-targetsize[1]))
         else:
             dimensions = random.choice(self.logo.keys())
 
-        return { 'width': dimensions[0],
-                 'height': dimensions[1],
-                 'data': self.logo[dimensions] }
+        return {'width': dimensions[0],
+                'height': dimensions[1],
+                'data': self.logo[dimensions],
+                }
 
 
 class IdentityProvider(Entity):
     """Class holding a SAML Identity Provider"""
 
-    def __init__(self,idpel):
+    def __init__(self, idpel):
         """Create a new IdentityProvider instance
         arguments:
             idpel -- An lxml.objectify.Element holding an EntityDescriptor for a shibboleth IdP
@@ -406,9 +385,8 @@ class IdentityProvider(Entity):
             # Get all ManageNameIDService definitions
             for entry in self.el.IDPSSODescriptor.ManageNameIDService:
                 self.mnid[entry.get('Binding')] = entry.get('Location')
-        except:
+        except Exception:
             pass
-
         # Override self.name, self.url with mdui:DisplayName, mdui:DisplayName
         # also add logo from mdui:Logo
         try:
@@ -422,7 +400,7 @@ class IdentityProvider(Entity):
                             '{http://www.w3.org/XML/1998/namespace}lang'
                             )] = name.text
             # Override self.url with mdui:InformationURL
-            if hasattr(ui,'InformationURL'):
+            if hasattr(ui, 'InformationURL'):
                 self.url = {}
                 for url in ui.InformationURL:
                     self.url[url.get(
@@ -463,7 +441,7 @@ class IdentityProvider(Entity):
         scopes = filter(lambda x: x.tag == "{urn:mace:shibboleth:metadata:1.0}Scope", self.el.IDPSSODescriptor.Extensions.getchildren())
         return scopes[0].text
 
-    def matchesScope(self,scope):
+    def matchesScope(self, scope):
         """Checks wheter the current IdPs scope matches the given string"""
 
         myscope = self.getScope()
@@ -481,7 +459,7 @@ class IdentityProvider(Entity):
 class ServiceProvider(Entity):
     """Class holding a SAML Service Provider"""
 
-    def __init__(self,spel):
+    def __init__(self, spel):
         """Create a new ServiceProvider instance
         arguments:
             spel -- An lxml.objectify.Element holding an EntityDescriptor for a shibboleth SP
@@ -498,6 +476,8 @@ class ServiceProvider(Entity):
         self.mnid = {}
         # Dictionary to hold all AttributeConsumingService definitions, by ServiceName
         self.atcs = {}
+        # List to hold all DiscoveryResponse locations definitions
+        self.drl = []
 
         # Get all AssertionConsumerService definitions (required)
         for entry in self.el.SPSSODescriptor.AssertionConsumerService:
@@ -506,14 +486,21 @@ class ServiceProvider(Entity):
         try:
             for entry in self.el.SPSSODescriptor.SingleLogoutService:
                 self.slo[entry.get('Binding')] = entry.get('Location')
-        except:
+        except Exception:
             pass
         # Get all ManageNameIDService definitions
         try:
+            for entry in self.el.SPSSODescriptor.Extensions['{urn:oasis:names:tc:SAML:profiles:SSO:idp-discovery-protocol}DiscoveryResponse']:
+                self.drl.append(entry.get('Location'))
+        except Exception:
+            pass
+        # Get all DiscoveryResponse definitions
+        try:
             for entry in self.el.SPSSODescriptor.ManageNameIDService:
                 self.mnid[entry.get('Binding')] = entry.get('Location')
-        except:
+        except Exception:
             pass
+
         # Get all AttributeConsumingService definitions
         try:
             for entry in self.el.SPSSODescriptor.AttributeConsumingService:
@@ -535,20 +522,14 @@ class ServiceProvider(Entity):
                         req_attr[(attr.get('Name'),
                                   attr.get('NameFormat'))] = {
                             'name': attr.get('FriendlyName'),
-                            'required':
-                                True if \
-                                attr.get('isRequired').lower == 'true' \
-                                else False
-                            }
+                            'required': attr.get('isRequired').lower == 'true'
+                        }
                 if 'en' in atcs_name:
                     self.atcs[atcs_name['en']] = type(
-                        self.__class__.__name__ + \
-                            '.AttributeConsumingService',
+                        self.__class__.__name__ + '.AttributeConsumingService',
                         (object,),
-                        { 'name': atcs_name,
-                          'descr': atcs_descr,
-                          'attr': req_attr }
-                        )
+                        {'name': atcs_name, 'descr': atcs_descr, 'attr': req_attr},
+                    )
         except AttributeError:
             pass
 
@@ -567,7 +548,7 @@ class ServiceProvider(Entity):
                             '{http://www.w3.org/XML/1998/namespace}lang'
                             )] = name.text
             # Override self.url with mdui:InformationURL
-            if hasattr(ui,'InformationURL'):
+            if hasattr(ui, 'InformationURL'):
                 self.url = {}
                 for url in ui.InformationURL:
                     self.url[url.get(
@@ -580,6 +561,12 @@ class ServiceProvider(Entity):
                                int(logo.get('height')))] = logo.text
         except AttributeError:
             pass
+
+    def isdDiscoveryResponseLocation(self, location):
+        for dr in self.drl:
+            if location.startswith(dr):
+                return True
+        return False
 
     def __repr__(self):
         return "SP: \"" + self.name['en'] + '" (' + self.id + ')'
