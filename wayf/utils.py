@@ -212,9 +212,9 @@ class IdpList(EntityList):
 class SpList(EntityList):
     """Class holding a list of SAML Service Providers"""
 
-    def isdDiscoveryResponseLocation(self, location):
+    def isDiscoveryResponseLocation(self, location):
         """Return True if any of the Service providers has this location as a responselocation"""
-        return bool([x for x in self if x.isDiscoveryResponseLocation(location)])
+        return any(x for x in self if x.isDiscoveryResponseLocation(location))
 
 
 class Entity:
@@ -562,11 +562,8 @@ class ServiceProvider(Entity):
         except AttributeError:
             pass
 
-    def isdDiscoveryResponseLocation(self, location):
-        for dr in self.drl:
-            if location.startswith(dr):
-                return True
-        return False
+    def isDiscoveryResponseLocation(self, location):
+        return any(x for x in self.drl if location.startswith(x))
 
     def __repr__(self):
         return "SP: \"" + self.name['en'] + '" (' + self.id + ')'
