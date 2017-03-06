@@ -1,0 +1,1065 @@
+<?xml version="1.0" encoding="UTF-8"?><EntitiesDescriptor xmlns="urn:oasis:names:tc:SAML:2.0:metadata" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:mdrpi="urn:oasis:names:tc:SAML:metadata:rpi" xmlns:mdui="urn:oasis:names:tc:SAML:metadata:ui" xmlns:shibmd="urn:mace:shibboleth:metadata:1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="be20160403T010001Z" Name="https://federation.belnet.be/federation-metadata.xml" validUntil="2016-04-11T01:00:01Z"><ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+<ds:SignedInfo>
+<ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+<ds:SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"/>
+<ds:Reference URI="#be20160403T010001Z">
+<ds:Transforms>
+<ds:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+<ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+</ds:Transforms>
+<ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+<ds:DigestValue>1DrBvZGmTjBQCi6Xxmx2jQczl0/HQIoJptVfOLj+2E8=</ds:DigestValue>
+</ds:Reference>
+</ds:SignedInfo>
+<ds:SignatureValue>
+nr59XagxWt1add2H8MECPk9TaD1NLpMnFQlhPas+HKnEK21rP4SDg3xDtWi09nmIO5xN3x3joG4e
+K+qk8E9kU9CGq66+oA0Ft9mFBVWbRa/uObI9r0IZDVgvnOGScFi6V+QjdoQxNg06SxI5xtlHVpE1
+QzhJvtcRaXWWX8Repz0WpkPsrYiVqelelfjQGwSq8v0VLFmBop+OkHm9PUOs3Yq+3+k4zxY3oPZ5
+I24rj3J75lZG5vu1U7zQU0c8zavRJulvlgiSR7L+YIeOivgyWWLUeVgL+jVQann1idvm+oR3WxvQ
+Kg7NL69mbnKLrduifKlqVR2ohe+rQxDlcxxRbg==
+</ds:SignatureValue>
+<ds:KeyInfo>
+<ds:KeyValue>
+<ds:RSAKeyValue>
+<ds:Modulus>
+uIDE5NvPBDOyDIBPQyifAINjDDD83+zKYOgcZXAgo3fHJkL5hmKI8X5qBkAwBP6s5rQF/LMOeN6m
+Vf6Gxe3KOajVzjFqutf9iZjMIQ+mPSSSgBzhNojEGdhyx8oPZjUFjwHiRS5B6p/xKurEj0WRJO17
+x1TXvRBx3flNQ8SuokcbcVPTKUMMvU3662sTFZ/lW6ATJKQB42k4GkN3gIlmRSqYJ6D0fgNb0Zoq
+NCknQAFu5A3S2P2ii0K34JrKDXexeeRrLiT7EfNrN7ee2HsyUoU2CcUDtAzvum2FRi79vr86CJr5
+0jer8hY+PIVHrY1xyJwJmnkK9hoYIo2OwZgDNQ==
+</ds:Modulus>
+<ds:Exponent>AQAB</ds:Exponent>
+</ds:RSAKeyValue>
+</ds:KeyValue>
+<ds:X509Data>
+<ds:X509Certificate>
+MIIElDCCA3ygAwIBAgIQIC4kyLfZZL8i5AbFSxFvHzANBgkqhkiG9w0BAQUFADA2MQswCQYDVQQG
+EwJOTDEPMA0GA1UEChMGVEVSRU5BMRYwFAYDVQQDEw1URVJFTkEgU1NMIENBMB4XDTEzMDcwOTAw
+MDAwMFoXDTE2MDcwODIzNTk1OVowQjEhMB8GA1UECxMYRG9tYWluIENvbnRyb2wgVmFsaWRhdGVk
+MR0wGwYDVQQDExRmZWRlcmF0aW9uLmJlbG5ldC5iZTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCC
+AQoCggEBALiAxOTbzwQzsgyAT0MonwCDYwww/N/symDoHGVwIKN3xyZC+YZiiPF+agZAMAT+rOa0
+BfyzDnjeplX+hsXtyjmo1c4xarrX/YmYzCEPpj0kkoAc4TaIxBnYcsfKD2Y1BY8B4kUuQeqf8Srq
+xI9FkSTte8dU170Qcd35TUPErqJHG3FT0ylDDL1N+utrExWf5VugEySkAeNpOBpDd4CJZkUqmCeg
+9H4DW9GaKjQpJ0ABbuQN0tj9ootCt+Cayg13sXnkay4k+xHzaze3nth7MlKFNgnFA7QM77pthUYu
+/b6/Ogia+dI3q/IWPjyFR62NccicCZp5CvYaGCKNjsGYAzUCAwEAAaOCAZAwggGMMB8GA1UdIwQY
+MBaAFAy9k2gM896ro0lrKzdXR+qQ47ntMB0GA1UdDgQWBBTm+NTk29Gtc7F5s+lr+qa6i7AZsjAO
+BgNVHQ8BAf8EBAMCBaAwDAYDVR0TAQH/BAIwADAdBgNVHSUEFjAUBggrBgEFBQcDAQYIKwYBBQUH
+AwIwIgYDVR0gBBswGTANBgsrBgEEAbIxAQICHTAIBgZngQwBAgEwOgYDVR0fBDMwMTAvoC2gK4Yp
+aHR0cDovL2NybC50Y3MudGVyZW5hLm9yZy9URVJFTkFTU0xDQS5jcmwwbQYIKwYBBQUHAQEEYTBf
+MDUGCCsGAQUFBzAChilodHRwOi8vY3J0LnRjcy50ZXJlbmEub3JnL1RFUkVOQVNTTENBLmNydDAm
+BggrBgEFBQcwAYYaaHR0cDovL29jc3AudGNzLnRlcmVuYS5vcmcwPgYDVR0RBDcwNYIUZmVkZXJh
+dGlvbi5iZWxuZXQuYmWCHWZlZGVyYXRpb24tbWV0YWRhdGEuYmVsbmV0LmJlMA0GCSqGSIb3DQEB
+BQUAA4IBAQC8ocXLZFAw4N24N7Avh9DjKPq7pdh6GUSTCodcfOwmmn8yhjAh3Dfr5eXgWJ3+zXou
+spLlJ4CVHLmqJLAKv76zsgmDmOuExGYFQC8Y0ma6LUwBxFyGpL3wHzGEJRHy0khcn3ABCNVtw9tq
+sSecYvY8DLLKma1S05R742bnZFYEa9u//FAPwG/1EbIX07/OYS8FKFfibdTdQ9MhRAnIi6N9UyBF
++3WFj63qfFd+sPGKsZxfDeuVOd9i790MMVOZQh4OCTO3qW2lRCG2cbBEsVhRzbMxbHhYxfbtjpSg
+QE8OgDPGwLNLqjCXsTDMzerLA/iovIqvVt7sMil7DA5fuPYX
+</ds:X509Certificate>
+</ds:X509Data>
+</ds:KeyInfo>
+</ds:Signature>
+<EntityDescriptor entityID="https://idp.uhasselt.be:443/idp/shibboleth" xmlns="urn:oasis:names:tc:SAML:2.0:metadata" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:shibmd="urn:mace:shibboleth:metadata:1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <IDPSSODescriptor protocolSupportEnumeration="urn:mace:shibboleth:1.0 urn:oasis:names:tc:SAML:1.1:protocol urn:oasis:names:tc:SAML:2.0:protocol">
+
+        <Extensions>
+            <shibmd:Scope regexp="false">uhasselt.be</shibmd:Scope>
+        </Extensions>
+
+        <KeyDescriptor>
+            <ds:KeyInfo>
+                <ds:X509Data>
+                    <ds:X509Certificate>
+MIIDJzCCAg+gAwIBAgIUGvDqwi5sfi5DeNrZElGeeeSKA8cwDQYJKoZIhvcNAQEF
+BQAwGjEYMBYGA1UEAxMPaWRwLnVoYXNzZWx0LmJlMB4XDTA5MDkyMjEzNTUyOVoX
+DTI5MDkyMjEzNTUyOVowGjEYMBYGA1UEAxMPaWRwLnVoYXNzZWx0LmJlMIIBIjAN
+BgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAobFBVfJW6lrIG6k8+tc6CLvuOfgg
+KRdPI6s57rBqyA23g9GYXSmkg1Mehha+ddRze3lXcsF1R+2OiXbmpIRU4kq1k0Vv
+xA2JtbHbQApg+4vk/3YMHvUN1LB35STTG8QX6vFUMTxjOnDMSS26GLSW/1lO6QRI
+Pf/auZUDFKHBlMJ2XHR9MJ+x/UP+IfF3VDS/mvlznRG6vo8txD/N0w9/7VACHQXy
+6/1U0gZKW79H3DnlCW4msTKG1BvNnYyQfmFVmysjnePDAdydkzPTfcg2EpCr9DRR
+nWPQwfSoSbG06iPMxYFx3/DWBcSB3aizgwCF8//ZVMG3muAQs1mNX4a2gQIDAQAB
+o2UwYzBCBgNVHREEOzA5gg9pZHAudWhhc3NlbHQuYmWGJmh0dHBzOi8vaWRwLnVo
+YXNzZWx0LmJlL2lkcC9zaGliYm9sZXRoMB0GA1UdDgQWBBS2b4PlaLQD2t/0P8uk
+bpvueWBYpDANBgkqhkiG9w0BAQUFAAOCAQEAnDelqfHax8vncq+gpIzSUSW7SZZE
+Fhtf3ubnzHD4lNvP+XQJ90YqEjdytNfpsqoZltGWhcoED/NZ2qTGo3JPZNGI5PUS
+AdonNedOe75IZEQFpzFi/uYqHhqawLTRRt8YIxwEMpgX7RnLtskqzXfWAaTKQsXr
+fzl4YgOKGdZelSm3f/3omJXuiZsUIJz9sSfoYbE5gWxB2EbI6IdDXWvt/02VNX4t
+EbLqvRE+8Q89PBACc8JtnkcG8G18FkslwbUoB0NMTnq10PsYCx5/bJOD29GURXEa
+ifXQTY04p/VdtztM+5pQDfmr0gtLAuejfj7k7gobDgvxawZLlFhao2GOAg==
+
+                    </ds:X509Certificate>
+                </ds:X509Data>
+            </ds:KeyInfo>
+        </KeyDescriptor>
+
+        <ArtifactResolutionService Binding="urn:oasis:names:tc:SAML:1.0:bindings:SOAP-binding" Location="https://idp.uhasselt.be:8443/idp/profile/SAML1/SOAP/ArtifactResolution" index="1"/>
+
+        <ArtifactResolutionService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP" Location="https://idp.uhasselt.be:8443/idp/profile/SAML2/SOAP/ArtifactResolution" index="2"/>
+
+        <NameIDFormat>urn:mace:shibboleth:1.0:nameIdentifier</NameIDFormat>
+        <NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</NameIDFormat>
+
+        <SingleSignOnService Binding="urn:mace:shibboleth:1.0:profiles:AuthnRequest" Location="https://idp.uhasselt.be:443/idp/profile/Shibboleth/SSO"/>
+
+        <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://idp.uhasselt.be:443/idp/profile/SAML2/POST/SSO"/>
+
+        <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST-SimpleSign" Location="https://idp.uhasselt.be:443/idp/profile/SAML2/POST-SimpleSign/SSO"/>
+
+        <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://idp.uhasselt.be:443/idp/profile/SAML2/Redirect/SSO"/>
+    </IDPSSODescriptor>
+
+    <AttributeAuthorityDescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:1.1:protocol urn:oasis:names:tc:SAML:2.0:protocol">
+        <Extensions>
+            <shibmd:Scope regexp="false">uhasselt.be</shibmd:Scope>
+        </Extensions>
+
+        <KeyDescriptor>
+            <ds:KeyInfo>
+                <ds:X509Data>
+                    <ds:X509Certificate>
+MIIDJzCCAg+gAwIBAgIUGvDqwi5sfi5DeNrZElGeeeSKA8cwDQYJKoZIhvcNAQEF
+BQAwGjEYMBYGA1UEAxMPaWRwLnVoYXNzZWx0LmJlMB4XDTA5MDkyMjEzNTUyOVoX
+DTI5MDkyMjEzNTUyOVowGjEYMBYGA1UEAxMPaWRwLnVoYXNzZWx0LmJlMIIBIjAN
+BgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAobFBVfJW6lrIG6k8+tc6CLvuOfgg
+KRdPI6s57rBqyA23g9GYXSmkg1Mehha+ddRze3lXcsF1R+2OiXbmpIRU4kq1k0Vv
+xA2JtbHbQApg+4vk/3YMHvUN1LB35STTG8QX6vFUMTxjOnDMSS26GLSW/1lO6QRI
+Pf/auZUDFKHBlMJ2XHR9MJ+x/UP+IfF3VDS/mvlznRG6vo8txD/N0w9/7VACHQXy
+6/1U0gZKW79H3DnlCW4msTKG1BvNnYyQfmFVmysjnePDAdydkzPTfcg2EpCr9DRR
+nWPQwfSoSbG06iPMxYFx3/DWBcSB3aizgwCF8//ZVMG3muAQs1mNX4a2gQIDAQAB
+o2UwYzBCBgNVHREEOzA5gg9pZHAudWhhc3NlbHQuYmWGJmh0dHBzOi8vaWRwLnVo
+YXNzZWx0LmJlL2lkcC9zaGliYm9sZXRoMB0GA1UdDgQWBBS2b4PlaLQD2t/0P8uk
+bpvueWBYpDANBgkqhkiG9w0BAQUFAAOCAQEAnDelqfHax8vncq+gpIzSUSW7SZZE
+Fhtf3ubnzHD4lNvP+XQJ90YqEjdytNfpsqoZltGWhcoED/NZ2qTGo3JPZNGI5PUS
+AdonNedOe75IZEQFpzFi/uYqHhqawLTRRt8YIxwEMpgX7RnLtskqzXfWAaTKQsXr
+fzl4YgOKGdZelSm3f/3omJXuiZsUIJz9sSfoYbE5gWxB2EbI6IdDXWvt/02VNX4t
+EbLqvRE+8Q89PBACc8JtnkcG8G18FkslwbUoB0NMTnq10PsYCx5/bJOD29GURXEa
+ifXQTY04p/VdtztM+5pQDfmr0gtLAuejfj7k7gobDgvxawZLlFhao2GOAg==
+
+                    </ds:X509Certificate>
+                </ds:X509Data>
+            </ds:KeyInfo>
+        </KeyDescriptor>
+
+        <AttributeService Binding="urn:oasis:names:tc:SAML:1.0:bindings:SOAP-binding" Location="https://idp.uhasselt.be:8443/idp/profile/SAML1/SOAP/AttributeQuery"/>
+
+        <AttributeService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP" Location="https://idp.uhasselt.be:8443/idp/profile/SAML2/SOAP/AttributeQuery"/>
+
+        <NameIDFormat>urn:mace:shibboleth:1.0:nameIdentifier</NameIDFormat>
+        <NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</NameIDFormat>
+
+    </AttributeAuthorityDescriptor>
+    <Organization>
+	<OrganizationName xml:lang="en" xmlns:xml="http://www.w3.org/XML/1998/namespace">Universiteit Hasselt</OrganizationName>
+	<OrganizationDisplayName xml:lang="en" xmlns:xml="http://www.w3.org/XML/1998/namespace">Universiteit Hasselt</OrganizationDisplayName>
+	<OrganizationURL xml:lang="en" xmlns:xml="http://www.w3.org/XML/1998/namespace">http://www.uhasselt.be/</OrganizationURL>
+    </Organization>
+    <ContactPerson contactType="technical">
+	<GivenName>Centrale Informatica Dienst</GivenName>
+	<SurName>HelpDesk</SurName>
+	<EmailAddress>helpdesk@uhasselt.be</EmailAddress>
+    </ContactPerson>
+
+</EntityDescriptor><EntityDescriptor entityID="urn:mace:kuleuven.be:kulassoc:lessius.eu" xmlns="urn:oasis:names:tc:SAML:2.0:metadata" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:shibmd="urn:mace:shibboleth:metadata:1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+            <IDPSSODescriptor protocolSupportEnumeration="urn:mace:shibboleth:1.0 urn:oasis:names:tc:SAML:1.1:protocol urn:oasis:names:tc:SAML:2.0:protocol">
+                <Extensions>
+                    <shibmd:Scope regexp="false">associatie.kuleuven.be</shibmd:Scope>
+                    <shibmd:Scope regexp="false">lessius.eu</shibmd:Scope>
+                </Extensions>
+                <KeyDescriptor>
+                    <ds:KeyInfo>
+                        <ds:KeyName>idp.lessius.eu</ds:KeyName>
+                        <ds:X509Data>
+                            <ds:X509Certificate>
+MIIDGzCCAgOgAwIBAgIJAOwbe05ufy/IMA0GCSqGSIb3DQEBBQUAMBkxFzAVBgNV
+BAMTDmlkcC5sZXNzaXVzLmV1MB4XDTEwMDIyMzEwMTQzNFoXDTEzMDIyMjEwMTQz
+NFowGTEXMBUGA1UEAxMOaWRwLmxlc3NpdXMuZXUwggEiMA0GCSqGSIb3DQEBAQUA
+A4IBDwAwggEKAoIBAQDezK13+bjg4kym1mQQtS0UeyPmfQiIEP4mDQF1baZ3T8xF
+tLqOnG5tAgf7Ofz3byou+JbRdYrjAGrVDaVYc9JIDHsXwI3U9MYAqXnfKzrAgBBy
+jBhcBtKDwnCmCX0bXBOP6uSh5OnCRBEbdqP8tI3AhXciJsDToSPR5YvdhVoNn96H
+oE2irbtHiU1R0cPZ+bxU7SFn7D0E2SWFnc/mDfsdhKfnjj16vafIqyvWwDxaTf9y
+ijfhAroeCEmVnIJ6pQYtnQ/D+I8rZLzSdbLbd3w0WgLOfSgy6BHMC/pVEiOSlcCF
+ggS5LXOfBxTbtI8PSIiwjcCzaKPJuDh4zcFdajZXAgMBAAGjZjBkMEMGA1UdEQQ8
+MDqCDmlkcC5sZXNzaXVzLmV1hih1cm46bWFjZTprdWxldXZlbi5iZTprdWxhc3Nv
+YzpsZXNzaXVzLmV1MB0GA1UdDgQWBBSVSnKbgLNgJLBzhU8YkvsKkIqEzTANBgkq
+hkiG9w0BAQUFAAOCAQEAPh98rEjFZY5dcgoROv0Hq3o1EUnYRFL0yQEL60gOEnMn
+T5VDmk6M3sKumtblrMuYeTjrDz23GWEMDQgvPLdGFCUbnY3uankbbJWRm+SJG/4+
+hNXxKHKuhyHje4dIHQv56Jobzg36DtnlInpiuz2PeKkeHwcioPRUrDiFrhQjeaFM
+ejVG65rpZ0Q19IHl3Ndk7tAXUTmQUuDmf0wgs9mr0iYqnld95OksD/gW/uuz2n7v
+EM63/Su3Co/ywdvHMxOruw9Oie0rQBRIyBwkYMV9cK6vZ4VDiVLfOxqgW3GC+1n5
+4X+ycj/97B7iliQ8sT0EjLIKzR27i2LaRqe2gU3hIg==
+                           </ds:X509Certificate>
+                        </ds:X509Data>
+                    </ds:KeyInfo>
+                </KeyDescriptor>
+                <ArtifactResolutionService Binding="urn:oasis:names:tc:SAML:1.0:bindings:SOAP-binding" Location="https://idp.lessius.eu:8443/idp/profile/SAML1/SOAP/ArtifactResolution" index="1"/>
+                <ArtifactResolutionService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP" Location="https://idp.lessius.eu:8443/idp/profile/SAML2/SOAP/ArtifactResolution" index="2"/>
+                <NameIDFormat>urn:mace:shibboleth:1.0:nameIdentifier</NameIDFormat>
+                <NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</NameIDFormat>
+                <SingleSignOnService Binding="urn:mace:shibboleth:1.0:profiles:AuthnRequest" Location="https://idp.lessius.eu/idp/profile/Shibboleth/SSO"/>
+                <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://idp.lessius.eu/idp/profile/SAML2/POST/SSO"/>
+                <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST-SimpleSign" Location="https://idp.lessius.eu/idp/profile/SAML2/POST-SimpleSign/SSO"/>
+                <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://idp.lessius.eu/idp/profile/SAML2/Redirect/SSO"/>
+            </IDPSSODescriptor>
+
+            <AttributeAuthorityDescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:1.1:protocol urn:oasis:names:tc:SAML:2.0:protocol">
+                <Extensions>
+                    <shibmd:Scope regexp="false">associatie.kuleuven.be</shibmd:Scope>
+                    <shibmd:Scope regexp="false">lessius.eu</shibmd:Scope>
+                </Extensions>
+                <KeyDescriptor>
+                    <ds:KeyInfo>
+                        <ds:KeyName>idp.lessius.eu</ds:KeyName>
+                        <ds:X509Data>
+                            <ds:X509Certificate>
+MIIDGzCCAgOgAwIBAgIJAOwbe05ufy/IMA0GCSqGSIb3DQEBBQUAMBkxFzAVBgNV
+BAMTDmlkcC5sZXNzaXVzLmV1MB4XDTEwMDIyMzEwMTQzNFoXDTEzMDIyMjEwMTQz
+NFowGTEXMBUGA1UEAxMOaWRwLmxlc3NpdXMuZXUwggEiMA0GCSqGSIb3DQEBAQUA
+A4IBDwAwggEKAoIBAQDezK13+bjg4kym1mQQtS0UeyPmfQiIEP4mDQF1baZ3T8xF
+tLqOnG5tAgf7Ofz3byou+JbRdYrjAGrVDaVYc9JIDHsXwI3U9MYAqXnfKzrAgBBy
+jBhcBtKDwnCmCX0bXBOP6uSh5OnCRBEbdqP8tI3AhXciJsDToSPR5YvdhVoNn96H
+oE2irbtHiU1R0cPZ+bxU7SFn7D0E2SWFnc/mDfsdhKfnjj16vafIqyvWwDxaTf9y
+ijfhAroeCEmVnIJ6pQYtnQ/D+I8rZLzSdbLbd3w0WgLOfSgy6BHMC/pVEiOSlcCF
+ggS5LXOfBxTbtI8PSIiwjcCzaKPJuDh4zcFdajZXAgMBAAGjZjBkMEMGA1UdEQQ8
+MDqCDmlkcC5sZXNzaXVzLmV1hih1cm46bWFjZTprdWxldXZlbi5iZTprdWxhc3Nv
+YzpsZXNzaXVzLmV1MB0GA1UdDgQWBBSVSnKbgLNgJLBzhU8YkvsKkIqEzTANBgkq
+hkiG9w0BAQUFAAOCAQEAPh98rEjFZY5dcgoROv0Hq3o1EUnYRFL0yQEL60gOEnMn
+T5VDmk6M3sKumtblrMuYeTjrDz23GWEMDQgvPLdGFCUbnY3uankbbJWRm+SJG/4+
+hNXxKHKuhyHje4dIHQv56Jobzg36DtnlInpiuz2PeKkeHwcioPRUrDiFrhQjeaFM
+ejVG65rpZ0Q19IHl3Ndk7tAXUTmQUuDmf0wgs9mr0iYqnld95OksD/gW/uuz2n7v
+EM63/Su3Co/ywdvHMxOruw9Oie0rQBRIyBwkYMV9cK6vZ4VDiVLfOxqgW3GC+1n5
+4X+ycj/97B7iliQ8sT0EjLIKzR27i2LaRqe2gU3hIg==
+			    </ds:X509Certificate>
+                        </ds:X509Data>
+                    </ds:KeyInfo>
+                </KeyDescriptor>
+                <AttributeService Binding="urn:oasis:names:tc:SAML:1.0:bindings:SOAP-binding" Location="https://idp.lessius.eu:8443/idp/profile/SAML1/SOAP/AttributeQuery"/>
+                <AttributeService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP" Location="https://idp.lessius.eu:8443/idp/profile/SAML2/SOAP/AttributeQuery"/>
+                <NameIDFormat>urn:mace:shibboleth:1.0:nameIdentifier</NameIDFormat>
+                <NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</NameIDFormat>
+            </AttributeAuthorityDescriptor>
+                <Organization>
+                    <OrganizationName xml:lang="en">Lessius</OrganizationName>
+                    <OrganizationDisplayName xml:lang="en">Lessius Hogeschool</OrganizationDisplayName>
+                    <OrganizationURL xml:lang="en">http://www.lessius.eu/</OrganizationURL>
+                </Organization>
+                <ContactPerson contactType="technical">
+                    <SurName>Technical Support</SurName>
+                    <EmailAddress>ictdienst@lessius.eu</EmailAddress>
+                </ContactPerson>
+</EntityDescriptor><EntityDescriptor entityID="urn:mace:kuleuven.be:kulassoc:kahosl.be" xmlns="urn:oasis:names:tc:SAML:2.0:metadata" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:shibmd="urn:mace:shibboleth:metadata:1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+		<IDPSSODescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol urn:oasis:names:tc:SAML:1.1:protocol urn:mace:shibboleth:1.0">
+			<Extensions>
+				<shibmd:Scope regexp="false">kahosl.be</shibmd:Scope>
+				<shibmd:Scope regexp="false">associatie.kuleuven.be</shibmd:Scope>
+			</Extensions>
+			<KeyDescriptor use="signing">
+				<ds:KeyInfo>
+					<ds:KeyName>idp.kahosl.be</ds:KeyName>
+                                    <!-- Issuer: /CN=idp.kahosl.be-->
+					<ds:X509Data>
+						<ds:X509Certificate>
+							MIIDFzCCAf+gAwIBAgIJALGV9lKbIUpGMA0GCSqGSIb3DQEBBQUAMBgxFjAUBgNV
+BAMTDWlkcC5rYWhvc2wuYmUwHhcNMTAwMTEyMTA1MzM2WhcNMTMwMTExMTA1MzM2
+WjAYMRYwFAYDVQQDEw1pZHAua2Fob3NsLmJlMIIBIjANBgkqhkiG9w0BAQEFAAOC
+AQ8AMIIBCgKCAQEA3UgKattlu4hUNcGuoTiphmrIFcIZMieStl8aAOIr3RIUUqYg
+epSvTINFw5kOr1O1jm2/U5rluplY2t1o1Uk+M5/y5W7FSAvVDYIlpW9qS2j2Ttyj
+YlM7+jJW+7HjGa1q4WhZ2UMmseLjy2smX9thgIBB5dOIxOcJm0mT3AmSgeXsZNrG
+3HhWnfZZSzYewWFj1jMcrJdUCcxGggoZwSeplPMXdDwyepcyYa/LyLELK28CjJ1u
+c7KGzoYkPH2JHmDAIlfdX6N70pakZUt2U4QF2pHq3g/4CHke2ErFlC1BiGRJc20m
+1zTgMrPHbHE+fHI6COMWTaHEGc/l4uWSAtJ9CwIDAQABo2QwYjBBBgNVHREEOjA4
+gg1pZHAua2Fob3NsLmJlhid1cm46bWFjZTprdWxldXZlbi5iZTprdWxhc3NvYzpr
+YWhvc2wuYmUwHQYDVR0OBBYEFCkmdkg+1dITrQp1Yta3ic7ZiCjeMA0GCSqGSIb3
+DQEBBQUAA4IBAQCIuY3fnCUVQyKOMBShvoaf8oqU58Sc8CLqND6Oi8dTs70oHZC3
+gw4D3voTUvz4W/2LFExJR+vwpX0Pb3hkzohXrlMRzPaLEryiyPeUlLwTHnJTWrI4
+jNXrtxoe76aIuMUAQEkrk9hvR8eNR0KQ9qYu/WeqP//dbyHp3+mCg5BKMPkDRFvr
+zYx6AKxP2t6WE3EJt5+llqXEChHME3OhztThhkKHejEfgDhnkN1hXwjNS+5fFjjG
+aZCh9lMJbpcCuV8fQK8xycpl62/H6h+I9+zu+OO3mQPD/gyeumZKFCrUjpLTVfks
+yj7dLrZpYn9rS4ErVJszWYafVHF9pTiNWpvD
+						</ds:X509Certificate>
+					</ds:X509Data>
+				</ds:KeyInfo>
+			</KeyDescriptor>
+			<ArtifactResolutionService Binding="urn:oasis:names:tc:SAML:1.0:bindings:SOAP-binding" Location="https://idp.kahosl.be:8443/idp/profile/SAML1/SOAP/ArtifactResolution" index="1"/>
+
+			<ArtifactResolutionService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP" Location="https://idp.kahosl.be:8443/idp/profile/SAML2/SOAP/ArtifactResolution" index="2"/>
+
+			<NameIDFormat>urn:mace:shibboleth:1.0:nameIdentifier</NameIDFormat>
+
+			<NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</NameIDFormat>
+
+			<SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST-SimpleSign" Location="https://idp.kahosl.be/idp/profile/SAML2/POST-SimpleSign/SSO"/>
+
+			<SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://idp.kahosl.be/idp/profile/SAML2/POST/SSO"/>
+
+			<SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://idp.kahosl.be/idp/profile/SAML2/Redirect/SSO"/>
+
+			<SingleSignOnService Binding="urn:mace:shibboleth:1.0:profiles:AuthnRequest" Location="https://idp.kahosl.be/idp/profile/Shibboleth/SSO"/>
+
+		</IDPSSODescriptor>
+
+
+		<AttributeAuthorityDescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol urn:oasis:names:tc:SAML:1.1:protocol">
+			<Extensions>
+				<shibmd:Scope regexp="false">kahosl.be</shibmd:Scope>
+                                <shibmd:Scope regexp="false">associatie.kuleuven.be</shibmd:Scope>
+                        </Extensions>
+			<KeyDescriptor use="signing">
+				<ds:KeyInfo>
+					<ds:KeyName>idp.kahosl.be</ds:KeyName>
+                                    <!-- Issuer: /CN=idp.kahosl.be-->
+					<ds:X509Data>
+						<ds:X509Certificate>
+							MIIDFzCCAf+gAwIBAgIJALGV9lKbIUpGMA0GCSqGSIb3DQEBBQUAMBgxFjAUBgNV
+BAMTDWlkcC5rYWhvc2wuYmUwHhcNMTAwMTEyMTA1MzM2WhcNMTMwMTExMTA1MzM2
+WjAYMRYwFAYDVQQDEw1pZHAua2Fob3NsLmJlMIIBIjANBgkqhkiG9w0BAQEFAAOC
+AQ8AMIIBCgKCAQEA3UgKattlu4hUNcGuoTiphmrIFcIZMieStl8aAOIr3RIUUqYg
+epSvTINFw5kOr1O1jm2/U5rluplY2t1o1Uk+M5/y5W7FSAvVDYIlpW9qS2j2Ttyj
+YlM7+jJW+7HjGa1q4WhZ2UMmseLjy2smX9thgIBB5dOIxOcJm0mT3AmSgeXsZNrG
+3HhWnfZZSzYewWFj1jMcrJdUCcxGggoZwSeplPMXdDwyepcyYa/LyLELK28CjJ1u
+c7KGzoYkPH2JHmDAIlfdX6N70pakZUt2U4QF2pHq3g/4CHke2ErFlC1BiGRJc20m
+1zTgMrPHbHE+fHI6COMWTaHEGc/l4uWSAtJ9CwIDAQABo2QwYjBBBgNVHREEOjA4
+gg1pZHAua2Fob3NsLmJlhid1cm46bWFjZTprdWxldXZlbi5iZTprdWxhc3NvYzpr
+YWhvc2wuYmUwHQYDVR0OBBYEFCkmdkg+1dITrQp1Yta3ic7ZiCjeMA0GCSqGSIb3
+DQEBBQUAA4IBAQCIuY3fnCUVQyKOMBShvoaf8oqU58Sc8CLqND6Oi8dTs70oHZC3
+gw4D3voTUvz4W/2LFExJR+vwpX0Pb3hkzohXrlMRzPaLEryiyPeUlLwTHnJTWrI4
+jNXrtxoe76aIuMUAQEkrk9hvR8eNR0KQ9qYu/WeqP//dbyHp3+mCg5BKMPkDRFvr
+zYx6AKxP2t6WE3EJt5+llqXEChHME3OhztThhkKHejEfgDhnkN1hXwjNS+5fFjjG
+aZCh9lMJbpcCuV8fQK8xycpl62/H6h+I9+zu+OO3mQPD/gyeumZKFCrUjpLTVfks
+yj7dLrZpYn9rS4ErVJszWYafVHF9pTiNWpvD
+						</ds:X509Certificate>
+					</ds:X509Data>
+				</ds:KeyInfo>
+			</KeyDescriptor>
+			<AttributeService Binding="urn:oasis:names:tc:SAML:1.0:bindings:SOAP-binding" Location="https://idp.kahosl.be:8443/idp/profile/SAML1/SOAP/AttributeQuery"/>
+
+			<AttributeService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP" Location="https://idp.kahosl.be:8443/idp/profile/SAML2/SOAP/AttributeQuery"/>
+
+			<NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</NameIDFormat>
+
+			<NameIDFormat>urn:mace:shibboleth:1.0:nameIdentifier</NameIDFormat>
+
+		</AttributeAuthorityDescriptor>
+
+		<Organization>
+			<OrganizationName xml:lang="nl">Katholieke Hogeschool Sint-Lieven</OrganizationName>
+			<OrganizationDisplayName xml:lang="nl">Katholieke Hogeschool Sint-Lieven</OrganizationDisplayName>
+			<OrganizationURL xml:lang="nl">http://www.kahosl.be</OrganizationURL>
+		</Organization>
+
+		<ContactPerson contactType="technical">
+                	 <GivenName>Technical Support</GivenName>
+                         <EmailAddress>netwerkdienst@kahosl.be</EmailAddress>
+                </ContactPerson>
+
+	</EntityDescriptor><EntityDescriptor entityID="urn:mace:kuleuven.be:kulassoc:hubrussel.be" xmlns="urn:oasis:names:tc:SAML:2.0:metadata" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:shibmd="urn:mace:shibboleth:metadata:1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+            <IDPSSODescriptor protocolSupportEnumeration="urn:mace:shibboleth:1.0 urn:oasis:names:tc:SAML:1.1:protocol urn:oasis:names:tc:SAML:2.0:protocol">
+                <Extensions>
+                    <shibmd:Scope regexp="false">associatie.kuleuven.be</shibmd:Scope>
+                    <shibmd:Scope regexp="false">hubrussel.be</shibmd:Scope>
+                </Extensions>
+                <KeyDescriptor>
+                    <ds:KeyInfo>
+                        <ds:KeyName>idp.hubrussel.be</ds:KeyName>
+                        <ds:X509Data>
+                            <ds:X509Certificate>
+MIIDKzCCAhOgAwIBAgIUa043qiEY+fNg5Uh8hzcVnzA6tvEwDQYJKoZIhvcNAQEF
+BQAwGzEZMBcGA1UEAxMQaWRwLmh1YnJ1c3NlbC5iZTAeFw0xMzAyMTkwNzU1MTRa
+Fw0zMzAyMTkwNzU1MTRaMBsxGTAXBgNVBAMTEGlkcC5odWJydXNzZWwuYmUwggEi
+MA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCmiwVamF2Ezc3iMSOh+f7jhM7Z
+MHNGSc68Yot/SMwY/qXCxwy9OMPRF1OFoEBU97qrPNzMyMi4GP74z/Gv1232BTV3
+FEFdXxpp4byu0ZH8YfXPiZHoqvzvtTJWe2RyVBf5eEEMcBZIWUbumu2/ITow8h3s
+bvXAEoqc6wRtYBdGrTR/gvqDOw8mhNZFn71Mi2ym8yyMuNjzV1xVSj8vjFxnZNp+
+LvGwhZD2CjvKhn/aDmBNnj2SG+Qz15XHQNeEZo1GdeEwRgTnnsb63c4+7SP/AhsP
+NEz/Je/BgKZDspWrreX0WLIlhXhpdFJEwejWcRfFG+healPxU+QqSY2v9PcXAgMB
+AAGjZzBlMEQGA1UdEQQ9MDuCEGlkcC5odWJydXNzZWwuYmWGJ2h0dHBzOi8vaWRw
+Lmh1YnJ1c3NlbC5iZS9pZHAvc2hpYmJvbGV0aDAdBgNVHQ4EFgQUx+lfICofWbRl
+dZjzoGLTig4dmVgwDQYJKoZIhvcNAQEFBQADggEBAEMPW/Qi4v+BqR1/db3Iay3C
+8vTDd+lw9sdhTestLFkds+osr5imipO8DE89OvUqMzd4C7xRDyMORr5NCANockF5
+JwnfhBRGpX65c2YF9RTkiHTkkeNneW6JrgaAIbvwC4kGU0wQ5cK8oS2iDaQN05kS
+CAK1pmoVarF5l965AHAEbtTTPhIrS/fbdrJoyTTG9pizbq7dd04qgAklPQ+0ah8B
+Z9sH2HVwlTSqu/Rd26jk/m2pC0IuXVzWtrKqfnBFUGp7ZwsPaBm1nd5X88gHA5WK
+CZlyqvYE9HLTFIORPG3h12ivsTUKCdPuiGfHVOvnGoVu06mL6bUapXVA0P033wg=
+			    </ds:X509Certificate>
+                        </ds:X509Data>
+                    </ds:KeyInfo>
+                </KeyDescriptor>
+                <ArtifactResolutionService Binding="urn:oasis:names:tc:SAML:1.0:bindings:SOAP-binding" Location="https://idp.hubrussel.be:8443/idp/profile/SAML1/SOAP/ArtifactResolution" index="1"/>
+                <ArtifactResolutionService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP" Location="https://idp.hubrussel.be:8443/idp/profile/SAML2/SOAP/ArtifactResolution" index="2"/>
+                <NameIDFormat>urn:mace:shibboleth:1.0:nameIdentifier</NameIDFormat>
+                <NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</NameIDFormat>
+                <SingleSignOnService Binding="urn:mace:shibboleth:1.0:profiles:AuthnRequest" Location="https://idp.hubrussel.be/idp/profile/Shibboleth/SSO"/>
+                <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://idp.hubrussel.be/idp/profile/SAML2/POST/SSO"/>
+                <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST-SimpleSign" Location="https://idp.hubrussel.be/idp/profile/SAML2/POST-SimpleSign/SSO"/>
+                <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://idp.hubrussel.be/idp/profile/SAML2/Redirect/SSO"/>
+            </IDPSSODescriptor>
+            <AttributeAuthorityDescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:1.1:protocol urn:oasis:names:tc:SAML:2.0:protocol">
+                <Extensions>
+                    <shibmd:Scope regexp="false">associatie.kuleuven.be</shibmd:Scope>
+                    <shibmd:Scope regexp="false">hubrussel.be</shibmd:Scope>
+                </Extensions>
+                <KeyDescriptor>
+                    <ds:KeyInfo>
+                        <ds:KeyName>idp.hubrussel.be</ds:KeyName>
+                        <ds:X509Data>
+                            <ds:X509Certificate>
+MIIDKzCCAhOgAwIBAgIUa043qiEY+fNg5Uh8hzcVnzA6tvEwDQYJKoZIhvcNAQEF
+BQAwGzEZMBcGA1UEAxMQaWRwLmh1YnJ1c3NlbC5iZTAeFw0xMzAyMTkwNzU1MTRa
+Fw0zMzAyMTkwNzU1MTRaMBsxGTAXBgNVBAMTEGlkcC5odWJydXNzZWwuYmUwggEi
+MA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCmiwVamF2Ezc3iMSOh+f7jhM7Z
+MHNGSc68Yot/SMwY/qXCxwy9OMPRF1OFoEBU97qrPNzMyMi4GP74z/Gv1232BTV3
+FEFdXxpp4byu0ZH8YfXPiZHoqvzvtTJWe2RyVBf5eEEMcBZIWUbumu2/ITow8h3s
+bvXAEoqc6wRtYBdGrTR/gvqDOw8mhNZFn71Mi2ym8yyMuNjzV1xVSj8vjFxnZNp+
+LvGwhZD2CjvKhn/aDmBNnj2SG+Qz15XHQNeEZo1GdeEwRgTnnsb63c4+7SP/AhsP
+NEz/Je/BgKZDspWrreX0WLIlhXhpdFJEwejWcRfFG+healPxU+QqSY2v9PcXAgMB
+AAGjZzBlMEQGA1UdEQQ9MDuCEGlkcC5odWJydXNzZWwuYmWGJ2h0dHBzOi8vaWRw
+Lmh1YnJ1c3NlbC5iZS9pZHAvc2hpYmJvbGV0aDAdBgNVHQ4EFgQUx+lfICofWbRl
+dZjzoGLTig4dmVgwDQYJKoZIhvcNAQEFBQADggEBAEMPW/Qi4v+BqR1/db3Iay3C
+8vTDd+lw9sdhTestLFkds+osr5imipO8DE89OvUqMzd4C7xRDyMORr5NCANockF5
+JwnfhBRGpX65c2YF9RTkiHTkkeNneW6JrgaAIbvwC4kGU0wQ5cK8oS2iDaQN05kS
+CAK1pmoVarF5l965AHAEbtTTPhIrS/fbdrJoyTTG9pizbq7dd04qgAklPQ+0ah8B
+Z9sH2HVwlTSqu/Rd26jk/m2pC0IuXVzWtrKqfnBFUGp7ZwsPaBm1nd5X88gHA5WK
+CZlyqvYE9HLTFIORPG3h12ivsTUKCdPuiGfHVOvnGoVu06mL6bUapXVA0P033wg=
+			    </ds:X509Certificate>
+                        </ds:X509Data>
+                    </ds:KeyInfo>
+                </KeyDescriptor>
+                <AttributeService Binding="urn:oasis:names:tc:SAML:1.0:bindings:SOAP-binding" Location="https://idp.hubrussel.be:8443/idp/profile/SAML1/SOAP/AttributeQuery"/>
+                <AttributeService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP" Location="https://idp.hubrussel.be:8443/idp/profile/SAML2/SOAP/AttributeQuery"/>
+                <NameIDFormat>urn:mace:shibboleth:1.0:nameIdentifier</NameIDFormat>
+                <NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</NameIDFormat>
+            </AttributeAuthorityDescriptor>
+                <Organization>
+                    <OrganizationName xml:lang="en">Hogeschool-Universiteit Brussel</OrganizationName>
+                    <OrganizationDisplayName xml:lang="en">Hogeschool-Universiteit Brussel</OrganizationDisplayName>
+                    <OrganizationURL xml:lang="en">http://www.hubrussel.be/</OrganizationURL>
+                </Organization>
+                <ContactPerson contactType="technical">
+                    <SurName>Technical Support</SurName>
+                    <EmailAddress>info@hubrussel.be</EmailAddress>
+                </ContactPerson>
+		</EntityDescriptor><EntityDescriptor entityID="https://vscentrum.be/webcms" xmlns="urn:oasis:names:tc:SAML:2.0:metadata">
+<SPSSODescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol urn:oasis:names:tc:SAML:1.1:protocol">
+<Extensions>
+<dsr:DiscoveryResponse xmlns:dsr="urn:oasis:names:tc:SAML:profiles:SSO:idp-discovery-protocol" Binding="urn:oasis:names:tc:SAML:profiles:SSO:idp-discovery-protocol" Location="https://vscentrum.be/webcms/Shibboleth.sso/DS" index="1"/>
+</Extensions>
+<KeyDescriptor use="signing">
+<ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+<!--  Issuer: /CN=ictsrp -->
+<ds:KeyName>ictsrp</ds:KeyName>
+<ds:X509Data>
+<ds:X509Certificate>
+MIIC2TCCAcGgAwIBAgIJAPbcsWFUdsulMA0GCSqGSIb3DQEBBQUAMBExDzANBgNV BAMTBmljdHNycDAeFw0xMzAxMTgxMzE5NDlaFw0yMzAxMTYxMzE5NDlaMBExDzAN BgNVBAMTBmljdHNycDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBALvW 1KhuKfTPMIgn3AIiu18LZT33Ruh86YfY87fQ3Walcbv3zu/OsVqSj+zQYAgG2NzN bOQ/mKHBg4EBucJjTuTDhPfkpo4brIrIxq933YDDhOS2qnZOPsTiCWjUf1R7laAS LeHqGfup/ohj/gf1aMVHArkTc3m/SmhK561b6qpXdDkE/nvqM2PS8+R6ZCDo+RHo XkC5ev1Noh6PjxOiGvgoZYHW/D4JnVdzeX3lyH8D5xxaH5GEc6n3J43CowamWaG8 ZjNoYd/CAEu0oCoEdQXSzob8wuR/1f21khLJbgMvqYSNkpZ09y0x/Hd4/ltcB2qD BKsBBhi1OZqgGzBLlwkCAwEAAaM0MDIwEQYDVR0RBAowCIIGaWN0c3JwMB0GA1Ud DgQWBBR41ryfw3aPOkBVpqjjwvg2MrxodTANBgkqhkiG9w0BAQUFAAOCAQEAWV26 ur2M5UhpCldn/plKdn1+u8V2HcetX6fHtrj/38UBiCQ9MdzRmp8YwlxV0BQfTO3R hqeEux1EjQTXFsPdnYKvjEQFWpL7+meWUXRdlw7xhX163KNFuHKK79f/4wzfRxSj xX86CpU8z3Fy2wK785iciVYbGd2Ry0OFOUEdYiZXloAFsW06Bhr1WtQ3z/suU0hS /UmD0GUp4dMIBiRVuhWmW5OltDnVDzzUTkvFWIh8XiHV+r9Z0v6z94w+SRl+k1MC jmckWtTawfV5ipSH3+z7LVqUUFbNMjxS1Hh/sSiQ4t7FGWYJFQNdC77iMz/9Q3o/ eAYbDsRFTUezKLj05Q==
+</ds:X509Certificate>
+</ds:X509Data>
+</ds:KeyInfo>
+</KeyDescriptor>
+<KeyDescriptor use="encryption">
+<ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+<!--  Issuer: /CN=ictsrp -->
+<ds:KeyName>ictsrp</ds:KeyName>
+<ds:X509Data>
+<ds:X509Certificate>
+MIIC2TCCAcGgAwIBAgIJAPbcsWFUdsulMA0GCSqGSIb3DQEBBQUAMBExDzANBgNV BAMTBmljdHNycDAeFw0xMzAxMTgxMzE5NDlaFw0yMzAxMTYxMzE5NDlaMBExDzAN BgNVBAMTBmljdHNycDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBALvW 1KhuKfTPMIgn3AIiu18LZT33Ruh86YfY87fQ3Walcbv3zu/OsVqSj+zQYAgG2NzN bOQ/mKHBg4EBucJjTuTDhPfkpo4brIrIxq933YDDhOS2qnZOPsTiCWjUf1R7laAS LeHqGfup/ohj/gf1aMVHArkTc3m/SmhK561b6qpXdDkE/nvqM2PS8+R6ZCDo+RHo XkC5ev1Noh6PjxOiGvgoZYHW/D4JnVdzeX3lyH8D5xxaH5GEc6n3J43CowamWaG8 ZjNoYd/CAEu0oCoEdQXSzob8wuR/1f21khLJbgMvqYSNkpZ09y0x/Hd4/ltcB2qD BKsBBhi1OZqgGzBLlwkCAwEAAaM0MDIwEQYDVR0RBAowCIIGaWN0c3JwMB0GA1Ud DgQWBBR41ryfw3aPOkBVpqjjwvg2MrxodTANBgkqhkiG9w0BAQUFAAOCAQEAWV26 ur2M5UhpCldn/plKdn1+u8V2HcetX6fHtrj/38UBiCQ9MdzRmp8YwlxV0BQfTO3R hqeEux1EjQTXFsPdnYKvjEQFWpL7+meWUXRdlw7xhX163KNFuHKK79f/4wzfRxSj xX86CpU8z3Fy2wK785iciVYbGd2Ry0OFOUEdYiZXloAFsW06Bhr1WtQ3z/suU0hS /UmD0GUp4dMIBiRVuhWmW5OltDnVDzzUTkvFWIh8XiHV+r9Z0v6z94w+SRl+k1MC jmckWtTawfV5ipSH3+z7LVqUUFbNMjxS1Hh/sSiQ4t7FGWYJFQNdC77iMz/9Q3o/ eAYbDsRFTUezKLj05Q==
+</ds:X509Certificate>
+</ds:X509Data>
+</ds:KeyInfo>
+</KeyDescriptor>
+<ArtifactResolutionService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP" Location="https://vscentrum.be/webcms/Shibboleth.sso/Artifact/SOAP" index="1"/>
+<SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Artifact" Location="https://vscentrum.be/webcms/Shibboleth.sso/SLO/Artifact"/>
+<SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://vscentrum.be/webcms/Shibboleth.sso/SLO/POST"/>
+<SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://vscentrum.be/webcms/Shibboleth.sso/SLO/Redirect"/>
+<SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP" Location="https://vscentrum.be/webcms/Shibboleth.sso/SLO/SOAP"/>
+<ManageNameIDService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Artifact" Location="https://vscentrum.be/webcms/Shibboleth.sso/NIM/Artifact"/>
+<ManageNameIDService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://vscentrum.be/webcms/Shibboleth.sso/NIM/POST"/>
+<ManageNameIDService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://vscentrum.be/webcms/Shibboleth.sso/NIM/Redirect"/>
+<ManageNameIDService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP" Location="https://vscentrum.be/webcms/Shibboleth.sso/NIM/SOAP"/>
+<NameIDFormat>urn:mace:shibboleth:1.0:nameIdentifier</NameIDFormat>
+<NameIDFormat>
+urn:oasis:names:tc:SAML:2.0:nameid-format:transient
+</NameIDFormat>
+<AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://vscentrum.be/webcms/Shibboleth.sso/SAML2/POST" index="1" isDefault="true"/>
+<AssertionConsumerService Binding="urn:oasis:names:tc:SAML:1.0:profiles:artifact-01" Location="https://vscentrum.be/webcms/Shibboleth.sso/SAML/Artifact" index="2"/>
+<AssertionConsumerService Binding="urn:oasis:names:tc:SAML:1.0:profiles:browser-post" Location="https://vscentrum.be/webcms/Shibboleth.sso/SAML/POST" index="3"/>
+<AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Artifact" Location="https://vscentrum.be/webcms/Shibboleth.sso/SAML2/Artifact" index="4"/>
+<AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:PAOS" Location="https://vscentrum.be/webcms/Shibboleth.sso/SAML2/ECP" index="5"/>
+<AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST-SimpleSign" Location="https://vscentrum.be/webcms/Shibboleth.sso/SAML2/POST-SimpleSign" index="6"/>
+</SPSSODescriptor>
+<Organization>
+<OrganizationName xml:lang="nl">KU Leuven</OrganizationName>
+<OrganizationDisplayName xml:lang="nl">KU Leuven</OrganizationDisplayName>
+<OrganizationURL xml:lang="nl">https://admin.kuleuven.be/icts/servicepunt</OrganizationURL>
+</Organization>
+<ContactPerson contactType="technical">
+<GivenName>ICTS Servicepunt</GivenName>
+<EmailAddress>servicepunt@icts.kuleuven.be</EmailAddress>
+</ContactPerson>
+</EntityDescriptor><!-- Thomson Reuters 26.10.2012 -->
+<!-- *************************************** -->
+<!-- SP https://sp.tshhosting.com/shibboleth -->
+<!-- *************************************** -->
+<EntityDescriptor entityID="https://fdr.itg.be/idp/shibboleth" xmlns="urn:oasis:names:tc:SAML:2.0:metadata" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:shibmd="urn:mace:shibboleth:metadata:1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><IDPSSODescriptor protocolSupportEnumeration="urn:mace:shibboleth:1.0 urn:oasis:names:tc:SAML:1.1:protocol urn:oasis:names:tc:SAML:2.0:protocol"><Extensions><shibmd:Scope regexp="false">itg.be</shibmd:Scope></Extensions><KeyDescriptor><ds:KeyInfo><ds:X509Data><ds:X509Certificate>MIIDEzCCAfugAwIBAgIUF7636vLNGBEZUm6DKO7sBDojaFIwDQYJKoZIhvcNAQEF
+BQAwFTETMBEGA1UEAxMKZmRyLml0Zy5iZTAeFw0xMzEwMjMxMDI1MDdaFw0zMzEw
+MjMxMDI1MDdaMBUxEzARBgNVBAMTCmZkci5pdGcuYmUwggEiMA0GCSqGSIb3DQEB
+AQUAA4IBDwAwggEKAoIBAQCM8FZvQIFks/xEIwwAzY2t4QpQDxnvU9Wfdw+v/2g9
+bkG/iS8dsEY7F9iZHw6/rURw+DmmgAOqPb49lvfM8ngS0Wd11gQzMLYLcNfI10OY
+bqC9CTW/4529aQPxz3wI4mXJsRF40IRc/MTqz59aat6cTGwEEv2FoMPh3tHuyZ06
+dMJxeRedBMzrcBZDdYI0nTRVVjvkVh4HDCqjH22iTbnjFewazlvHawmQTcanYIMg
+pU/eHWRU8Gt9IeqysD5M5hfWB0YFG+wy0NObfadVyaKBJ6h19aYrwqYFPOJ+azkk
+48JdtseDpKZRgxD3bfmTOwGlOU3xVUbdehJzkKFQAG+lAgMBAAGjWzBZMDgGA1Ud
+EQQxMC+CCmZkci5pdGcuYmWGIWh0dHBzOi8vZmRyLml0Zy5iZS9pZHAvc2hpYmJv
+bGV0aDAdBgNVHQ4EFgQUPXM6N8NW23wX0pmqX4OFLbKOR6QwDQYJKoZIhvcNAQEF
+BQADggEBACdcwois72pjd2xqY9etYnEUXKYIDV6GkikgD94yffopEw0uwODgD+06
+HQ718SbbU5fhrBxciIlfKTvE6auh7fTw3dxjzf9+8fu4xj/tT7ESwaIfXQi7Vwkx
+vbIX4mbSuXcpIe4Gir+eRMiPLm87gj2pvti6QW3SA//LmjFbkcC52HQJdkMZmtCN
+9ycH8spRzTKNcA74V6uF3+oYfW+wT+xcWKNCL0s/gvHyLQace4D0Iw6H4jDzIa9I
+ivjYqyzpDrZpO/77eZcymyCVwv+4nlJ0G8KOyghXWYIdR4HOtQOUBZsHUQ31xlOr
+Ts0r4J4ZHjfrzTuj4cA/9wal1J8FcjY=</ds:X509Certificate></ds:X509Data></ds:KeyInfo></KeyDescriptor><ArtifactResolutionService Binding="urn:oasis:names:tc:SAML:1.0:bindings:SOAP-binding" Location="https://fdr.itg.be:8443/idp/profile/SAML1/SOAP/ArtifactResolution" index="1"/><ArtifactResolutionService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP" Location="https://fdr.itg.be:8443/idp/profile/SAML2/SOAP/ArtifactResolution" index="2"/><NameIDFormat>urn:mace:shibboleth:1.0:nameIdentifier</NameIDFormat><NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</NameIDFormat><SingleSignOnService Binding="urn:mace:shibboleth:1.0:profiles:AuthnRequest" Location="https://fdr.itg.be/idp/profile/Shibboleth/SSO"/><SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://fdr.itg.be/idp/profile/SAML2/POST/SSO"/><SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST-SimpleSign" Location="https://fdr.itg.be/idp/profile/SAML2/POST-SimpleSign/SSO"/><SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://fdr.itg.be/idp/profile/SAML2/Redirect/SSO"/></IDPSSODescriptor><AttributeAuthorityDescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:1.1:protocol urn:oasis:names:tc:SAML:2.0:protocol"><Extensions><shibmd:Scope regexp="false">itg.be</shibmd:Scope></Extensions><KeyDescriptor><ds:KeyInfo><ds:X509Data><ds:X509Certificate>MIIDEzCCAfugAwIBAgIUF7636vLNGBEZUm6DKO7sBDojaFIwDQYJKoZIhvcNAQEF
+BQAwFTETMBEGA1UEAxMKZmRyLml0Zy5iZTAeFw0xMzEwMjMxMDI1MDdaFw0zMzEw
+MjMxMDI1MDdaMBUxEzARBgNVBAMTCmZkci5pdGcuYmUwggEiMA0GCSqGSIb3DQEB
+AQUAA4IBDwAwggEKAoIBAQCM8FZvQIFks/xEIwwAzY2t4QpQDxnvU9Wfdw+v/2g9
+bkG/iS8dsEY7F9iZHw6/rURw+DmmgAOqPb49lvfM8ngS0Wd11gQzMLYLcNfI10OY
+bqC9CTW/4529aQPxz3wI4mXJsRF40IRc/MTqz59aat6cTGwEEv2FoMPh3tHuyZ06
+dMJxeRedBMzrcBZDdYI0nTRVVjvkVh4HDCqjH22iTbnjFewazlvHawmQTcanYIMg
+pU/eHWRU8Gt9IeqysD5M5hfWB0YFG+wy0NObfadVyaKBJ6h19aYrwqYFPOJ+azkk
+48JdtseDpKZRgxD3bfmTOwGlOU3xVUbdehJzkKFQAG+lAgMBAAGjWzBZMDgGA1Ud
+EQQxMC+CCmZkci5pdGcuYmWGIWh0dHBzOi8vZmRyLml0Zy5iZS9pZHAvc2hpYmJv
+bGV0aDAdBgNVHQ4EFgQUPXM6N8NW23wX0pmqX4OFLbKOR6QwDQYJKoZIhvcNAQEF
+BQADggEBACdcwois72pjd2xqY9etYnEUXKYIDV6GkikgD94yffopEw0uwODgD+06
+HQ718SbbU5fhrBxciIlfKTvE6auh7fTw3dxjzf9+8fu4xj/tT7ESwaIfXQi7Vwkx
+vbIX4mbSuXcpIe4Gir+eRMiPLm87gj2pvti6QW3SA//LmjFbkcC52HQJdkMZmtCN
+9ycH8spRzTKNcA74V6uF3+oYfW+wT+xcWKNCL0s/gvHyLQace4D0Iw6H4jDzIa9I
+ivjYqyzpDrZpO/77eZcymyCVwv+4nlJ0G8KOyghXWYIdR4HOtQOUBZsHUQ31xlOr
+Ts0r4J4ZHjfrzTuj4cA/9wal1J8FcjY=</ds:X509Certificate></ds:X509Data></ds:KeyInfo></KeyDescriptor><AttributeService Binding="urn:oasis:names:tc:SAML:1.0:bindings:SOAP-binding" Location="https://fdr.itg.be:8443/idp/profile/SAML1/SOAP/AttributeQuery"/><AttributeService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP" Location="https://fdr.itg.be:8443/idp/profile/SAML2/SOAP/AttributeQuery"/><NameIDFormat>urn:mace:shibboleth:1.0:nameIdentifier</NameIDFormat><NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</NameIDFormat></AttributeAuthorityDescriptor><Organization><OrganizationName xml:lang="en" xmlns:xml="http://www.w3.org/XML/1998/namespace">Instituut voor Tropische Geneeskunde</OrganizationName><OrganizationDisplayName xml:lang="en" xmlns:xml="http://www.w3.org/XML/1998/namespace">ITG</OrganizationDisplayName><OrganizationURL xml:lang="en" xmlns:xml="http://www.w3.org/XML/1998/namespace">http://www.itg.be</OrganizationURL></Organization><ContactPerson contactType="technical"><GivenName>Marc</GivenName><SurName>Michiels</SurName><EmailAddress>informatica@itg.be</EmailAddress></ContactPerson></EntityDescriptor><EntityDescriptor entityID="urn:mace:kuleuven.be:kulassoc:khleuven.be" xmlns="urn:oasis:names:tc:SAML:2.0:metadata" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:mdrpi="urn:oasis:names:tc:SAML:metadata:rpi" xmlns:mdui="urn:oasis:names:tc:SAML:metadata:ui" xmlns:shibmd="urn:mace:shibboleth:metadata:1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+			 <Extensions>
+            			<mdrpi:RegistrationInfo registrationAuthority="http://federation.belnet.be/" registrationInstant="2012-03-27T12:00:00Z">
+              				<mdrpi:RegistrationPolicy xml:lang="en">http://federation.belnet.be/files/Belnet-metadata-registration-practice-statement.txt</mdrpi:RegistrationPolicy>
+            			</mdrpi:RegistrationInfo>
+        		</Extensions>
+
+		    <IDPSSODescriptor protocolSupportEnumeration="urn:mace:shibboleth:1.0 urn:oasis:names:tc:SAML:1.1:protocol urn:oasis:names:tc:SAML:2.0:protocol">
+			<Extensions>
+			    <shibmd:Scope regexp="false">associatie.kuleuven.be</shibmd:Scope>
+			    <shibmd:Scope regexp="false">khleuven.be</shibmd:Scope>
+
+			<mdui:UIInfo xmlns:mdui="urn:oasis:names:tc:SAML:metadata:ui">
+                		<mdui:DisplayName xml:lang="en">KHLeuven</mdui:DisplayName>
+                		<mdui:Description xml:lang="en">Katholieke Hogeschool Leuven</mdui:Description>
+			</mdui:UIInfo>
+
+			</Extensions>
+			<KeyDescriptor>
+			    <ds:KeyInfo>
+				<ds:KeyName>idp.khleuven.be</ds:KeyName>
+				<ds:X509Data>
+				    <ds:X509Certificate>
+	MIIDKDCCAhCgAwIBAgIVAIEBQgacYZ+Obt/8LGcNE9xCxtg1MA0GCSqGSIb3DQEB
+	BQUAMBoxGDAWBgNVBAMTD2lkcC5raGxldXZlbi5iZTAeFw0wOTEyMTUwOTI5Mjla
+	Fw0yOTEyMTUwOTI5MjlaMBoxGDAWBgNVBAMTD2lkcC5raGxldXZlbi5iZTCCASIw
+	DQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAJo7I1DRJ2ulw9KOgJGEX3Yo+Oi1
+	axnNmLMaJQGWHIuKOih7ePjvm2MuGaFHZZLHsa3yI6JMsi6OWoh4FnUTfU8t+lSc
+	i9Mn4zjQBIGQK6HAQiFjouUuMAKGD0hvXuqtIbw7cNK6dABRuZx6xbJ7HveUAb2W
+	iLshYnfJ5smDY44UN68eOZfRS941NE+hY2EESWfRtHj3bF8K1eClv9DKaxB7A6zA
+	3A0kZrum6K2DiyiN4gj9pUpC0w86jdXmPq+/8XXHLnX2RTBJE55KNzNe82n0DomT
+	qVXGZ5bxBNuSuS+IGKQpxNDO6py7wKxUVMdIRHoy2xUqU62JunMyfExCgwcCAwEA
+	AaNlMGMwQgYDVR0RBDswOYIPaWRwLmtobGV1dmVuLmJlhiZodHRwczovL2lkcC5r
+	aGxldXZlbi5iZS9pZHAvc2hpYmJvbGV0aDAdBgNVHQ4EFgQU6LNVU7ay63LW4qY9
+	gmQd70bUxXQwDQYJKoZIhvcNAQEFBQADggEBABGQdtkb/TncVxlIi0ejI3AHUYmG
+	RT05mU0Cmt1SEKybN6/VvwamKPWc9bmJu+uxJo3bxRVzOfUdXExZCe9KoLugj7KJ
+	ECH1yRDSb+s9TV2djqGEQO104Ol6fhDRH1YV7FWGjQ79Roddu6IwEawek4VEY4om
+	rQmBOTjKUb10v9xTTX28PsTM7e8Avbu9BujIgeX4KcsUWqDDsX8r9P8hK7aOS7Ym
+	XPLrSitrNNrQYr9FzuRm995nQ20lVTjh83TiPADSXUXDkebI9GcKqDA662HTNpNp
+	5Dpn+ZM2hbJN+AbA9QdpVSb+MJCzpRyh2AlN8simVEiciy1+p5tWR3iLwv8=
+				    </ds:X509Certificate>
+				</ds:X509Data>
+			    </ds:KeyInfo>
+			</KeyDescriptor>
+			<ArtifactResolutionService Binding="urn:oasis:names:tc:SAML:1.0:bindings:SOAP-binding" Location="https://idp.khleuven.be:8443/idp/profile/SAML1/SOAP/ArtifactResolution" index="1"/>
+			<ArtifactResolutionService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP" Location="https://idp.khleuven.be:8443/idp/profile/SAML2/SOAP/ArtifactResolution" index="2"/>
+			<NameIDFormat>urn:mace:shibboleth:1.0:nameIdentifier</NameIDFormat>
+			<NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</NameIDFormat>
+			<SingleSignOnService Binding="urn:mace:shibboleth:1.0:profiles:AuthnRequest" Location="https://idp.khleuven.be/idp/profile/Shibboleth/SSO"/>
+			<SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://idp.khleuven.be/idp/profile/SAML2/POST/SSO"/>
+			<SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST-SimpleSign" Location="https://idp.khleuven.be/idp/profile/SAML2/POST-SimpleSign/SSO"/>
+			<SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://idp.khleuven.be/idp/profile/SAML2/Redirect/SSO"/>
+		    </IDPSSODescriptor>
+
+		    <AttributeAuthorityDescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:1.1:protocol urn:oasis:names:tc:SAML:2.0:protocol">
+			<Extensions>
+			    <shibmd:Scope regexp="false">associatie.kuleuven.be</shibmd:Scope>
+			    <shibmd:Scope regexp="false">khleuven.be</shibmd:Scope>
+			</Extensions>
+			<KeyDescriptor>
+			    <ds:KeyInfo>
+				<ds:KeyName>idp.khleuven.be</ds:KeyName>
+				<ds:X509Data>
+				    <ds:X509Certificate>
+	MIIDKDCCAhCgAwIBAgIVAIEBQgacYZ+Obt/8LGcNE9xCxtg1MA0GCSqGSIb3DQEB
+	BQUAMBoxGDAWBgNVBAMTD2lkcC5raGxldXZlbi5iZTAeFw0wOTEyMTUwOTI5Mjla
+	Fw0yOTEyMTUwOTI5MjlaMBoxGDAWBgNVBAMTD2lkcC5raGxldXZlbi5iZTCCASIw
+	DQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAJo7I1DRJ2ulw9KOgJGEX3Yo+Oi1
+	axnNmLMaJQGWHIuKOih7ePjvm2MuGaFHZZLHsa3yI6JMsi6OWoh4FnUTfU8t+lSc
+	i9Mn4zjQBIGQK6HAQiFjouUuMAKGD0hvXuqtIbw7cNK6dABRuZx6xbJ7HveUAb2W
+	iLshYnfJ5smDY44UN68eOZfRS941NE+hY2EESWfRtHj3bF8K1eClv9DKaxB7A6zA
+	3A0kZrum6K2DiyiN4gj9pUpC0w86jdXmPq+/8XXHLnX2RTBJE55KNzNe82n0DomT
+	qVXGZ5bxBNuSuS+IGKQpxNDO6py7wKxUVMdIRHoy2xUqU62JunMyfExCgwcCAwEA
+	AaNlMGMwQgYDVR0RBDswOYIPaWRwLmtobGV1dmVuLmJlhiZodHRwczovL2lkcC5r
+	aGxldXZlbi5iZS9pZHAvc2hpYmJvbGV0aDAdBgNVHQ4EFgQU6LNVU7ay63LW4qY9
+	gmQd70bUxXQwDQYJKoZIhvcNAQEFBQADggEBABGQdtkb/TncVxlIi0ejI3AHUYmG
+	RT05mU0Cmt1SEKybN6/VvwamKPWc9bmJu+uxJo3bxRVzOfUdXExZCe9KoLugj7KJ
+	ECH1yRDSb+s9TV2djqGEQO104Ol6fhDRH1YV7FWGjQ79Roddu6IwEawek4VEY4om
+	rQmBOTjKUb10v9xTTX28PsTM7e8Avbu9BujIgeX4KcsUWqDDsX8r9P8hK7aOS7Ym
+	XPLrSitrNNrQYr9FzuRm995nQ20lVTjh83TiPADSXUXDkebI9GcKqDA662HTNpNp
+	5Dpn+ZM2hbJN+AbA9QdpVSb+MJCzpRyh2AlN8simVEiciy1+p5tWR3iLwv8=
+				    </ds:X509Certificate>
+				</ds:X509Data>
+			    </ds:KeyInfo>
+			</KeyDescriptor>
+			<AttributeService Binding="urn:oasis:names:tc:SAML:1.0:bindings:SOAP-binding" Location="https://idp.khleuven.be:8443/idp/profile/SAML1/SOAP/AttributeQuery"/>
+			<AttributeService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP" Location="https://idp.khleuven.be:8443/idp/profile/SAML2/SOAP/AttributeQuery"/>
+			<NameIDFormat>urn:mace:shibboleth:1.0:nameIdentifier</NameIDFormat>
+			<NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</NameIDFormat>
+		    </AttributeAuthorityDescriptor>
+			<Organization>
+			    <OrganizationName xml:lang="en">Katholieke Hogeschool Leuven</OrganizationName>
+			    <OrganizationDisplayName xml:lang="en">KHLeuven</OrganizationDisplayName>
+			    <OrganizationURL xml:lang="en">http://www.khleuven.be/</OrganizationURL>
+			</Organization>
+			<ContactPerson contactType="technical">
+			    <SurName>Technical Support</SurName>
+			    <EmailAddress>support@khleuven.be</EmailAddress>
+			</ContactPerson>
+	</EntityDescriptor><EntityDescriptor entityID="https://idpx.ua.ac.be/idp/shibboleth" xmlns="urn:oasis:names:tc:SAML:2.0:metadata" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:mdrpi="urn:oasis:names:tc:SAML:metadata:rpi" xmlns:mdui="urn:oasis:names:tc:SAML:metadata:ui" xmlns:shibmd="urn:mace:shibboleth:metadata:1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+        <Extensions>
+             <mdrpi:RegistrationInfo registrationAuthority="http://federation.belnet.be/" registrationInstant="2012-03-27T12:00:00Z">
+             <mdrpi:RegistrationPolicy xml:lang="en">http://federation.belnet.be/files/Belnet-metadata-registration-practice-statement.txt</mdrpi:RegistrationPolicy>
+             </mdrpi:RegistrationInfo>
+        </Extensions>
+
+    <IDPSSODescriptor protocolSupportEnumeration="urn:mace:shibboleth:1.0 urn:oasis:names:tc:SAML:1.1:protocol urn:oasis:names:tc:SAML:2.0:protocol">
+
+       <Extensions>
+          <shibmd:Scope regexp="false">ua.ac.be</shibmd:Scope>
+          <mdui:UIInfo>
+            <mdui:DisplayName xml:lang="en">Universiteit Antwerpen</mdui:DisplayName>
+            <mdui:Description xml:lang="en">The University of Antwerp is a young, dynamic and forward-thinking university. It integrates the assets of its historic roots with its ambition to contribute positively to society.</mdui:Description>
+            <mdui:Logo height="16" width="16">https://idpx.ua.ac.be/ua_small.png</mdui:Logo>
+            <mdui:Logo height="75" width="153">https://idpx.ua.ac.be/ua_big.png</mdui:Logo>
+          </mdui:UIInfo>
+          <mdui:DiscoHints>
+            <mdui:IPHint>143.169.0.0/16</mdui:IPHint>
+            <mdui:IPHint>143.129.0.0/16</mdui:IPHint>
+            <mdui:IPHint>146.175.0.0/16</mdui:IPHint>
+            <mdui:DomainHint>idpx.ua.ac.be</mdui:DomainHint>
+          </mdui:DiscoHints>
+      </Extensions>
+
+        <KeyDescriptor>
+            <ds:KeyInfo>
+                <ds:X509Data>
+                    <ds:X509Certificate>
+MIIDIDCCAgigAwIBAgIVAN35bNDF/CV2nOx1eMcNH1z01yvsMA0GCSqGSIb3DQEB
+BQUAMBgxFjAUBgNVBAMTDWlkcHgudWEuYWMuYmUwHhcNMTMwMzIxMDgxNzMwWhcN
+MzMwMzIxMDgxNzMwWjAYMRYwFAYDVQQDEw1pZHB4LnVhLmFjLmJlMIIBIjANBgkq
+hkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEApyXIh2Np1E1Qki0uEcCUhHjmAPRCxhxg
+CWv6AQkR7jbs0o4PYTE9wXRtOze9811RyQtPgj9zUjEibD1CCv76XpBO/mN6y1No
+QtfS8Nbn4djWRgJWZfIHiXNs9ffL4BnbzpBDuUr/PHO8gBIwKfdpWklFjvnO9Vrs
+gS1qDHh7rJ+Zk0rRi3ZrRRGg0JdTSUYJx7EgVo9C9Ajwv1RpRWG8ZJAct90AxQ5+
+D4EeVuuouSOj5WsqUgA4htmjEYTiPNCF7k1RfZlzJVMFTawgo7jjMkjX23zUK56s
++rc7EAlUhLtq8Pqj0+uJDQfxGDaTfVY0dIaHq/5IFDn7BRRUB9+dQQIDAQABo2Ew
+XzA+BgNVHREENzA1gg1pZHB4LnVhLmFjLmJlhiRodHRwczovL2lkcHgudWEuYWMu
+YmUvaWRwL3NoaWJib2xldGgwHQYDVR0OBBYEFEeqIRV/QsxJ3bc7RrO2RABUu1Lf
+MA0GCSqGSIb3DQEBBQUAA4IBAQCVGsA3oBYrhjRaJiwlSNBrP+Peaq0823RWnGXc
+/jv17Sl99jbd3DyhIsuQ0zt2WpcG8kRt8L3DvNDeWnKu1xxFZ8Ntzqpz4oFAnMBq
+fMFfZf4s0xt8L+RrmeH6MM8q/eOcmGl1E/lmDA2eoqm5vvDAXhaCLfWuYHXfNpMj
+p5U39b+mNsQXGPTpuahnCbuctNW7Mc3chwFsbxjXPyinY4yxcBzqh1e97himRJaY
+5vK/rwetVB79srpcogHy2H1BBrZk+9w0Vwi+ygZehm5pPE+33TouniaRO/CRhAFh
+NpiD0CuosCt4MZj94vQ6z/XALYvkr3baOjCB3pek0xXnftOd
+
+                    </ds:X509Certificate>
+                </ds:X509Data>
+            </ds:KeyInfo>
+        </KeyDescriptor>
+
+        <ArtifactResolutionService Binding="urn:oasis:names:tc:SAML:1.0:bindings:SOAP-binding" Location="https://idpx.ua.ac.be:8443/idp/profile/SAML1/SOAP/ArtifactResolution" index="1"/>
+
+        <ArtifactResolutionService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP" Location="https://idpx.ua.ac.be:8443/idp/profile/SAML2/SOAP/ArtifactResolution" index="2"/>
+
+        <NameIDFormat>urn:mace:shibboleth:1.0:nameIdentifier</NameIDFormat>
+        <NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</NameIDFormat>
+
+        <SingleSignOnService Binding="urn:mace:shibboleth:1.0:profiles:AuthnRequest" Location="https://idpx.ua.ac.be/idp/profile/Shibboleth/SSO"/>
+
+        <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://idpx.ua.ac.be/idp/profile/SAML2/POST/SSO"/>
+
+        <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST-SimpleSign" Location="https://idpx.ua.ac.be/idp/profile/SAML2/POST-SimpleSign/SSO"/>
+
+        <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://idpx.ua.ac.be/idp/profile/SAML2/Redirect/SSO"/>
+    </IDPSSODescriptor>
+
+    <AttributeAuthorityDescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:1.1:protocol urn:oasis:names:tc:SAML:2.0:protocol">
+
+        <Extensions>
+            <shibmd:Scope regexp="false">ac.be</shibmd:Scope>
+        </Extensions>
+
+        <KeyDescriptor>
+            <ds:KeyInfo>
+                <ds:X509Data>
+                    <ds:X509Certificate>
+MIIDIDCCAgigAwIBAgIVAN35bNDF/CV2nOx1eMcNH1z01yvsMA0GCSqGSIb3DQEB
+BQUAMBgxFjAUBgNVBAMTDWlkcHgudWEuYWMuYmUwHhcNMTMwMzIxMDgxNzMwWhcN
+MzMwMzIxMDgxNzMwWjAYMRYwFAYDVQQDEw1pZHB4LnVhLmFjLmJlMIIBIjANBgkq
+hkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEApyXIh2Np1E1Qki0uEcCUhHjmAPRCxhxg
+CWv6AQkR7jbs0o4PYTE9wXRtOze9811RyQtPgj9zUjEibD1CCv76XpBO/mN6y1No
+QtfS8Nbn4djWRgJWZfIHiXNs9ffL4BnbzpBDuUr/PHO8gBIwKfdpWklFjvnO9Vrs
+gS1qDHh7rJ+Zk0rRi3ZrRRGg0JdTSUYJx7EgVo9C9Ajwv1RpRWG8ZJAct90AxQ5+
+D4EeVuuouSOj5WsqUgA4htmjEYTiPNCF7k1RfZlzJVMFTawgo7jjMkjX23zUK56s
++rc7EAlUhLtq8Pqj0+uJDQfxGDaTfVY0dIaHq/5IFDn7BRRUB9+dQQIDAQABo2Ew
+XzA+BgNVHREENzA1gg1pZHB4LnVhLmFjLmJlhiRodHRwczovL2lkcHgudWEuYWMu
+YmUvaWRwL3NoaWJib2xldGgwHQYDVR0OBBYEFEeqIRV/QsxJ3bc7RrO2RABUu1Lf
+MA0GCSqGSIb3DQEBBQUAA4IBAQCVGsA3oBYrhjRaJiwlSNBrP+Peaq0823RWnGXc
+/jv17Sl99jbd3DyhIsuQ0zt2WpcG8kRt8L3DvNDeWnKu1xxFZ8Ntzqpz4oFAnMBq
+fMFfZf4s0xt8L+RrmeH6MM8q/eOcmGl1E/lmDA2eoqm5vvDAXhaCLfWuYHXfNpMj
+p5U39b+mNsQXGPTpuahnCbuctNW7Mc3chwFsbxjXPyinY4yxcBzqh1e97himRJaY
+5vK/rwetVB79srpcogHy2H1BBrZk+9w0Vwi+ygZehm5pPE+33TouniaRO/CRhAFh
+NpiD0CuosCt4MZj94vQ6z/XALYvkr3baOjCB3pek0xXnftOd
+
+                    </ds:X509Certificate>
+                </ds:X509Data>
+            </ds:KeyInfo>
+        </KeyDescriptor>
+
+        <AttributeService Binding="urn:oasis:names:tc:SAML:1.0:bindings:SOAP-binding" Location="https://idpx.ua.ac.be:8443/idp/profile/SAML1/SOAP/AttributeQuery"/>
+
+        <AttributeService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP" Location="https://idpx.ua.ac.be:8443/idp/profile/SAML2/SOAP/AttributeQuery"/>
+
+        <NameIDFormat>urn:mace:shibboleth:1.0:nameIdentifier</NameIDFormat>
+        <NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</NameIDFormat>
+
+    </AttributeAuthorityDescriptor>
+
+    <Organization>
+       <OrganizationName xml:lang="en">Universiteit Antwerpen</OrganizationName>
+       <OrganizationDisplayName xml:lang="en">Universiteit Antwerpen</OrganizationDisplayName>
+       <OrganizationURL xml:lang="en">http://www.uantwerpen.be/</OrganizationURL>
+    </Organization>
+
+   <ContactPerson contactType="technical">
+       <GivenName>Vincent</GivenName>
+       <SurName>Feyaerts</SurName>
+      <EmailAddress>vincent.feyaerts@uantwerpen.be</EmailAddress>
+   </ContactPerson>
+
+</EntityDescriptor><EntityDescriptor entityID="urn:mace:kuleuven.be:kulassoc:kuleuven.be" xmlns="urn:oasis:names:tc:SAML:2.0:metadata" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:mdrpi="urn:oasis:names:tc:SAML:metadata:rpi" xmlns:mdui="urn:oasis:names:tc:SAML:metadata:ui" xmlns:shibmd="urn:mace:shibboleth:metadata:1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Extensions><mdrpi:RegistrationInfo registrationAuthority="http://federation.belnet.be/" registrationInstant="2012-03-27T12:00:00Z"><mdrpi:RegistrationPolicy xml:lang="en">http://federation.belnet.be/files/Belnet-metadata-registration-practice-statement.txt</mdrpi:RegistrationPolicy></mdrpi:RegistrationInfo></Extensions><IDPSSODescriptor protocolSupportEnumeration="urn:mace:shibboleth:1.0 urn:oasis:names:tc:SAML:1.1:protocol urn:oasis:names:tc:SAML:2.0:protocol"><Extensions><shibmd:Scope regexp="false">kuleuven.be</shibmd:Scope><shibmd:Scope regexp="false">groept.be</shibmd:Scope><shibmd:Scope regexp="false">hubkaho.be</shibmd:Scope><shibmd:Scope regexp="false">odisee.be</shibmd:Scope><shibmd:Scope regexp="false">ucll.be</shibmd:Scope><shibmd:Scope regexp="false">vives.be</shibmd:Scope><shibmd:Scope regexp="false">luca-arts.be</shibmd:Scope><shibmd:Scope regexp="false">khlim.be</shibmd:Scope><shibmd:Scope regexp="false">khleuven.be</shibmd:Scope><shibmd:Scope regexp="false">thomasmore.be</shibmd:Scope><mdui:UIInfo xmlns:mdui="urn:oasis:names:tc:SAML:metadata:ui"><mdui:DisplayName xml:lang="en">KU Leuven Association</mdui:DisplayName><mdui:DisplayName xml:lang="nl">Associatie KU Leuven</mdui:DisplayName><mdui:Description xml:lang="en">KU Leuven and the associated university colleges</mdui:Description><mdui:Description xml:lang="nl">KU Leuven en de geassocieerde hogescholen</mdui:Description><mdui:InformationURL xml:lang="en">http://associatie.kuleuven.be/eng</mdui:InformationURL><mdui:InformationURL xml:lang="nl">http://associatie.kuleuven.be/over</mdui:InformationURL><mdui:Logo height="16" width="16">data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA3BpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wUmlnaHRzPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvcmlnaHRzLyIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcFJpZ2h0czpNYXJrZWQ9IlRydWUiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RDUwMUMyNENENTYzMTFFM0FEMDM5OUJEM0Y1NDQ1OUYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RDUwMUMyNERENTYzMTFFM0FEMDM5OUJEM0Y1NDQ1OUYiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpENTAxQzI0QUQ1NjMxMUUzQUQwMzk5QkQzRjU0NDU5RiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpENTAxQzI0QkQ1NjMxMUUzQUQwMzk5QkQzRjU0NDU5RiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PnDgVQAAAAIVSURBVHjadFLNaxNBFJ+dnd3ZbDeaRJuvGhoPGqGt0iqpgpJ68NRj8aIInsSLqFSPFf8CPXrwIB6KYCXSqwcVpILUQz0EvJaINYY0CU33a3ZmfJtE3UL7Y5mdeR/zfu/9Rrn9vokiUBBiQoq/ew0raC9I9ABen0s3kKQfx6WElaqKkAck+Bx5HN2bPpyOqXB0Avl0o7vLZIz8r4OjZFouLyW1s2laiBP4Tia1mTRtOjxKC0fp24EsZ2i05vksJRjJfRNsJgsWuZDbkzCR0k8k9K4nIn32gbHScsX0qG5p4RW/bFHv8cEYZjO040uMh5HETCVDOio20G45O5zBVxu3fXTDCvflLF3dkjRlYRHWIZ9fLMOv1bWL+eTMpauDhMdLz+vNnesr9+Ha8TgRXz6uftvMpA9BN6T27gNU69Q25xYXcH/8LOCTJiseQa7HTEMHy5TuvFqutiaLUkhlbO4h4+J3o71efXRuYhzth/rWdml+iRr6CO1L32x0Ls6eOigaUMil5iunOz+3w6ZBdtmz71y7/M+9cPfZj0YbnkVx7OjrJ7cGxsWbV968XQsCQXwWJAqjwHXjex0csFZXPqFYSH19rfayMnWmdCx8NSzIH885jqfkKw90XXNcv2d74BBCJOImUTEID913dxxQAOwxqlkmhTQCtBh4uDBoKIKKsapiAYRggqoaHzG4GMrsBxzG+EeAAQCt0M7G/zjX3wAAAABJRU5ErkJggg==</mdui:Logo><mdui:Logo height="75" width="153">data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAABLCAYAAAA1fMjoAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA11pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0idXVpZDozMkNEMEY5MDg3OUQxMURDOTFDN0UzMEIyRjdCQjM1QyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo5QzUzODlCMkQ2MDcxMUUzQjY2RUFDMkIyRTcwODk5QSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo5QzUzODlCMUQ2MDcxMUUzQjY2RUFDMkIyRTcwODk5QSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBJbGx1c3RyYXRvciBDUzUuMSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZEN0YxMTc0MDcyMDY4MTE4QzE0QUQ0NTU2MzQwN0Y2IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkZEN0YxMTc0MDcyMDY4MTE4QzE0QUQ0NTU2MzQwN0Y2Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+R5rIdQAADfdJREFUeNrsXV1oHNcVHtlSYtlyIrW1caChu41bSJw2kh/8EEorOQ8tdaBKUxIKBdslfSgJxKIBQ0tjy6UPhhS54LyVWC70IaHBNsQlfXBXgSYQPdhKK8tQN5WKCzF2QJv4R2tLtnq/2XvXV3fPnbnzu6vd88Gw2tHMmftz/s+dux3Ly8sesLVQnBcfIx//d27cS4gfnvl02WMwWgBrtL+nxHHska8USuIo8NAwGJqACMsxJD6eEUe/OM4JIdnHw8Nod3QoF6ujo8P/FILRKz4OiGOftCpl7Xq4YFPsYjHa0cWi0MtDxGhndOpfhPUYFh9j4kAMMiqsxUEeIgYLSFU4ToiPYelWDbi4UgxGO1mQYbYaDIZdQIpCOOaaoVGFnk5vQ1dH3fnz84vONHZsus/b1tvlFTeuNWgseR9eve3NXV/KhQawobOjRmtz972w78rCXe98edGbFLRuLEXLa1Btu7G4LNp0xyt9UvGuVO5GGtu5a0vWNqD9hY2ddeevLtype87mdWu8Td1rY899tQ9LVjp6O7f1dcV+TlB/dazIYgk3q19akpOg4VWzWThXltbFye1KmsX647e/4E+KiaMXrovJvxXKOHu/tsEf4CCAMY/OXCcZKQ0aCs8X13u7Hl5H9qfGFGKiTl+qeG/O3nQSDJe2QegwXiYTHNr+gC9YJl4997lVAT0t2o9nmkC/f/7BfF1/nyt2x557jOmrZz+30tHb+fbOL8Z+TlB/dazRYhC4VuekUOATMYmqhQyKoyRTwJkCDGBjph1fui/w3qGH7vf2f2NjKPP42kcwyWs7euuuTYOG0rq/2/GgP8lBwqGuxXVg3qBrX3q0x7ltGMcweq7AmFBAO2CRWhn6SP9AWo4+WAspFCOygDjgVVO+/Vk3aGjL/bGEB+cpLRfGmC891pMqDYX939wYmXkgcBACCmiXjVGDXFW0I6m7G9SPqG1azQIC5j8lBALu1BF5znep8opNlK8ephltE0UJD1wMmG1bvODHBVIjp0FDuSSUG+NqQU2mg68NmnGAdiTx1cMEIGy+WilI92TcAYEoC3cq98a4DDbcLCoOoe6Fj/zKZLnmh9t8aQSgVyq3U6EB7Hq42xprvCXijFkRSBd71gq3aj0pkDiv9/HpL68LjF2mhfBCQNEuih7uj5LgiDInys1SyuNK5Y6vTOqCfMIKYWyviut1zF67k4iHMCYuyRMkA+IISEMRFmPobpZLBsKfPMG4ijmm55fqJk9NYFo00D4qRkB7EXyqyQM90KLiBNwPOgi0g6zq4X9eq7XrvGQuxD11ViSmBQFTu8Q7sDLHLlb7BcE2FRief2jggbr7JsR1LomJSNkpMb4Y56wsSMmwHKW8LImLe6ULSVg2q5a1ERMDTQVmUxmSqIhCw+ZaQdObmg3f0Q/KfSoK5sTzbMyNdphWAfRwjzmOcQN11/iiKiA3Wt7FGnUR0MyCc2IyoHUpBsJ3U0B8ZrIwJ7Qg7lF0cO3kp7czoWHWTBRQN6EAGpSAbOsTUzNbFRRSQOaXrFYlyzl5a3ahLv2qlNukpY95AvMXlv5FH1wtV230G11BpyZDaWyTgZTp1+sPYFSbT09ZIBy4/vA/rtU0exo0gkw/zejxYoPp8mKm82HLGKIIuWNTV11MAfe4GQQkyyxWw2DLp1NuhC14NH181+ciBlDPToNGq4CKB6GQqq7mYttks5pCQGyDq5ZgUEExZXHA2L+Y/MyvILtqM2jJn359fao0osZeed6XZE7UeExbkhStKCRNofYoZodQqEwVFRtQbpbubuHQ10AFFRnxfzMzFpeG1TcWwTZlDW1BuEpD3li6a30eJcBwRylGfeNfN50to62fiJeUW4ixMq9pBjfLJc17pXJn9QiIrVLrEmxhIt+5VPEFjBIyxeR+IH2hKoi2WoG/vql7TSIa1XTwEhnoY4UAJSC21LaymqiZ2PpOZY5Qg6FSszeX7rorLMtqBipVWydYFzsiL7xME1mnedWCxUHv3tuEEyKAn8jTergCzAAB2bxuLcmU1aLTrRXMjudR14Lhk9KA1ke2ilpkh3vA9HrWyybYujtj09aqMKgLCayHrQYTtKAyLVdJ3euagl91LpYQjmPiY49xzQFxHktO9mbxElUSv1UF9/CJn/NoplS1BvXdlsZ9538Vsi1RaNSKgKI91DVYZ+ULCqxMX6eVDu7XGRo1FEroIBCP93X6QXOhZ21gLJfHfCiL2EgBcfE8ANdUr/5G4T4pHKiHHJFrsnAe5/AaLoRnIG33yqVSG2aBoEXBUCYtfyGhYErbAkCdgaCpk9JQeFMM/qGBLusEhq3TQrywQngvLViXzIctJqwyw81IDJ5U4bmudFhtFgSrecfNegg2khNCMudVq+r9aVoRm3sBhjd9bww6lnrbfHEc1P9dgjowtHpuUhrKLaIKai5A9swMMkEf5+O0Dfclda/Qnjcu1gsZ1nhR17eSm6WrS8Qd71EXaTFIqu+D2KrniCvAZPoxaXmDT7lZ6gWhqIytM2QaNO5ZkZuRl18EvRCGtqFKHkUzQ0ijMKpNYYGGOR84SpdvZWKFmjYG8TJcSuKcSgzwl7G4j3In1GI5TCSC6ueF5g7ypcFkeA5cD1O7pkHjnmtU8dscRgt0YIHC0pO47pVrZb96H5TcQAwDelGr9Daa0/PRVgG0kpvVoe3Niz9GPPkOCKVIMIYuGa1m2DhOvUf9uObvo6YA182VcdKgsSJL1te1Ym3VrBAIlaVKo3/+UvP5RWeXihFdQEKVzGoREAYjbRdryOF63iuL0Z4WRO3NmwbYgjBaBfquJsviGNS+H9R/BsH8P4PRVgJCANv/FHiIGCwgDAaDBYTBiIpMlrtj20gGoxWQSR1kWRFlMFrIgqS2q8no8b/xyDJay4KkWQfxBn/JFoTRWkE61zkYjAABYTAYLCAMRuwgHQjbi3coyw0cGIxmF5Cg90E8j1fzMtpcQKbYQjAYHIMwGJEtyFCeLtTBPU95B3bvrDuPIuPB8TO17/1bH/JKYy94vT30rywNjfzBm5iarQZQ4rrB/mLdNR1Dv6o7Z7tWp+eK5dJvyfPUc6PScIE5ZhQt9Al9i9L2fT960ht7cVfd/478+QNv5PXTzrSKP37NK2zp9cc8LvR5wbzZaOFZc5fnQ9tljlmoBZGuVa/cH8uHfCcEgfsJueNiroBQHNv/rFU49h5+OzIzM9xx8u8XyPOUYqHO+T77vz+pY9gsQSndVFwsuUEcuG1MCYdXfSdE/bptLj8DrQPaCxaEAjTY+LtnmYszBBibYm7Miam0Bvu/StI49f6FXNu853vbhbXqyyQGgWDAiijq2EgO+/JiN0W1o+Jwnh3FQQGCATPPaKQVWSkQ33miaLl/Jvc2j734/UwEBNZhVP7CrbIax6X7VZbxSSGPDkJDUb6vEg64Vox88N5HtAtrCgTlYpWvV3wXK28Mf+sxq8uXJEhf0V8V2xkClDke3GCPOzDYVHDYyogS6GdjQWYsTPhobS5szOhiPWzJg+SxyFOCdnK6ugWBldgtrcfLcEGF5ZiT8cigtCiZZ7mQOaHiDggHBhJaidF4IYGfr3z9Zok/TIuWhhXRLQiq6PrPH4xK4ShJi4Ii4slGdRhuVTsKR1hqNA+rCjcLbgvFhOPvzlvjj4mp/zi502F9PP7Xs7ESMmlYEf1Xbsfl74AME8Lg/yRCIxll93e3C2Y43XYCkpYvnTRQp2JCCAYYl2ojrI6LQoMrHdZHWxyUhxVZEYPInzaYMs4NNQOjwPU69f4M1z0aAJXuNdOnQQwYl6mTAAJpxq6wImnFIHCnUCg8Jo5Z+QLVsiwSDjfDRAUVDRnZWxEqDoFld70+a8CamXWbpBZELxQiCJ+VMciE5lbhPIRkrNGThAmJoxFYqJKPgc0iULWqvKvnCp/dqKS+H4LuYkEAkMkaUNkrFbzL3y7cJz5/b/wvE6AICMmnsllxXC3QMa/H2iDanSg3FWOnlealxtJWcaaYO0rBL8rcpJ3mhRXBcpO0qunmL0yNUAIgzu31qjua7MnelM/4WZmgzExUV8tMQ4JZojBHqwb8qGVEURKuQoKsUyMx8vpfMrEgnrQg1lgtj8599PHlmmaBNqBMuHK1TCGCG0D5nGoBG9KO1Xt35iIcYelLF83psgLWTPVi7KhxOPGbn/jXoZ9QGi8/+2SkcbCle81AOUr13CXNq4TONdULQbaNQVIBKQT1RRyn8tUEp/0JoawF5WphYGzMj/NhKz3TzpClMUFxaGBcqPvU6ui48YbL+ERde+WS5g1qkw2jx88Iui8kHn/dxULdY4xa1i5jkF55TW6ANoriakFzJWHyVtnwDpo2blEV1sOmqV2C70ZWz01hTkPh6QIyIl2sc/IdkIMy5TsvY4+9eQTo1GTbOkplteJW3HFfq8Qf6H+cBZ2475lf/ymRlXWpnufpgaQmIJL5saxdbUF6QLpVsBrYzWS8GTtqrt0Ckw/87Kiz9sD1YIpWe7cErg5iHFehV9mksPghyEK4Vs/zAvqSdF4btvVodbFbL5lBcX1Jx+UexDBPPLJF3Ntd59NiANN4XyFurKELcZJ4JSwwxhhgLMw1U+XrC35SBGPgGlhjDmwvsdnmIew+N0V2j7aNFvX8KNcGCsjWQnHQRSjluyGJBYTBWA3Qs1glh+uxLmuCh43RjgJiLkosefUbyfHGcYz2FBBzwzi5BSlvJMdoa/DGcQwGCwiDkdDFsvx4Tr+x27tbFovBaMEgncpime+AcBaL0Vb4vwADAI6r9hTmuAw9AAAAAElFTkSuQmCC</mdui:Logo></mdui:UIInfo><mdui:DiscoHints xmlns:mdui="urn:oasis:names:tc:SAML:metadata:ui"><mdui:DomainHint>kuleuven.be</mdui:DomainHint><mdui:IPHint>134.58.0.0/16</mdui:IPHint><mdui:IPHint>193.190.168.0/23</mdui:IPHint><mdui:IPHint>193.190.176.0/22</mdui:IPHint><mdui:IPHint>193.190.180.0/23</mdui:IPHint><mdui:IPHint>193.190.253.0/24</mdui:IPHint><mdui:IPHint>193.190.146.160/27</mdui:IPHint><mdui:IPHint>193.190.57.0/26</mdui:IPHint><mdui:IPHint>193.190.57.192/27</mdui:IPHint><mdui:IPHint>193.190.57.224/27</mdui:IPHint><mdui:IPHint>193.190.58.0/26</mdui:IPHint><mdui:IPHint>193.190.59.0/24</mdui:IPHint><mdui:IPHint>193.190.255.0/25</mdui:IPHint><mdui:IPHint>193.190.138.0/24</mdui:IPHint><mdui:IPHint>193.191.187.0/25</mdui:IPHint><mdui:IPHint>193.190.77.0/26</mdui:IPHint><mdui:IPHint>193.190.224.0/24</mdui:IPHint><mdui:IPHint>193.190.225.0/24</mdui:IPHint><mdui:IPHint>193.190.130.128/26</mdui:IPHint><mdui:IPHint>2a02:2c40::/32</mdui:IPHint><mdui:GeolocationHint>geo:50.9378101,4.0409517000000505</mdui:GeolocationHint><mdui:GeolocationHint>geo:51.2194475,4.40246430000002</mdui:GeolocationHint><mdui:GeolocationHint>geo:51.209348,3.2246995000000424</mdui:GeolocationHint><mdui:GeolocationHint>geo:50.84999999999999,4.350000000000023</mdui:GeolocationHint><mdui:GeolocationHint>geo:50.91083,5.4133600000000115</mdui:GeolocationHint><mdui:GeolocationHint>geo:50.98965,5.050160000000005</mdui:GeolocationHint><mdui:GeolocationHint>geo:50.8464506,4.262063000000012</mdui:GeolocationHint><mdui:GeolocationHint>geo:51.16257,4.990839999999935</mdui:GeolocationHint><mdui:GeolocationHint>geo:51.0543422,3.717424299999948</mdui:GeolocationHint><mdui:GeolocationHint>geo:50.93069,5.332480000000032</mdui:GeolocationHint><mdui:GeolocationHint>geo:50.8194776,3.2577263000000584</mdui:GeolocationHint><mdui:GeolocationHint>geo:50.87822088437878,4.702697216918987</mdui:GeolocationHint><mdui:GeolocationHint>geo:51.1302138,4.571509200000037</mdui:GeolocationHint><mdui:GeolocationHint>geo:51.0258761,4.477536200000031</mdui:GeolocationHint><mdui:GeolocationHint>geo:51.2166667,2.8999999999999772</mdui:GeolocationHint><mdui:GeolocationHint>geo:50.94990869999999,3.129447099999993</mdui:GeolocationHint><mdui:GeolocationHint>geo:50.8674164,4.377298099999962</mdui:GeolocationHint><mdui:GeolocationHint>geo:51.07045,4.53135999999995</mdui:GeolocationHint><mdui:GeolocationHint>geo:51.1558839,4.15444100000002</mdui:GeolocationHint><mdui:GeolocationHint>geo:50.940892,4.904695599999968</mdui:GeolocationHint><mdui:GeolocationHint>geo:51.06498,3.101570000000038</mdui:GeolocationHint><mdui:GeolocationHint>geo:51.3216509,4.93755770000007</mdui:GeolocationHint><mdui:GeolocationHint>geo:51.2025247,4.770882700000016</mdui:GeolocationHint><mdui:GeolocationHint>geo:50.8134333,4.324834399999986</mdui:GeolocationHint></mdui:DiscoHints></Extensions><KeyDescriptor><ds:KeyInfo><ds:X509Data><ds:X509Certificate>MIIDJzCCAg+gAwIBAgIUJCkaCLjPZevQdbFbyV/aX8+ObfEwDQYJKoZIhvcNAQEF
+BQAwGjEYMBYGA1UEAxMPaWRwLmt1bGV1dmVuLmJlMB4XDTEwMTIwNjEwMzY1MFoX
+DTMwMTIwNjEwMzY1MFowGjEYMBYGA1UEAxMPaWRwLmt1bGV1dmVuLmJlMIIBIjAN
+BgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoIYa2FxhIfJ7Sy1RhWTmUObGUJRO
+WkyRuQ8colNagd7LgtmV1QMtzO7ZBrzUtJYtl65JJdGa0bN3k2UotpvB2qu77n8g
+CenFr2QgOxbf+7uadVkxAYaow0GA1u3a9c4TaHn4Y8WazR1SN386VKGwZcKEGGsV
+KWnC3gXGLar2p1Oqd69l68nSXQ98O6GgmGbnDVbN/VgNI2Vqe5dpu4tAQQoH6gPH
+GPl4xTeffAI/Vcy7OveAEXlz1nGTxJlwZ9/+RmEV8ub553ZYeojaceMqrHDSpkzu
+d8fwWsifjdZS7jfxFuhlbiPh67aa4y1jskGmviWOENCNZU246TyPuSE9nQIDAQAB
+o2UwYzBCBgNVHREEOzA5gg9pZHAua3VsZXV2ZW4uYmWGJmh0dHBzOi8vaWRwLmt1
+bGV1dmVuLmJlL2lkcC9zaGliYm9sZXRoMB0GA1UdDgQWBBQ3Wq3jKozzu+nRqPAm
+llWj/cBVAjANBgkqhkiG9w0BAQUFAAOCAQEANGAtqMje2/kEPetXA0AOesJ0OYxh
+AaKIAawXwUQcvAEW+uO879UEppsq3VMXrX9VqXrXY47o5B2+/NtvSls7U0FeA/QE
+vBEeFteBO7NxKY7VasCCfYI7mT0LUr3MgIPDnENq4ymNyLVgAhxOK4Vu43mtPz8D
++yUwJwUPelIPJsW994v3EXGFSN8XYoxZcWfub41JBTSCcUPEeRllizGgTgFpZdGw
+yBBF0f9qs7xieTqsGGijXddW2178IDQV0l3abTnhZZW+FWO5pKOYwkRaLD092RVh
+5WD5+lg0EzoMXE00cBUlt6+K8JNWQARxL7MYUMX0ciUUP+XCSFsiYVHX4w==</ds:X509Certificate></ds:X509Data></ds:KeyInfo></KeyDescriptor><ArtifactResolutionService Binding="urn:oasis:names:tc:SAML:1.0:bindings:SOAP-binding" Location="https://idp.kuleuven.be:8443/idp/profile/SAML1/SOAP/ArtifactResolution" index="1"/><ArtifactResolutionService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP" Location="https://idp.kuleuven.be:8443/idp/profile/SAML2/SOAP/ArtifactResolution" index="2"/><NameIDFormat>urn:mace:shibboleth:1.0:nameIdentifier</NameIDFormat><NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</NameIDFormat><SingleSignOnService Binding="urn:mace:shibboleth:1.0:profiles:AuthnRequest" Location="https://idp.kuleuven.be/idp/profile/Shibboleth/SSO"/><SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://idp.kuleuven.be/idp/profile/SAML2/POST/SSO"/><SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST-SimpleSign" Location="https://idp.kuleuven.be/idp/profile/SAML2/POST-SimpleSign/SSO"/><SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://idp.kuleuven.be/idp/profile/SAML2/Redirect/SSO"/></IDPSSODescriptor><AttributeAuthorityDescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:1.1:protocol urn:oasis:names:tc:SAML:2.0:protocol"><Extensions><shibmd:Scope regexp="false">kuleuven.be</shibmd:Scope><shibmd:Scope regexp="false">groept.be</shibmd:Scope><shibmd:Scope regexp="false">hubkaho.be</shibmd:Scope><shibmd:Scope regexp="false">odisee.be</shibmd:Scope><shibmd:Scope regexp="false">ucll.be</shibmd:Scope><shibmd:Scope regexp="false">vives.be</shibmd:Scope><shibmd:Scope regexp="false">luca-arts.be</shibmd:Scope><shibmd:Scope regexp="false">khlim.be</shibmd:Scope><shibmd:Scope regexp="false">khleuven.be</shibmd:Scope><shibmd:Scope regexp="false">thomasmore.be</shibmd:Scope></Extensions><KeyDescriptor><ds:KeyInfo><ds:X509Data><ds:X509Certificate>MIIDJzCCAg+gAwIBAgIUJCkaCLjPZevQdbFbyV/aX8+ObfEwDQYJKoZIhvcNAQEF
+BQAwGjEYMBYGA1UEAxMPaWRwLmt1bGV1dmVuLmJlMB4XDTEwMTIwNjEwMzY1MFoX
+DTMwMTIwNjEwMzY1MFowGjEYMBYGA1UEAxMPaWRwLmt1bGV1dmVuLmJlMIIBIjAN
+BgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoIYa2FxhIfJ7Sy1RhWTmUObGUJRO
+WkyRuQ8colNagd7LgtmV1QMtzO7ZBrzUtJYtl65JJdGa0bN3k2UotpvB2qu77n8g
+CenFr2QgOxbf+7uadVkxAYaow0GA1u3a9c4TaHn4Y8WazR1SN386VKGwZcKEGGsV
+KWnC3gXGLar2p1Oqd69l68nSXQ98O6GgmGbnDVbN/VgNI2Vqe5dpu4tAQQoH6gPH
+GPl4xTeffAI/Vcy7OveAEXlz1nGTxJlwZ9/+RmEV8ub553ZYeojaceMqrHDSpkzu
+d8fwWsifjdZS7jfxFuhlbiPh67aa4y1jskGmviWOENCNZU246TyPuSE9nQIDAQAB
+o2UwYzBCBgNVHREEOzA5gg9pZHAua3VsZXV2ZW4uYmWGJmh0dHBzOi8vaWRwLmt1
+bGV1dmVuLmJlL2lkcC9zaGliYm9sZXRoMB0GA1UdDgQWBBQ3Wq3jKozzu+nRqPAm
+llWj/cBVAjANBgkqhkiG9w0BAQUFAAOCAQEANGAtqMje2/kEPetXA0AOesJ0OYxh
+AaKIAawXwUQcvAEW+uO879UEppsq3VMXrX9VqXrXY47o5B2+/NtvSls7U0FeA/QE
+vBEeFteBO7NxKY7VasCCfYI7mT0LUr3MgIPDnENq4ymNyLVgAhxOK4Vu43mtPz8D
++yUwJwUPelIPJsW994v3EXGFSN8XYoxZcWfub41JBTSCcUPEeRllizGgTgFpZdGw
+yBBF0f9qs7xieTqsGGijXddW2178IDQV0l3abTnhZZW+FWO5pKOYwkRaLD092RVh
+5WD5+lg0EzoMXE00cBUlt6+K8JNWQARxL7MYUMX0ciUUP+XCSFsiYVHX4w==</ds:X509Certificate></ds:X509Data></ds:KeyInfo></KeyDescriptor><AttributeService Binding="urn:oasis:names:tc:SAML:1.0:bindings:SOAP-binding" Location="https://idp.kuleuven.be:8443/idp/profile/SAML1/SOAP/AttributeQuery"/><AttributeService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP" Location="https://idp.kuleuven.be:8443/idp/profile/SAML2/SOAP/AttributeQuery"/><NameIDFormat>urn:mace:shibboleth:1.0:nameIdentifier</NameIDFormat><NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</NameIDFormat></AttributeAuthorityDescriptor><Organization><OrganizationName xml:lang="nl">KU Leuven / Associatie KU Leuven</OrganizationName><OrganizationName xml:lang="en">KU Leuven / KU Leuven Association</OrganizationName><OrganizationDisplayName xml:lang="nl">KU Leuven / Associatie KU Leuven</OrganizationDisplayName><OrganizationDisplayName xml:lang="en">KU Leuven / KU Leuven Association</OrganizationDisplayName><OrganizationURL xml:lang="nl">http://www.kuleuven.be</OrganizationURL><OrganizationURL xml:lang="en">http://www.kuleuven.be</OrganizationURL></Organization><ContactPerson contactType="technical"><GivenName>AAI team</GivenName><EmailAddress>shib@kuleuven.be</EmailAddress></ContactPerson><ContactPerson contactType="support"><GivenName>ICTS Servicepunt</GivenName><EmailAddress>servicepunt@icts.kuleuven.be</EmailAddress></ContactPerson></EntityDescriptor><EntityDescriptor entityID="https://idp.vub.ac.be/idp/shibboleth" xmlns="urn:oasis:names:tc:SAML:2.0:metadata" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:mdrpi="urn:oasis:names:tc:SAML:metadata:rpi" xmlns:mdui="urn:oasis:names:tc:SAML:metadata:ui" xmlns:shibmd="urn:mace:shibboleth:metadata:1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <Extensions>
+        <mdrpi:RegistrationInfo registrationAuthority="http://federation.belnet.be/" registrationInstant="2012-03-27T12:00:00Z">
+          <mdrpi:RegistrationPolicy xml:lang="en">http://federation.belnet.be/files/Belnet-metadata-registration-practice-statement.txt</mdrpi:RegistrationPolicy>
+        </mdrpi:RegistrationInfo>
+    </Extensions>
+
+    <IDPSSODescriptor protocolSupportEnumeration="urn:mace:shibboleth:1.0 urn:oasis:names:tc:SAML:1.1:protocol urn:oasis:names:tc:SAML:2.0:protocol">
+
+        <Extensions>
+            <shibmd:Scope regexp="false" xmlns:shibmd="urn:mace:shibboleth:metadata:1.0">vub.ac.be</shibmd:Scope>
+             <mdui:UIInfo xmlns:mdui="urn:oasis:names:tc:SAML:metadata:ui">
+                <mdui:DisplayName xml:lang="en">VUB - Vrije Universiteit Brussel</mdui:DisplayName>
+                <mdui:Description xml:lang="en">Vrije Universiteit Brussel</mdui:Description>
+                <mdui:Logo height="16" width="16">https://idp.vub.ac.be/logo/vub-small.jpg</mdui:Logo>
+                <mdui:Logo height="110" width="347">https://idp.vub.ac.be/logo/vub-large.png</mdui:Logo>
+
+                               </mdui:UIInfo>
+                                <mdui:DiscoHints xmlns:mdui="urn:oasis:names:tc:SAML:metadata:ui">
+                                        <mdui:IPHint>134.184.0.0/16</mdui:IPHint>
+                                        <mdui:IPHint>2001:06a8:1190::/64</mdui:IPHint>
+                                        <mdui:DomainHint>vub.ac.be</mdui:DomainHint>
+                                        <mdui:GeolocationHint>geo:50.8213690,4.3957100</mdui:GeolocationHint>
+                                </mdui:DiscoHints>
+        </Extensions>
+
+
+        <KeyDescriptor>
+            <ds:KeyInfo>
+                <ds:X509Data>
+                    <ds:X509Certificate>
+MIIDHzCCAgegAwIBAgIUUfJ0sMk1r7U/7VeOC4dUi0tFk+4wDQYJKoZIhvcNAQEF
+BQAwGDEWMBQGA1UEAxMNaWRwLnZ1Yi5hYy5iZTAeFw0xMzEyMTcwODQ5NDRaFw0z
+MzEyMTcwODQ5NDRaMBgxFjAUBgNVBAMTDWlkcC52dWIuYWMuYmUwggEiMA0GCSqG
+SIb3DQEBAQUAA4IBDwAwggEKAoIBAQCgAg+ICRsB+l1EPx8pRtbp/W/s0DruoIHO
+wlHgtvhVToh/GDdAqDNHdhGGTSTVc77JO1j1yV3sQgczH+4Hz/bczwUCbna3ItgN
+SvnhzzFcpzdJ7MKJJaIc4CszrZG4TBA3hHaAIOsjlOz8QwG7DIhx7pF/wZktYJkQ
+RE6vC6Y579QcFqxBF8nNi+jKELWgwean36+lqIDYLhsWDye/lJ/h5dgp0W1bfYM+
+CNXNbBF5IiLY9RgypiGBtm+717vig8GVpHOsiFsN7+CPboRr0BFVwg2NEpnvlZSa
+plqYBHOlmqLDJv8l7Du6ss1Vp1eLgp/cdb0pbeBme/+NCMZIGOJvAgMBAAGjYTBf
+MD4GA1UdEQQ3MDWCDWlkcC52dWIuYWMuYmWGJGh0dHBzOi8vaWRwLnZ1Yi5hYy5i
+ZS9pZHAvc2hpYmJvbGV0aDAdBgNVHQ4EFgQUb3yOJUsB5SdaKAXaXW+Xxlub4Dgw
+DQYJKoZIhvcNAQEFBQADggEBAArzqWvBazHyT82L/HbNUH+KbrbOtgj2eiLRmWDT
+GCB1/qXuuh+WLejyvN7EJ+SBGGdWEdytBvZyAmIq4Kv4EDDupu/ynYCxP03v6oW5
+ucpeNa/q3lA9oAXPNp4z5DXJYTTMlRXOojmJnokizp4pxKM9hKVPBN7QB7n6KjPy
+2F+EAkHGF5c4LKgMsOK4Gsjux1vi/PbAO0qiMOfsHdKM1ZUJQP+skNYkhjMCVV4d
+/h/4Ex6XuS8nqlpwIti+gqTmnULy0Aa3fBluoLmvB38uDPdlC3QkBiFbQtX+GUDG
+dnwz715sBlh9o1XpY8ZJk6VAdG4njwd/RBj9cZcya3tIaMw=
+
+                    </ds:X509Certificate>
+                </ds:X509Data>
+            </ds:KeyInfo>
+        </KeyDescriptor>
+
+        <ArtifactResolutionService Binding="urn:oasis:names:tc:SAML:1.0:bindings:SOAP-binding" Location="https://idp.vub.ac.be:8443/idp/profile/SAML1/SOAP/ArtifactResolution" index="1"/>
+
+        <ArtifactResolutionService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP" Location="https://idp.vub.ac.be:8443/idp/profile/SAML2/SOAP/ArtifactResolution" index="2"/>
+
+        <SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://idp.vub.ac.be/idp/profile/SAML2/Redirect/SLO"/>
+
+        <SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://idp.vub.ac.be/idp/profile/SAML2/POST/SLO"/>
+
+        <SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP" Location="https://idp.vub.ac.be:8443/idp/profile/SAML2/SOAP/SLO"/>
+
+        <NameIDFormat>urn:mace:shibboleth:1.0:nameIdentifier</NameIDFormat>
+        <NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</NameIDFormat>
+
+        <SingleSignOnService Binding="urn:mace:shibboleth:1.0:profiles:AuthnRequest" Location="https://idp.vub.ac.be/idp/profile/Shibboleth/SSO"/>
+
+        <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://idp.vub.ac.be/idp/profile/SAML2/POST/SSO"/>
+
+        <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST-SimpleSign" Location="https://idp.vub.ac.be/idp/profile/SAML2/POST-SimpleSign/SSO"/>
+
+        <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://idp.vub.ac.be/idp/profile/SAML2/Redirect/SSO"/>
+    </IDPSSODescriptor>
+
+    <AttributeAuthorityDescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:1.1:protocol urn:oasis:names:tc:SAML:2.0:protocol">
+
+        <Extensions>
+            <shibmd:Scope regexp="false">vub.ac.be</shibmd:Scope>
+        </Extensions>
+
+        <KeyDescriptor>
+            <ds:KeyInfo>
+                <ds:X509Data>
+                    <ds:X509Certificate>
+MIIDHzCCAgegAwIBAgIUUfJ0sMk1r7U/7VeOC4dUi0tFk+4wDQYJKoZIhvcNAQEF
+BQAwGDEWMBQGA1UEAxMNaWRwLnZ1Yi5hYy5iZTAeFw0xMzEyMTcwODQ5NDRaFw0z
+MzEyMTcwODQ5NDRaMBgxFjAUBgNVBAMTDWlkcC52dWIuYWMuYmUwggEiMA0GCSqG
+SIb3DQEBAQUAA4IBDwAwggEKAoIBAQCgAg+ICRsB+l1EPx8pRtbp/W/s0DruoIHO
+wlHgtvhVToh/GDdAqDNHdhGGTSTVc77JO1j1yV3sQgczH+4Hz/bczwUCbna3ItgN
+SvnhzzFcpzdJ7MKJJaIc4CszrZG4TBA3hHaAIOsjlOz8QwG7DIhx7pF/wZktYJkQ
+RE6vC6Y579QcFqxBF8nNi+jKELWgwean36+lqIDYLhsWDye/lJ/h5dgp0W1bfYM+
+CNXNbBF5IiLY9RgypiGBtm+717vig8GVpHOsiFsN7+CPboRr0BFVwg2NEpnvlZSa
+plqYBHOlmqLDJv8l7Du6ss1Vp1eLgp/cdb0pbeBme/+NCMZIGOJvAgMBAAGjYTBf
+MD4GA1UdEQQ3MDWCDWlkcC52dWIuYWMuYmWGJGh0dHBzOi8vaWRwLnZ1Yi5hYy5i
+ZS9pZHAvc2hpYmJvbGV0aDAdBgNVHQ4EFgQUb3yOJUsB5SdaKAXaXW+Xxlub4Dgw
+DQYJKoZIhvcNAQEFBQADggEBAArzqWvBazHyT82L/HbNUH+KbrbOtgj2eiLRmWDT
+GCB1/qXuuh+WLejyvN7EJ+SBGGdWEdytBvZyAmIq4Kv4EDDupu/ynYCxP03v6oW5
+ucpeNa/q3lA9oAXPNp4z5DXJYTTMlRXOojmJnokizp4pxKM9hKVPBN7QB7n6KjPy
+2F+EAkHGF5c4LKgMsOK4Gsjux1vi/PbAO0qiMOfsHdKM1ZUJQP+skNYkhjMCVV4d
+/h/4Ex6XuS8nqlpwIti+gqTmnULy0Aa3fBluoLmvB38uDPdlC3QkBiFbQtX+GUDG
+dnwz715sBlh9o1XpY8ZJk6VAdG4njwd/RBj9cZcya3tIaMw=
+
+                    </ds:X509Certificate>
+                </ds:X509Data>
+            </ds:KeyInfo>
+        </KeyDescriptor>
+
+        <AttributeService Binding="urn:oasis:names:tc:SAML:1.0:bindings:SOAP-binding" Location="https://idp.vub.ac.be:8443/idp/profile/SAML1/SOAP/AttributeQuery"/>
+
+        <AttributeService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP" Location="https://idp.vub.ac.be:8443/idp/profile/SAML2/SOAP/AttributeQuery"/>
+
+        <NameIDFormat>urn:mace:shibboleth:1.0:nameIdentifier</NameIDFormat>
+        <NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</NameIDFormat>
+
+    </AttributeAuthorityDescriptor>
+
+    <Organization>
+        <OrganizationName xml:lang="en" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                Vrije Universiteit Brussel
+        </OrganizationName>
+        <OrganizationDisplayName xml:lang="en" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                VUB - Vrije Universiteit Brussel
+        </OrganizationDisplayName>
+        <OrganizationURL xml:lang="en" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                http://www.vub.ac.be
+        </OrganizationURL>
+    </Organization>
+    <ContactPerson contactType="technical">
+        <GivenName>Technical Support</GivenName>
+        <SurName>Technical Support</SurName>
+        <EmailAddress>support@vub.ac.be</EmailAddress>
+    </ContactPerson>
+
+</EntityDescriptor><EntityDescriptor xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion" ID="I5ffeaa4f805618f" entityID="https://sso.vito.be" xmlns="urn:oasis:names:tc:SAML:2.0:metadata" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:mdrpi="urn:oasis:names:tc:SAML:metadata:rpi" xmlns:mdui="urn:oasis:names:tc:SAML:metadata:ui">
+	<Extensions>
+            <mdrpi:RegistrationInfo registrationAuthority="http://federation.belnet.be/" registrationInstant="2012-03-27T12:00:00Z">
+              <mdrpi:RegistrationPolicy xml:lang="en">http://federation.belnet.be/files/Belnet-metadata-registration-practice-statement.txt</mdrpi:RegistrationPolicy>
+            </mdrpi:RegistrationInfo>
+    </Extensions>
+
+<IDPSSODescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
+	<Extensions>
+            <shibmd:Scope regexp="false" xmlns:shibmd="urn:mace:shibboleth:metadata:1.0">VITO</shibmd:Scope>
+             <mdui:UIInfo xmlns:mdui="urn:oasis:names:tc:SAML:metadata:ui">
+                <mdui:DisplayName xml:lang="en">VITO</mdui:DisplayName>
+                <mdui:Description xml:lang="en">Vlaamse Instelling voor Technologisch Onderzoek</mdui:Description>
+                <mdui:Logo height="16" width="16">https://bsds2015.vito.be/sites/bsds2015.vito.be/files/vito_smaller.jpg</mdui:Logo>
+                <mdui:Logo height="75" width="153">https://bsds2015.vito.be/sites/bsds2015.vito.be/files/vito_larger.jpg</mdui:Logo>
+
+                               </mdui:UIInfo>
+                                <mdui:DiscoHints xmlns:mdui="urn:oasis:names:tc:SAML:metadata:ui">
+                                        <mdui:IPHint>193.190.188.0/22</mdui:IPHint>
+                                        <mdui:IPHint>2001:06a8:0a50:8000::0/49</mdui:IPHint>
+                                        <mdui:DomainHint>vito.be</mdui:DomainHint>
+                                        <mdui:GeolocationHint>geo:51.218543,5.090905</mdui:GeolocationHint>
+                                </mdui:DiscoHints>
+        </Extensions>
+
+	<KeyDescriptor>
+			<ds:KeyInfo>
+				<ds:X509Data>
+					<ds:X509Certificate>MIID3TCCAsWgAwIBAgIJALl3yBmvtc6zMA0GCSqGSIb3DQEBBQUAMFIxCzAJBgNVBAYTAkJFMRAwDgYDVQQIEwdBbnR3ZXJwMQwwCgYDVQQHEwNNb2wxDTALBgNVBAoTBFZpdG8xFDASBgNVBAMTC3Nzby52aXRvLmJlMB4XDTE1MDkxNTA3MzgyMloXDTQzMDEzMTA3MzgyMlowUjELMAkGA1UEBhMCQkUxEDAOBgNVBAgTB0FudHdlcnAxDDAKBgNVBAcTA01vbDENMAsGA1UEChMEVml0bzEUMBIGA1UEAxMLc3NvLnZpdG8uYmUwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDhiX+4KHkneW8gdSKV+2piklMrolgprQ7anUqP8znpOznPaBH9060ECJQUw4k+PQ1O92NUEODgQe35/K2DuA6vuiMFlmwce87O5kq1ri6VHeIjTF5jxtLZ9o6EHXFR0W1WuC5AWTsVg3sjdVVQc0EoWXOCn0cwwR24Ni6B7G9PT3VIFI/UuNxD5nAR564H2yCOSbEVdasN9xvjO5wSzIgmuxLQT4IDy4Ez3L5RDK7OZTAjVwHwKCkLe0Ndx89BY/WzTrZCa/dMDIbGeee1bDeQ5fjqXqUssZwrXqNJkL27KYOJZv+UWEmEyhzaSGpyGiPZHlN0liHarpR3Hb0MSYcDAgMBAAGjgbUwgbIwHQYDVR0OBBYEFDzHYTGcKe8VZxOVMTvIK5UMRMtDMIGCBgNVHSMEezB5gBQ8x2ExnCnvFWcTlTE7yCuVDETLQ6FWpFQwUjELMAkGA1UEBhMCQkUxEDAOBgNVBAgTB0FudHdlcnAxDDAKBgNVBAcTA01vbDENMAsGA1UEChMEVml0bzEUMBIGA1UEAxMLc3NvLnZpdG8uYmWCCQC5d8gZr7XOszAMBgNVHRMEBTADAQH/MA0GCSqGSIb3DQEBBQUAA4IBAQABXKgnPs452tJLsfw4kzCF2lO0ZsUfInFoU+o9EK+JO1i6Hzn1euFb5LzCWSDBtwJuqRVpOkyAmjZ3CQrR4DY/Zlbffki701nAoSSS1S56aggOYF6DvqYfoxuyiF6I89NvjC1LP+RX1IoIsljRr6aeKu1Jfp+vT2yr3PnhAP0Cn+3sGIbaOyF9Y9ZLXo4BTQmpQhsnBwrXy5zJ6oeVZI1xsNNbdMacNIcCffsyYhJGLB7/M7YuUtZR0qZmeyjdR8Clxd7uLx0k9qOs6SYIGWRWeBuhXShDvAx4JNNQc9kkhOEOJyK0v4PpF6m19d/aVSuQCeJsaK553npGMhYSj64q</ds:X509Certificate>
+				</ds:X509Data>
+			</ds:KeyInfo>
+		</KeyDescriptor>
+		<NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</NameIDFormat>
+		<SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://sso.vito.be/saml/idp/profile/redirectorpost/sso">
+		</SingleSignOnService>
+		<SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://sso.vito.be/saml/idp/profile/redirectorpost/sso">
+		</SingleSignOnService>
+	</IDPSSODescriptor>
+
+<Organization>
+  <OrganizationName xml:lang="en">Vito</OrganizationName>
+  <OrganizationDisplayName xml:lang="en">Vito</OrganizationDisplayName>
+  <OrganizationURL xml:lang="en">http://www.vito.be/</OrganizationURL>
+</Organization>
+
+<ContactPerson contactType="technical">
+      <SurName>SAML IdP Support</SurName>
+      <EmailAddress>mailto:snb@vito.be</EmailAddress>
+</ContactPerson>
+
+</EntityDescriptor><EntityDescriptor ID="account.vscentrum.be_201512161747" entityID="https://account.vscentrum.be" xmlns="urn:oasis:names:tc:SAML:2.0:metadata">
+<SPSSODescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol urn:oasis:names:tc:SAML:1.1:protocol urn:oasis:names:tc:SAML:1.0:protocol">
+<Extensions>
+<idpdisc:DiscoveryResponse xmlns:idpdisc="urn:oasis:names:tc:SAML:profiles:SSO:idp-discovery-protocol" Binding="urn:oasis:names:tc:SAML:profiles:SSO:idp-discovery-protocol" Location="https://account.vscentrum.be/Shibboleth.sso/DS" index="1"/>
+</Extensions>
+<KeyDescriptor>
+<ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+<!--  Issuer: /CN=account.vscentrum.be -->
+<ds:KeyName>account.vscentrum.be</ds:KeyName>
+<ds:X509Data>
+<ds:X509Certificate>
+MIIDAzCCAeugAwIBAgIJAMyFXJRpNtLcMA0GCSqGSIb3DQEBBQUAMB8xHTAbBgNV BAMTFGFjY291bnQudnNjZW50cnVtLmJlMB4XDTE1MDkwNDE2MDAwNFoXDTI1MDkw MTE2MDAwNFowHzEdMBsGA1UEAxMUYWNjb3VudC52c2NlbnRydW0uYmUwggEiMA0G CSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDFSSRufaTtiEbyVbknww/S4trRYFNr lc0F4aIn5KrLJtDnTtGDLOfrD5YmDF1F3D3oCuNNEL6fvNzR+uzdnRePzxAoLbzG 7OYM6vTnmyGjjfCgTeZ5MItvs6m3zoTOvJ7qpJnpub7QgXlyUDkoekb96MLi0PLJ QRJVcEwu5V0wWPHawrEZSF9MUulSetg4KeOUF+KMMpVfd+FZbbwX9RbdKWfISfED JtypBuraFAKKWk4pszsHpr0VBWiEYYUhYzfoe3iJ+WXRofUsOI9BnxVvHtBGQviO urFIQYcOhfSYeEwOH6loFmeTbHq33ATjpxFSSRtK0vg5VMPzqrnoHcUzAgMBAAGj QjBAMB8GA1UdEQQYMBaCFGFjY291bnQudnNjZW50cnVtLmJlMB0GA1UdDgQWBBTE 9Kard5yGUW28rHm4lptwMCdTkDANBgkqhkiG9w0BAQUFAAOCAQEArB3Mr9/c2EL1 hNOS9IBiqccEV1oPcRb3ZOeK9lUm8zvKj0qOTH76T+l89kcuJbR0gVbG9mmDcu4H Shg3fskwJIaNQQCQYnXh3SM+cxphLcQ9gtLMxNJoxD5IbhaM+SYRBcJGnmarX5HA Nay7bo0yZFy/BgwZzKzpkgwkasDzE3P2UdBpLG5BjNhH9FBB7exaaKvuVn6P6jGU 4S7Oc12qBmqkY29G9NMWUuHPT0cMTGR1swS2LIfiYfnPfVQyyFuI/m16962IwoDx R2mM+7EewisARnivUJX9Nsr4r+aU8c2YJbZqgNL9m2HhUfqjzkKUj4dhmMgELp9t uaTGJpaYzQ==
+</ds:X509Certificate>
+</ds:X509Data>
+</ds:KeyInfo>
+</KeyDescriptor>
+<ArtifactResolutionService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP" Location="https://account.vscentrum.be/Shibboleth.sso/Artifact/SOAP" index="1"/>
+<SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP" Location="https://account.vscentrum.be/Shibboleth.sso/SLO/SOAP"/>
+<SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://account.vscentrum.be/Shibboleth.sso/SLO/Redirect"/>
+<SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://account.vscentrum.be/Shibboleth.sso/SLO/POST"/>
+<SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Artifact" Location="https://account.vscentrum.be/Shibboleth.sso/SLO/Artifact"/>
+<ManageNameIDService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP" Location="https://account.vscentrum.be/Shibboleth.sso/NIM/SOAP"/>
+<ManageNameIDService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://account.vscentrum.be/Shibboleth.sso/NIM/Redirect"/>
+<ManageNameIDService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://account.vscentrum.be/Shibboleth.sso/NIM/POST"/>
+<ManageNameIDService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Artifact" Location="https://account.vscentrum.be/Shibboleth.sso/NIM/Artifact"/>
+<AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://account.vscentrum.be/Shibboleth.sso/SAML2/POST" index="1"/>
+<AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST-SimpleSign" Location="https://account.vscentrum.be/Shibboleth.sso/SAML2/POST-SimpleSign" index="2"/>
+<AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Artifact" Location="https://account.vscentrum.be/Shibboleth.sso/SAML2/Artifact" index="3"/>
+<AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:PAOS" Location="https://account.vscentrum.be/Shibboleth.sso/SAML2/ECP" index="4"/>
+<AssertionConsumerService Binding="urn:oasis:names:tc:SAML:1.0:profiles:browser-post" Location="https://account.vscentrum.be/Shibboleth.sso/SAML/POST" index="5"/>
+<AssertionConsumerService Binding="urn:oasis:names:tc:SAML:1.0:profiles:artifact-01" Location="https://account.vscentrum.be/Shibboleth.sso/SAML/Artifact" index="6"/>
+</SPSSODescriptor>
+<Organization>
+<OrganizationName xml:lang="nl">KU Leuven</OrganizationName>
+<OrganizationDisplayName xml:lang="nl">KU Leuven</OrganizationDisplayName>
+<OrganizationURL xml:lang="nl">https://admin.kuleuven.be/icts/servicepunt</OrganizationURL>
+</Organization>
+<ContactPerson contactType="technical">
+<GivenName>FOOCES Onderzoek - ICTS KU Leuven</GivenName>
+<EmailAddress>hpcinfo@icts.kuleuven.be</EmailAddress>
+</ContactPerson>
+</EntityDescriptor>
+<md:EntityDescriptor xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" entityID="https://welkom.ugent.be/saml2/idp/metadata.php" ID="pfx3f904df8-3285-6e4e-3ee2-c02711a0947e"><ds:Signature>
+  <ds:SignedInfo><ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+    <ds:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+  <ds:Reference URI="#pfx3f904df8-3285-6e4e-3ee2-c02711a0947e"><ds:Transforms><ds:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/><ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></ds:Transforms><ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><ds:DigestValue>FQys01KOQ790HC3CvDoFjB6yO64=</ds:DigestValue></ds:Reference></ds:SignedInfo><ds:SignatureValue>RtYcjM8QlP7xBT6GqPgLWLuEZyutbEKNTPwj+NiN5IkHik/HdzJFZ4rjvbvaUlCqUnBSyobjAYhu0Wy7cQaZM8Cj7IC6iy4/RBSK0L3+H1qIx9cMf1qnAArB83HTpo/EyQJ2sClxCU9B17jNkFVnG/f+euhE9qdXyTJ98u/wCzzdYCLamCeM3rGnKVE1I64hJGC5Nim1dSXq7nD+WgvNz1UeTD5dY5/DJhckaezDSDIgSsHkbNWFJugMlKyF6hxKzEuGpI1v+teSBxhQ+N2kG1as+d/SCYE2T1/EplaucWxEYZpuDfr+u/HD6BRLdVHcHKt2k6SLKRdGznTEru7wGQ==</ds:SignatureValue>
+<ds:KeyInfo><ds:X509Data><ds:X509Certificate>MIIEqjCCA5KgAwIBAgIQMH1DR8bSirMUeet1Spm8ozANBgkqhkiG9w0BAQsFADBkMQswCQYDVQQGEwJOTDEWMBQGA1UECBMNTm9vcmQtSG9sbGFuZDESMBAGA1UEBxMJQW1zdGVyZGFtMQ8wDQYDVQQKEwZURVJFTkExGDAWBgNVBAMTD1RFUkVOQSBTU0wgQ0EgMjAeFw0xNTAzMDMwMDAwMDBaFw0xODAzMDIyMzU5NTlaMD0xITAfBgNVBAsTGERvbWFpbiBDb250cm9sIFZhbGlkYXRlZDEYMBYGA1UEAxMPd2Vsa29tLnVnZW50LmJlMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAsihxhfrGDghVLjDRDffPDySDunVBtDOuyQYIa/yPrwirdCVsIuTu9Gdabx5su4mwqaeg6M+//HiaMVfFaYklmqVV3yS5mbwKdAvWezYe4JenYnS235MOHiiZGJZm3kbXZFZNS+IfvWrLIG5OYyXZm8I3Hv6jnB+bd+w01rnPus95LVBlGoSJvkKifuXOO8rFWlTCRoOGIjhDiomU2MZfdIf+6SmiyzY8KAzEtoC+zc7h59hEncXWuxen0TWI3MVFigYFj5T65lAj1sbxyfnUIEEL7ZSCWIZ1SB+Jh91k7oR7V0VDFa4CJizCTPdTG3GzrUJO/x/6Qkg8qGZTi3IYDQIDAQABo4IBfTCCAXkwHwYDVR0jBBgwFoAUW9CKHJoyW+C13ZZUG+GGKLD9tr0wHQYDVR0OBBYEFGnLVxLmF4FCpymE2Z9PG17TKHTeMA4GA1UdDwEB/wQEAwIFoDAMBgNVHRMBAf8EAjAAMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjAiBgNVHSAEGzAZMA0GCysGAQQBsjEBAgIdMAgGBmeBDAECATA6BgNVHR8EMzAxMC+gLaArhilodHRwOi8vY3JsLnVzZXJ0cnVzdC5jb20vVEVSRU5BU1NMQ0EyLmNybDBsBggrBgEFBQcBAQRgMF4wNQYIKwYBBQUHMAKGKWh0dHA6Ly9jcnQudXNlcnRydXN0LmNvbS9URVJFTkFTU0xDQTIuY3J0MCUGCCsGAQUFBzABhhlodHRwOi8vb2NzcC51c2VydHJ1c3QuY29tMCwGA1UdEQQlMCOCD3dlbGtvbS51Z2VudC5iZYIQd2VsY29tZS51Z2VudC5iZTANBgkqhkiG9w0BAQsFAAOCAQEAp92o2XGyu8APLn5w6fotT7FfIEAycnho2FOlcrJ9BBexcGHuBqPmoosF52SaWRvj5CUYxhzuAH0ECh1P+QYhRTEHcUQM/NyV0UOjIyEsGUz2z21byhF6AucbyS5fU9UNf8rabzxL4B7T98xY7kfnYe5idRQLXMLPXv56bBOMrNfDZ3i6Vrupc+8YHaWJwrFvVni8+lBTMUw4ZMRADb6QuH+PsFnW5/V6p2dXGqVD6WlVimp4GNlbKFAfu0bsbaha8eLgdlto/rfvBhT4xej7W6+1Z7Jlcwcr6WUiTxNrcLx4gp8TnkodQLWj2GGzJRsydXfkayOlD0Db3dt30m2sFA==</ds:X509Certificate></ds:X509Data></ds:KeyInfo></ds:Signature>
+  <md:IDPSSODescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
+    <md:KeyDescriptor use="signing">
+      <ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+        <ds:X509Data>
+          <ds:X509Certificate>MIIEqjCCA5KgAwIBAgIQMH1DR8bSirMUeet1Spm8ozANBgkqhkiG9w0BAQsFADBkMQswCQYDVQQGEwJOTDEWMBQGA1UECBMNTm9vcmQtSG9sbGFuZDESMBAGA1UEBxMJQW1zdGVyZGFtMQ8wDQYDVQQKEwZURVJFTkExGDAWBgNVBAMTD1RFUkVOQSBTU0wgQ0EgMjAeFw0xNTAzMDMwMDAwMDBaFw0xODAzMDIyMzU5NTlaMD0xITAfBgNVBAsTGERvbWFpbiBDb250cm9sIFZhbGlkYXRlZDEYMBYGA1UEAxMPd2Vsa29tLnVnZW50LmJlMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAsihxhfrGDghVLjDRDffPDySDunVBtDOuyQYIa/yPrwirdCVsIuTu9Gdabx5su4mwqaeg6M+//HiaMVfFaYklmqVV3yS5mbwKdAvWezYe4JenYnS235MOHiiZGJZm3kbXZFZNS+IfvWrLIG5OYyXZm8I3Hv6jnB+bd+w01rnPus95LVBlGoSJvkKifuXOO8rFWlTCRoOGIjhDiomU2MZfdIf+6SmiyzY8KAzEtoC+zc7h59hEncXWuxen0TWI3MVFigYFj5T65lAj1sbxyfnUIEEL7ZSCWIZ1SB+Jh91k7oR7V0VDFa4CJizCTPdTG3GzrUJO/x/6Qkg8qGZTi3IYDQIDAQABo4IBfTCCAXkwHwYDVR0jBBgwFoAUW9CKHJoyW+C13ZZUG+GGKLD9tr0wHQYDVR0OBBYEFGnLVxLmF4FCpymE2Z9PG17TKHTeMA4GA1UdDwEB/wQEAwIFoDAMBgNVHRMBAf8EAjAAMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjAiBgNVHSAEGzAZMA0GCysGAQQBsjEBAgIdMAgGBmeBDAECATA6BgNVHR8EMzAxMC+gLaArhilodHRwOi8vY3JsLnVzZXJ0cnVzdC5jb20vVEVSRU5BU1NMQ0EyLmNybDBsBggrBgEFBQcBAQRgMF4wNQYIKwYBBQUHMAKGKWh0dHA6Ly9jcnQudXNlcnRydXN0LmNvbS9URVJFTkFTU0xDQTIuY3J0MCUGCCsGAQUFBzABhhlodHRwOi8vb2NzcC51c2VydHJ1c3QuY29tMCwGA1UdEQQlMCOCD3dlbGtvbS51Z2VudC5iZYIQd2VsY29tZS51Z2VudC5iZTANBgkqhkiG9w0BAQsFAAOCAQEAp92o2XGyu8APLn5w6fotT7FfIEAycnho2FOlcrJ9BBexcGHuBqPmoosF52SaWRvj5CUYxhzuAH0ECh1P+QYhRTEHcUQM/NyV0UOjIyEsGUz2z21byhF6AucbyS5fU9UNf8rabzxL4B7T98xY7kfnYe5idRQLXMLPXv56bBOMrNfDZ3i6Vrupc+8YHaWJwrFvVni8+lBTMUw4ZMRADb6QuH+PsFnW5/V6p2dXGqVD6WlVimp4GNlbKFAfu0bsbaha8eLgdlto/rfvBhT4xej7W6+1Z7Jlcwcr6WUiTxNrcLx4gp8TnkodQLWj2GGzJRsydXfkayOlD0Db3dt30m2sFA==</ds:X509Certificate>
+        </ds:X509Data>
+      </ds:KeyInfo>
+    </md:KeyDescriptor>
+    <md:KeyDescriptor use="encryption">
+      <ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+        <ds:X509Data>
+          <ds:X509Certificate>MIIEqjCCA5KgAwIBAgIQMH1DR8bSirMUeet1Spm8ozANBgkqhkiG9w0BAQsFADBkMQswCQYDVQQGEwJOTDEWMBQGA1UECBMNTm9vcmQtSG9sbGFuZDESMBAGA1UEBxMJQW1zdGVyZGFtMQ8wDQYDVQQKEwZURVJFTkExGDAWBgNVBAMTD1RFUkVOQSBTU0wgQ0EgMjAeFw0xNTAzMDMwMDAwMDBaFw0xODAzMDIyMzU5NTlaMD0xITAfBgNVBAsTGERvbWFpbiBDb250cm9sIFZhbGlkYXRlZDEYMBYGA1UEAxMPd2Vsa29tLnVnZW50LmJlMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAsihxhfrGDghVLjDRDffPDySDunVBtDOuyQYIa/yPrwirdCVsIuTu9Gdabx5su4mwqaeg6M+//HiaMVfFaYklmqVV3yS5mbwKdAvWezYe4JenYnS235MOHiiZGJZm3kbXZFZNS+IfvWrLIG5OYyXZm8I3Hv6jnB+bd+w01rnPus95LVBlGoSJvkKifuXOO8rFWlTCRoOGIjhDiomU2MZfdIf+6SmiyzY8KAzEtoC+zc7h59hEncXWuxen0TWI3MVFigYFj5T65lAj1sbxyfnUIEEL7ZSCWIZ1SB+Jh91k7oR7V0VDFa4CJizCTPdTG3GzrUJO/x/6Qkg8qGZTi3IYDQIDAQABo4IBfTCCAXkwHwYDVR0jBBgwFoAUW9CKHJoyW+C13ZZUG+GGKLD9tr0wHQYDVR0OBBYEFGnLVxLmF4FCpymE2Z9PG17TKHTeMA4GA1UdDwEB/wQEAwIFoDAMBgNVHRMBAf8EAjAAMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjAiBgNVHSAEGzAZMA0GCysGAQQBsjEBAgIdMAgGBmeBDAECATA6BgNVHR8EMzAxMC+gLaArhilodHRwOi8vY3JsLnVzZXJ0cnVzdC5jb20vVEVSRU5BU1NMQ0EyLmNybDBsBggrBgEFBQcBAQRgMF4wNQYIKwYBBQUHMAKGKWh0dHA6Ly9jcnQudXNlcnRydXN0LmNvbS9URVJFTkFTU0xDQTIuY3J0MCUGCCsGAQUFBzABhhlodHRwOi8vb2NzcC51c2VydHJ1c3QuY29tMCwGA1UdEQQlMCOCD3dlbGtvbS51Z2VudC5iZYIQd2VsY29tZS51Z2VudC5iZTANBgkqhkiG9w0BAQsFAAOCAQEAp92o2XGyu8APLn5w6fotT7FfIEAycnho2FOlcrJ9BBexcGHuBqPmoosF52SaWRvj5CUYxhzuAH0ECh1P+QYhRTEHcUQM/NyV0UOjIyEsGUz2z21byhF6AucbyS5fU9UNf8rabzxL4B7T98xY7kfnYe5idRQLXMLPXv56bBOMrNfDZ3i6Vrupc+8YHaWJwrFvVni8+lBTMUw4ZMRADb6QuH+PsFnW5/V6p2dXGqVD6WlVimp4GNlbKFAfu0bsbaha8eLgdlto/rfvBhT4xej7W6+1Z7Jlcwcr6WUiTxNrcLx4gp8TnkodQLWj2GGzJRsydXfkayOlD0Db3dt30m2sFA==</ds:X509Certificate>
+        </ds:X509Data>
+      </ds:KeyInfo>
+    </md:KeyDescriptor>
+    <md:KeyDescriptor use="signing">
+      <ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+        <ds:X509Data>
+          <ds:X509Certificate>MIIEqjCCA5KgAwIBAgIQMH1DR8bSirMUeet1Spm8ozANBgkqhkiG9w0BAQsFADBkMQswCQYDVQQGEwJOTDEWMBQGA1UECBMNTm9vcmQtSG9sbGFuZDESMBAGA1UEBxMJQW1zdGVyZGFtMQ8wDQYDVQQKEwZURVJFTkExGDAWBgNVBAMTD1RFUkVOQSBTU0wgQ0EgMjAeFw0xNTAzMDMwMDAwMDBaFw0xODAzMDIyMzU5NTlaMD0xITAfBgNVBAsTGERvbWFpbiBDb250cm9sIFZhbGlkYXRlZDEYMBYGA1UEAxMPd2Vsa29tLnVnZW50LmJlMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAsihxhfrGDghVLjDRDffPDySDunVBtDOuyQYIa/yPrwirdCVsIuTu9Gdabx5su4mwqaeg6M+//HiaMVfFaYklmqVV3yS5mbwKdAvWezYe4JenYnS235MOHiiZGJZm3kbXZFZNS+IfvWrLIG5OYyXZm8I3Hv6jnB+bd+w01rnPus95LVBlGoSJvkKifuXOO8rFWlTCRoOGIjhDiomU2MZfdIf+6SmiyzY8KAzEtoC+zc7h59hEncXWuxen0TWI3MVFigYFj5T65lAj1sbxyfnUIEEL7ZSCWIZ1SB+Jh91k7oR7V0VDFa4CJizCTPdTG3GzrUJO/x/6Qkg8qGZTi3IYDQIDAQABo4IBfTCCAXkwHwYDVR0jBBgwFoAUW9CKHJoyW+C13ZZUG+GGKLD9tr0wHQYDVR0OBBYEFGnLVxLmF4FCpymE2Z9PG17TKHTeMA4GA1UdDwEB/wQEAwIFoDAMBgNVHRMBAf8EAjAAMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjAiBgNVHSAEGzAZMA0GCysGAQQBsjEBAgIdMAgGBmeBDAECATA6BgNVHR8EMzAxMC+gLaArhilodHRwOi8vY3JsLnVzZXJ0cnVzdC5jb20vVEVSRU5BU1NMQ0EyLmNybDBsBggrBgEFBQcBAQRgMF4wNQYIKwYBBQUHMAKGKWh0dHA6Ly9jcnQudXNlcnRydXN0LmNvbS9URVJFTkFTU0xDQTIuY3J0MCUGCCsGAQUFBzABhhlodHRwOi8vb2NzcC51c2VydHJ1c3QuY29tMCwGA1UdEQQlMCOCD3dlbGtvbS51Z2VudC5iZYIQd2VsY29tZS51Z2VudC5iZTANBgkqhkiG9w0BAQsFAAOCAQEAp92o2XGyu8APLn5w6fotT7FfIEAycnho2FOlcrJ9BBexcGHuBqPmoosF52SaWRvj5CUYxhzuAH0ECh1P+QYhRTEHcUQM/NyV0UOjIyEsGUz2z21byhF6AucbyS5fU9UNf8rabzxL4B7T98xY7kfnYe5idRQLXMLPXv56bBOMrNfDZ3i6Vrupc+8YHaWJwrFvVni8+lBTMUw4ZMRADb6QuH+PsFnW5/V6p2dXGqVD6WlVimp4GNlbKFAfu0bsbaha8eLgdlto/rfvBhT4xej7W6+1Z7Jlcwcr6WUiTxNrcLx4gp8TnkodQLWj2GGzJRsydXfkayOlD0Db3dt30m2sFA==</ds:X509Certificate>
+        </ds:X509Data>
+      </ds:KeyInfo>
+    </md:KeyDescriptor>
+    <md:ArtifactResolutionService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP" Location="https://welkom.ugent.be/saml2/idp/ArtifactResolutionService.php" index="0"/>
+    <md:SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://welkom.ugent.be/saml2/idp/SingleLogoutService.php"/>
+    <md:NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</md:NameIDFormat>
+    <md:SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://welkom.ugent.be/saml2/idp/SSOService.php"/>
+  </md:IDPSSODescriptor>
+  <md:Organization>
+    <md:OrganizationName xml:lang="en">UGent</md:OrganizationName>
+    <md:OrganizationDisplayName xml:lang="en">UGent</md:OrganizationDisplayName>
+    <md:OrganizationURL xml:lang="en">http://www.ugent.be</md:OrganizationURL>
+  </md:Organization>
+  <md:ContactPerson contactType="technical">
+    <md:GivenName>Frank</md:GivenName>
+    <md:SurName>Meisschaert</md:SurName>
+    <md:EmailAddress>Frank.Meisschaert@UGent.be</md:EmailAddress>
+  </md:ContactPerson>
+  <md:ContactPerson contactType="technical">
+    <md:GivenName>Administrator</md:GivenName>
+    <md:EmailAddress>danny.bollaert@ugent.be</md:EmailAddress>
+  </md:ContactPerson>
+</md:EntityDescriptor>
+</EntitiesDescriptor>
