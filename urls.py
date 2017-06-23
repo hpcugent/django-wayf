@@ -1,12 +1,13 @@
 from django.conf import settings
-from django.conf.urls import patterns, url, include
+from django.conf.urls import url, include
+from django.views.static import serve
 
 urlpatterns = []
 
 
-urlpatterns = patterns('',
-  url(r'^static/(?P<path>.*)$', 'django.views.static.serve',
-      {'document_root': settings.STATIC_ROOT}
-        ),
-)
-urlpatterns += patterns('', (r'^(.*)', include('wayf.urls')))
+urlpatterns = [
+  url(r'^static/(?P<path>.*)$', serve, {
+    'document_root': settings.STATIC_ROOT
+  }),
+]
+urlpatterns += [url(r'^(.*)', include('wayf.urls'))]
