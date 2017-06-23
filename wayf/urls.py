@@ -1,9 +1,9 @@
-from django.conf import settings
-from django.conf.urls import patterns, url, include
+from django.conf.urls import url
+from wayf.views import wayf, setlanguage
 
 urlpatterns = []
 
-urlpatterns += patterns('',
-    (r'^/?$', 'wayf.views.wayf'),
-    (r'^setlanguage/(.*)', 'wayf.views.setlanguage'),
-)
+urlpatterns += [
+    url(r'^/?$', wayf),
+    url(r'^setlanguage/(.*)', setlanguage),
+]
