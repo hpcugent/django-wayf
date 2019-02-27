@@ -1,7 +1,7 @@
 from wayf.utils import ShibbolethMetadata
 # optional for now , getUserRealm
 import time
-from django.shortcuts import render_to_response
+from django.shortcuts import render
 from django.conf import settings
 from django.http import HttpResponseRedirect
 from django.utils.http import urlencode
@@ -48,7 +48,11 @@ def wayf(request):
         elif 'user_idp' in request.POST.keys():
             current_idp = idps[request.POST['user_idp']]
             if current_idp:
-                cookies.append({'name': settings.LAST_IDP_COOKIE, 'data': request.POST['user_idp'], 'age': 86400 * 100})
+                cookies.append({
+                    'name': settings.LAST_IDP_COOKIE,
+                    'data': request.POST['user_idp'],
+                    'age': 86400 * 100,
+                })
                 if request.POST.get('save'):
                     if request.POST.get('savetype') == 'perm':
                         age = 86400 * 100
@@ -60,8 +64,8 @@ def wayf(request):
     if not request.GET:
         # We were called without any arguments
         if current_idp:
-            response = render_to_response("wayf_set.html", {'currentidp': current_idp.getName()},
-                                          context_instance=RequestContext(request))
+            response = render(request, "wayf_set.html", {'currentidp': current_idp.getName()})
+
             for cookie in cookies:
                 if cookie['age']:
                     expires = time.strftime("%a, %d-%m-%y %H:%M:%S GMT", time.gmtime(time.time() + cookie['age']))
@@ -71,8 +75,8 @@ def wayf(request):
                                     max_age=cookie['age'], expires=expires)
         else:
             idplist = idps.getIdpsByCategory()
-            response = render_to_response("wayf.html", {'idplist': idplist, 'request': request, 'selected': selectedidp},
-                                          context_instance=RequestContext(request))
+            response = render(request, "wayf.html",
+                                          {'idplist': idplist, 'request': request, 'selected': selectedidp})
 
         response['P3P'] = settings.P3P_HEADER
         return response
@@ -91,7 +95,7 @@ def wayf(request):
             returnval = request.GET['return']
 
             if not sps.isDiscoveryResponseLocation(returnval):
-                response = render_to_response("400.html")
+                response = render(request, "400.html")
                 response.status_code = 400  # bad request
             else:
                 response = HttpResponseRedirect(returnval + "&" + urlencode(((returnparam, current_idp.id),)))
@@ -102,7 +106,7 @@ def wayf(request):
                 current_idp.sso['urn:mace:shibboleth:1.0:profiles:AuthnRequest'] + "?" + request.GET.urlencode()
                 )
         else:
-            response = render_to_response("400.html")
+            response = render(request, "400.html")
             response.status_code = 400  # bad request
 
         for cookie in cookies:
@@ -122,14 +126,15 @@ def wayf(request):
     idplist = idps.getIdpsByCategory()
 
     # Render the apropriate wayf template
-    response = render_to_response("wayf_from_sp.html", {'idplist': idplist, 'request': request, 'selected': selectedidp},
-                                  context_instance=RequestContext(request))
+    response = render(request, "wayf_from_sp.html",
+                                  {'idplist': idplist, 'request': request, 'selected': selectedidp})
+
     response['P3P'] = settings.P3P_HEADER
     return response
 
 
 def index(request):
-    return render_to_response("index.html", context_instance=RequestContext(request))
+    return render(request, "index.html")
 
 
 def idp_list(request):
@@ -137,7 +142,7 @@ def idp_list(request):
     idps = metadata.getIdps()
     idplist = idps.getIdpsByCategory(exclude=('wayf', 'test'))
 
-    return render_to_response("idp_list.html", {'idplist': idplist}, context_instance=RequestContext(request))
+    return render(request, "idp_list.html", {'idplist': idplist})
 
 
 def sp_list(request):
@@ -154,7 +159,7 @@ def sp_list(request):
     splist.insert(splist.index(('http://www.grnet.gr/aai', splist_other)), ('other', splist_other_new))
     splist.remove(('http://www.grnet.gr/aai', splist_other))
 
-    return render_to_response("sp_list.html", {'splist': splist}, context_instance=RequestContext(request))
+    return render(request, "sp_list.html", {'splist': splist})
 
 
 def entity_list(request, group=None):
@@ -164,8 +169,8 @@ def entity_list(request, group=None):
     entities = metadata.getEntities(augmented=True)
     entlist = entities.getEntities(group=group, logosize=(100, 100))
 
-    return render_to_response("entity_list.html", {'entlist': entlist,
-                                                   'group': group}, context_instance=RequestContext(request))
+    return render(request, "entity_list.html",
+                              {'entlist': entlist, 'group': group})
 
 """ example support view
 uses urldecode from dnsutils
@@ -199,9 +204,9 @@ def support(request, mode="support"):
             opts['idpname'] = idp.getName()
 
     if mode == "help":
-        response = render_to_response("help.html", opts, context_instance=RequestContext(request))
+        response = render(request, "help.html", opts)
     else:
-        response = render_to_response("support.html", opts, context_instance=RequestContext(request))
+        response = render(request, "support.html", opts)
 
     response['P3P'] = 'CP="NOI CUR DEVa OUR IND COM NAV PRE"'
     return response
