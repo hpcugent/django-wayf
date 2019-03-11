@@ -4,6 +4,6 @@ from wayf.views import wayf, setlanguage
 urlpatterns = []
 
 urlpatterns += [
-    url(r'^/?$', wayf),
+    url(r'^[/]?$', wayf),  # work around warning wrt url pattern starting with /
     url(r'^setlanguage/(.*)', setlanguage),
 ]
