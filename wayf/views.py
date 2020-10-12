@@ -20,13 +20,13 @@ def wayf(request):
     cookies = []
 
     # Get the current IdP, if there is one
-    if settings.IDP_COOKIE in request.COOKIES.keys():
+    if settings.IDP_COOKIE in request.COOKIES:
         current_idp = idps[request.COOKIES[settings.IDP_COOKIE]]
     else:
         current_idp = None
 
     # Try to get the user's last used IdP
-    if settings.LAST_IDP_COOKIE in request.COOKIES.keys():
+    if settings.LAST_IDP_COOKIE in request.COOKIES:
         selectedidp = idps[request.COOKIES[settings.LAST_IDP_COOKIE]]
     else:
         selectedidp = None
@@ -38,14 +38,14 @@ def wayf(request):
 
     # First check to see if anything has changed
     if request.method == "POST":
-        if 'clear' in request.POST.keys():
+        if 'clear' in request.POST:
             if request.POST['clear']:
                 response = HttpResponseRedirect("/")
                 response.delete_cookie(settings.IDP_COOKIE, domain=settings.COOKIE_DOMAIN)
                 response['P3P'] = settings.P3P_HEADER
                 return response
 
-        elif 'user_idp' in request.POST.keys():
+        elif 'user_idp' in request.POST:
             current_idp = idps[request.POST['user_idp']]
             if current_idp:
                 cookies.append({
@@ -84,10 +84,10 @@ def wayf(request):
     # If we got to this point, then this is a request comming from an SP
     if current_idp:
         # We have an IdP to route the request to
-        if 'entityID' in request.GET.keys() and 'return' in request.GET.keys():
+        if 'entityID' in request.GET and 'return' in request.GET:
             # a SAML Discovery Service request
             # Discovery Service mandates that 'entityID' holds the SP's ID
-            if 'returnIDParam' in request.GET.keys() and request.GET['returnIDParam']:
+            if 'returnIDParam' in request.GET and request.GET['returnIDParam']:
                 returnparam = request.GET['returnIDParam']
             else:
                 returnparam = 'entityID'
@@ -99,7 +99,7 @@ def wayf(request):
                 response.status_code = 400  # bad request
             else:
                 response = HttpResponseRedirect(returnval + "&" + urlencode(((returnparam, current_idp.id),)))
-        elif 'shire' in request.GET.keys() and 'target' in request.GET.keys():
+        elif 'shire' in request.GET and 'target' in request.GET:
             # an old Shibboleth 1.x request
             # We just redirect the user to the given IdP
             response = HttpResponseRedirect(
