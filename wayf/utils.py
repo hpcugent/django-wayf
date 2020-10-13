@@ -20,7 +20,7 @@ xpath_ns = {'ds': 'http://www.w3.org/2000/09/xmldsig#',
             'xsi': 'http://www.w3.org/2001/XMLSchema-instance'}
 
 
-class ShibbolethMetadata:
+class ShibbolethMetadata(object):
     """Basic object holding the shibboleth metadata"""
 
     def __init__(self, filename):
@@ -98,7 +98,7 @@ class EntityList(list):
     def __getitem__(self, key):
         # Allow for "entitylist['a_provider_entityid'] lookups
         try:
-            return filter(lambda x: x.id == key, self)[0]
+            return list(filter(lambda x: x.id == key, self))[0]
         except:
             return None
 
@@ -125,7 +125,8 @@ class EntityList(list):
         else:
             entities = self
 
-        entities = sorted(entities)
+        entities = sorted(entities, key=lambda x: x.getName())
+
 
         return map(lambda x: {'name': x.getName(lang),
                               'url': x.getURL(lang),
@@ -163,13 +164,13 @@ class IdpList(EntityList):
     def getCategoryIdps(self, category):
         """Returns the list of known identity providers for a given category"""
 
-        return filter(lambda x: x.getType() == category, self)
+        return list(filter(lambda x: x.getType() == category, self))
 
     def getIdpForScope(self, scope):
         """Returns the identity provider matching a given scope"""
 
         try:
-            return filter(lambda x: x.matchesScope(scope), self)[0]
+            return list(filter(lambda x: x.matchesScope(scope), self))[0]
         except:
             return None
 
@@ -217,7 +218,7 @@ class SpList(EntityList):
         return any(x for x in self if x.isDiscoveryResponseLocation(location))
 
 
-class Entity:
+class Entity(object):
     """Basic class holding a SAML Entity"""
 
     def __init__(self, el):
@@ -269,10 +270,6 @@ class Entity:
         except:
             pass
 
-    def __cmp__(self, other):
-        # Alphabetic sorting by name
-        return cmp(self.getName(get_language()), other.getName(get_language()))
-
     def __repr__(self):
         return "Entity: \"" + self.getname() + '" (' + self.id + ')'
 
@@ -314,7 +311,7 @@ class Entity:
             try:
                 return self.name['en']
             except:
-                return self.name[self.name.keys()[0]]
+                return self.name[list(self.name)[0]]
 
     def getURL(self, lang=None):
         if not lang:
@@ -341,9 +338,9 @@ class Entity:
         if isinstance(targetsize, tuple) and \
                 len(targetsize) is 2 and \
                 [isinstance(i, int) for i in targetsize]:
-            dimensions = min(self.logo.keys(), key=lambda x: abs(x[0]-targetsize[0]) + abs(x[1]-targetsize[1]))
+            dimensions = min(list(self.logo), key=lambda x: abs(x[0]-targetsize[0]) + abs(x[1]-targetsize[1]))
         else:
-            dimensions = random.choice(self.logo.keys())
+            dimensions = random.choice(list(self.logo))
 
         return {'width': dimensions[0],
                 'height': dimensions[1],
@@ -425,7 +422,7 @@ class IdentityProvider(Entity):
         for lang in self.name.values():
             if lang.lower().find('test') >= 0:
                 return "test"
-            elif re.findall(r'(univerisyt|universiteit|universite|school of fine arts)', lang.lower()):
+            elif re.findall(r'(univeristy|universiteit|universite|school of fine arts)', lang.lower()):
                 return "university"
             elif lang.lower().find('technological') >= 0:
                 return "tei"
@@ -439,7 +436,7 @@ class IdentityProvider(Entity):
         """Returns the scope of the current IdP"""
 
         scopes = filter(lambda x: x.tag == "{urn:mace:shibboleth:metadata:1.0}Scope", self.el.IDPSSODescriptor.Extensions.getchildren())
-        return scopes[0].text
+        return list(scopes)[0].text
 
     def matchesScope(self, scope):
         """Checks wheter the current IdPs scope matches the given string"""
