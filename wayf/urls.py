@@ -5,5 +5,5 @@ urlpatterns = []
 
 urlpatterns += [
     url(r'^[/]?$', wayf),  # work around warning wrt url pattern starting with /
-    url(r'^setlanguage/(.*)', setlanguage),
+    url(r'^setlanguage/(.*)$', setlanguage),
 ]
