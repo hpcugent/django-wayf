@@ -3,7 +3,7 @@
 {% block title %}Select your Home Organization{% endblock %}
 {% block header %}Select your Home Organization{% endblock %}
 {% block content %}
-<p>In order to proceed, you have to select your Home Organization from the list below. You may save your selection, in order to avoid this question during future uses of this service.</p>
+<p>In order to proceed, you have to select your Home Organization from the list below.</p>
 
 <div id="idpform">
 <form id="idp_selection" method="post">
@@ -12,20 +12,17 @@
 	{% include "idp_dropdown.html" %}
 	</select>
 	<input type="submit" value="{% trans "Confirm" %}" /><br />
-	<script type="text/javascript">
-	function toggleRadios(){
-		var state;
-		state = ! document.forms[0].save.checked;
-		document.getElementById('permsave').disabled = state;
-		document.getElementById('sesssave').disabled = state;
-	}
-	</script>
-	<div id="userprefs">
-	<input type="checkbox" name="save" value="1" onclick="toggleRadios();"/>Save my preference:</input>
-	<input type="radio" id="sesssave" name="savetype" value="session"  checked="true" />For this browser session</input>
-	<input type="radio" id="permsave" name="savetype" value="perm" />Permanently</input><br />
-	</div>
 </form>
+<script>
+  // Add on save function to form
+  function remember(obj) {
+      localStorage.setItem("user_idp", obj.options[obj.selectedIndex].value);
+  }
+  const select = document.getElementById("user_idp_select")
+  select.value = ""+localStorage.getItem("user_idp")+""
+  // for CSP reasons, cannot have this in onchange="remember(this)" form
+  select.addEventListener('change', function() {remember(this)})
+</script>
 </div>
 
 {% endblock %}
