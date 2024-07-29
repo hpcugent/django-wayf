@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
-from lxml.objectify import parse
-from django.conf import settings
-from django.utils.translation import ugettext_lazy as _l
-from django.utils.translation import get_language
-import re
 import random
+import re
+
+from django.conf import settings
+from django.utils.translation import get_language
+from django.utils.translation import gettext_lazy as _l
+from lxml.objectify import parse
 
 
 # A catalog of the institution categories. The order in which they appear
