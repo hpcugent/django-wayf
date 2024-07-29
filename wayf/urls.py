@@ -1,9 +1,7 @@
-from django.conf.urls import url
+from django.urls import re_path
 from wayf.views import wayf, setlanguage
 
-urlpatterns = []
-
-urlpatterns += [
-    url(r'^[/]?$', wayf),  # work around warning wrt url pattern starting with /
-    url(r'^setlanguage/(.*)$', setlanguage),
+urlpatterns = [
+    re_path(r'^[/]?$', wayf),  # work around warning wrt url pattern starting with /
+    re_path(r'^setlanguage/(.*)$', setlanguage),
 ]
