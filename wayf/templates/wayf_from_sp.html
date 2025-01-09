@@ -13,16 +13,6 @@
 	</select>
 	<input type="submit" value="{% trans "Confirm" %}" /><br />
 </form>
-<script>
-  // Add on save function to form
-  function remember(obj) {
-      localStorage.setItem("user_idp", obj.options[obj.selectedIndex].value);
-  }
-  const select = document.getElementById("user_idp_select")
-  select.value = ""+localStorage.getItem("user_idp")+""
-  // for CSP reasons, cannot have this in onchange="remember(this)" form
-  select.addEventListener('change', function() {remember(this)})
-</script>
 </div>
 
 {% endblock %}
