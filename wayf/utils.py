@@ -39,11 +39,11 @@ class ShibbolethMetadata(object):
         """Returns an EntityList holding all Entities (of requested type) found
         in the metadata, perhaps augmented in to the corresponding object type
         """
-        if entity_type is "idp":
+        if entity_type == "idp":
             entityfilter = "IDPSSODescriptor"
-        elif entity_type is "sp":
+        elif entity_type == "sp":
             entityfilter = "SPSSODescriptor"
-        # elif entity_type is "aa":
+        # elif entity_type == "aa":
         #     entityfilter = "AttributeAuthorityDescriptor"
         else:
             entityfilter = None
@@ -337,7 +337,7 @@ class Entity(object):
 
         # get (x, y) closest to target (a, b)
         if isinstance(targetsize, tuple) and \
-                len(targetsize) is 2 and \
+                len(targetsize) == 2 and \
                 [isinstance(i, int) for i in targetsize]:
             dimensions = min(list(self.logo), key=lambda x: abs(x[0]-targetsize[0]) + abs(x[1]-targetsize[1]))
         else:
